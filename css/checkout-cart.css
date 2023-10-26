@@ -190,6 +190,7 @@ ul {
 
 .totals_product_cost {
     padding: 0;
+    text-align: end;
 }
 
 .totals_product_cost span::after {
@@ -197,9 +198,10 @@ ul {
 }
 
 .totals_delivery {
-    display: flex;
+    padding: 0;
     font-size: 14px;
 }
+
 
 .totals_delivery_element {
     padding: 0;
@@ -207,6 +209,7 @@ ul {
 
 .totals_delivery_cost {
     padding: 0;
+    text-align: end;
 }
 
 .totals_delivery_cost span {
@@ -229,6 +232,7 @@ ul {
     font-weight: bold;
     color: red;
     font-size: 18px;
+    text-align: end;
 }
 
 .totals_cart_cost span::after {
@@ -405,6 +409,12 @@ label.sex:after {
 .btn_online button {
     background: #002d5c;
     color: #fff;
+    font-weight: 600;
+}
+
+.btn_offline button {
+    background: "#bebebe";
+    color: "black";
     font-weight: 600;
 }
 
