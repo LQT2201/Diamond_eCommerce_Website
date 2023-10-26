@@ -1,0 +1,20 @@
+footer .social-media .logo img{
+    width:35px;
+    padding-left: 10px;
+}
+footer a {
+    text-decoration-line: none;
+}
+footer h6 {
+    font-size: 14px;
+}
+footer {
+    font-size: 13px;
+    font-family: Roboto,sans-serif;
+}
+footer #footer-logo img {
+    width: 150px;
+    position: relative;
+    padding-top: 25px;
+    padding-left: 60px;
+}
