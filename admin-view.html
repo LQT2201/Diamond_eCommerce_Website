@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/admin-view.css">
+    <link rel="stylesheet" href="./css/admin_content_product.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="row" style="justify-content: center;">
+            <div class="col l-2 menu-tab">
+                <div class="row dashboard">
+                    <span><ion-icon name="speedometer-outline"></ion-icon>Bảng điều khiển</span>
+                </div>
+                <div class="row product">
+
+                    <span>
+                        <ion-icon name="pricetags-outline"></ion-icon>
+                        Sản phẩm
+                    </span>
+                </div>
+                <div class="row category">
+                    <span><ion-icon name="albums-outline"></ion-icon>Danh mục sản phẩm</span>
+                </div>
+                <div class="row order">
+                    <span><ion-icon name="calendar-clear-outline"></ion-icon>Đơn hàng</span>
+                </div>
+                <div class="row report">
+                    <span><ion-icon name="bar-chart-outline"></ion-icon>Thống kê</span>
+                </div>
+                <div class="row account">
+                    <span><ion-icon name="people-outline"></ion-icon>Quản lý tài khoản</span>
+                </div>
+            </div>
+            <div class="col l-9 content">
+                <div class="row content_product">
+                    <div class="row content_product_title">
+                        <h2>Sản phẩm</h2>
+                    </div>
+                    <div class="row content_product_form">
+                        <div class="row content_product_action">
+                            <div class="col l-6 product_action_add">
+                                <button>Thêm sản phẩm</button>
+                            </div>
+                            <div class="col l-5 product_action_search">
+                                <span>Tìm kiếm: </span>
+                                <input type="text" placeholder="Tên sản phẩm">
+                                <button><ion-icon name="search-outline"></ion-icon></button>
+                            </div>
+                        </div>
+                        <div class="row content_product_filter">
+                            <select>
+                                <option>Danh mục</option>
+                            </select>
+                            <input type="number" placeholder="Giá bắt đầu">
+                            <input type="number" placeholder="Giá kết thúc">
+                            <button>Lọc</button>
+                        </div>
+                        <div class="row content_product_list">
+                            <div class="row product_list_title">
+                                <div class="col l-1 product_select_all">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="col l-2 product_category">
+                                    <span>Danh mục</span>
+                                </div>
+                                <div class="col l-2 product_name">
+                                    <span>Tên sản phẩm</span>
+                                </div>
+                                <div class="col l-2 product_image">
+                                    <span>Hình ảnh</span>
+                                </div>
+                                <div class="col l-2 product_price">
+                                    <span>Giá</span>
+                                </div>
+                                <div class="col l-1 product_count">
+                                    <span>Số lượng</span>
+                                </div>
+                                <div class="col l-1 product_edit">
+
+                                </div>
+                                <div class="col l-1 product_delete">
+
+                                </div>
+                            </div>
+                            <div class="row product_list">
+                                <div class="col l-1 product_select_all">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="col l-2 product_category">
+                                    <span>Vòng tay</span>
+                                </div>
+                                <div class="col l-2 product_name">
+                                    <span>Lắc tay pnj</span>
+                                </div>
+                                <div class="col l-2 product_image">
+                                    <span>Hình ảnh</span>
+                                </div>
+                                <div class="col l-2 product_price">
+                                    <span>15900000đ</span>
+                                </div>
+                                <div class="col l-1 product_count">
+                                    <span>10</span>
+                                </div>
+                                <div class="col l-1 product_edit">
+                                    <button>Sửa</button>
+                                </div>
+                                <div class="col l-1 product_delete">
+                                    <button>Xóa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
