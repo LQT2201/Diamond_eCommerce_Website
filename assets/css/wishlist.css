@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wishlistPage {
+    background-color: #F2F1F6;
+}
+
+.menu-profile {
+    background: #fff;
+}
+
+.menu-profile__info{
+    padding:15px 20px;
+    border-bottom:1px solid #f7f7f7;
+}
+
+.menu-profile__info a {
+    text-decoration: none;
+    color: #999;
+}
+
+.menu-profile__info a:hover {
+    text-decoration: none;
+    color:#000 ;
+}
+
+.profile-avatar{
+    width:50px;
+    height:50px;
+    overflow:hidden;
+    border-radius:50%;
+    float:left;
+    margin-right:10px;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.profile-avatar img{
+    max-width: 100%;
+}
+
+.profile-name {
+    font-size: 16px;
+}
+
+.menu-profile__list{
+    width: 100%;
+    float: left;
+}
+
+.menu-profile__item{
+    padding:10px 20px;
+    display:block;
+    position:relative;
+  }
+  .menu-profile__item.active{
+    background:#f7f7f7;
+    color:#ff6600;
+    font-weight: 700;
+  }
