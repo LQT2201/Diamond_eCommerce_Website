@@ -9,6 +9,7 @@ footer h6 {
     font-size: 14px;
 }
 footer {
+    background-color: #f8f9fa;
     font-size: 13px;
     font-family: Roboto,sans-serif;
 }
@@ -17,4 +18,14 @@ footer #footer-logo img {
     position: relative;
     padding-top: 25px;
     padding-left: 60px;
+}
+footer .information .row {
+    justify-content: right;
+}
+footer .footer-slash {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(172, 172, 172);
 }

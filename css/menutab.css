@@ -1,0 +1,50 @@
+.menu-link {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 5em;
+}
+.account-information {
+    padding-left: 6.5em;
+}
+.info-left {
+    background-color: #f5f4f4;
+}
+.item-account {
+    border-top: 1px solid #dbdbdb;
+}
+.item-account a {
+    text-decoration: none;
+    color: #333;
+}
+.item-account a.active {
+    color: #da2032 !important;
+}
+.item-account a:hover {
+    color: #da2032 !important;
+}
+.item-account {
+    padding: 6px 5px;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.title-h2 {
+    max-height: 2.25em;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+    display: block;
+    color: #212529;
+}
+
+.title-h2 h2:before{
+    content: '';
+    width: 50%;
+    background: #da2032;
+    height: 2px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    z-index: 1;
+}

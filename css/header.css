@@ -1,3 +1,47 @@
+header {
+    background-color: #f8f9fa;
+    box-shadow: 0 0px 9px 1px #e0e0e0;
+}
+header .row {
+    justify-content: center;
+    align-items: center;
+}
 header a img {
-    width: 75px;
+    width: 88px;
+}
+header li {
+    float:left;
+}
+header li a {
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+header #header-brand {
+    text-align: center;
+}
+header #header-right li{
+    float: right;
+}
+header .header-menu ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+header .header-top li {
+    margin-top: -10px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f8f9fa;
 }

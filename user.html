@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/menutab.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header >
+        <div class="grid">
+            <div class="header-top">
+                <div class="row">
+                    <div class="col l-2">
+                        <ul>
+                            <li><a href="/aboutus.html">Về cửa hàng</a></li>
+                            <li><a href="tel:+1800">1800</a></li>
+                        </ul>
+                    </div>
+                    <div class="col l-6" id="header-brand">
+                        <a href="#">
+                            <img src="img/pnj.com.vn.png" alt="Logo">
+                        </a>
+                    </div>
+                    <div class="col l-2" id="header-right">
+                        <ul>
+                            <li><a href="#">Giỏ hàng</a></li>
+                            <li><a href="#">Tài khoản</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="grid" id="navbar">
+            <div class="header-menu">
+                <div class="row">
+                    <div class="col l-8">
+                        <ul>
+                            <li>
+                                <a href="#">Trang sức</a>
+                            </li>
+                            <li>
+                                <a href="#">Quà tặng</a>
+                            </li>
+                            <li>
+                                <a href="#">Kim cương viên</a>
+                            </li>
+                            <li>
+                                <a href="#">Trang sức ngọc trai</a>
+                            </li>
+                            <li>
+                                <a href="#">Thương hiệu</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-3">
+                        <div class="search-block">
+                            <form action="">
+                                <input type="text" name="hint_keyword" value="" id="search_input" title="Tìm kiếm nhanh" autocomplete="off">
+                                <button type="submit">Tìm kiếm</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="menu-link">
+        <div class="row">
+            <div class="col l-4">
+                <a href="/">Trang chủ</a>
+                <i>/</i>
+                <a href="/">Thông tin tài khoản</a>
+            </div>
+        </div>
+    </section>
+    <section class="account-information">
+        <div class="grid">
+            <div class="row">
+                <div class="col l-2 info-left">
+                    <div class="item-account">
+                        <p>Tài khoản của ĐINH NGUYÊN MINH HẢI</p>
+                    </div>
+                    <div class="item-account">
+                        <a href="/user.html" class="active">Thông tin tài khoản</a>
+                    </div>
+                    <div class="item-account">
+                        <a href="/order.html">Đơn hàng của tôi</a>
+                    </div>
+                    <div class="item-account">
+                        <a href="#">Giỏ hàng</a>
+                    </div>
+                    <div class="item-account">
+                        <a href="#">Hỏi đáp</a>
+                    </div>
+                </div>
+                <div class="col l-6 info-right">
+                    <div class="title-h2">
+                        <h2>THÔNG TIN TÀI KHOẢN</h2>
+                    </div>
+                    <form id="send-infor" method="post" novalidate="novalidate">
+                        <div class="form-group">
+                            <label>Họ tên<span>*</span>
+                                <input type="text" class="fullname" id="fullname" name="fullname" value="Đinh Nguyên Minh Hải">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Email<span>*</span>
+                                <input type="email" class="email" id="email" name="email" value="dinhnguyenminhhai@gmail.com">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Số điện thoại<span>*</span>
+                                <input type="text" class="phonenumber" id="phonenumber" name="phonenumber" value="0399066641">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Giới tính<span>*</span></label>
+                            <div class="gt-norn">
+                                <label class="radio-inline">
+                                    Nam
+                                    <input type="radio" value="0" name="gender" checked="">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-inline">
+                                    Nữ
+                                    <input type="radio" value="1" name="gender">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-inline">
+                                    Khác
+                                    <input type="radio" value="2" name="gender">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Ngày sinh<span>*</span>
+                                <input type="date" id="birthday" name="birthday">
+                            </label>
+                            <input type="submit" value="Submit">
+                        </div>
+                        <div class="form-group">
+                            <label>Địa chỉ
+                                <input type="text" name="address">
+                            </label>
+                        </div>
+                        <div class="form-group account-1">
+                            <label class="radio-inline">
+                                Thay đổi mật khẩu
+                                <input type="checkbox" name="fixpass" id="fixpass" value="1">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="show-change-pass">
+                            <div class="form-group">
+                                <label>Mật khẩu cũ<span>*</span>
+                                    <input type="password" class="oldpassword" name="oldpass">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Mật khẩu<span>*</span>
+                                    <input type="password" class="password" id="pass" name="pass">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Xác nhận mật khẩu<span>*</span>
+                                    <input type="password" class="repassword" name="repass" id="repass">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <button type="submit">Lưu</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-slash"></div>
+        <div class="row">
+            <div class="col l-2" id="footer-logo">
+                <a href="#">
+                    <img src="img/pnj.com.vn.png" alt="Logo">
+                </a>
+            </div>
+        </div>
+        <section class="information">
+            <div class="row">
+                <div class="col l-3">
+                    <h6>© Công Ty Cổ Phần Vàng Bạc Đá Quý</h6>
+                    <p></p>
+                </div>
+                <div class="col l-2">
+                    <h6>Về chúng tôi</h6>
+                    <p><a href="#!">Thành lập</a></p>
+                    <p><a href="#!">Mục tiêu</a></p>
+                </div>
+                <div class="col l-3">
+                    <h6>Dịch vụ khách hàng</h6>
+                    <p><a href="#!">Hướng dẫn đo size trang sức</a></p>
+                    <p><a href="#!">Mua hàng trả góp</a></p>
+                    <p><a href="#!">Hướng dẫn mua hàng và thanh toán</a></p>
+                    <p><a href="#!">Chính sách hoàn tiền</a></p>
+                    <p><a href="#!">Chính sách giao hàng</a></p>
+                    <p><a href="#!">Cẩm nang sử dụng trang sức</a></p>
+                    <p><a href="#!">Chính sách bảo hành thu đổi</a></p>
+                    <p><a href="#!">Chính sách khách hàng thân thiết</a></p>
+                    <p><a href="#!">Chính sách bảo mật thông tin khách hàng</a></p>
+                    <p><a href="#!">Chính sách xử lý dữ liệu cá nhân</a></p>
+                    <p><a href="#!">Câu hỏi thường gặp</a></p>
+                </div>
+                <div class="col l-3">
+                    <h6>Kết nối với chúng tôi</h6>
+                    <div class="social-media">
+                        <a href="#" class="logo">
+                            <img src="img/facebook.svg" alt="Facebook logo">
+                        </a>
+                        <a href="#" class="logo">
+                            <img src="img/youtube.svg" alt="Youtube logo">
+                        </a>
+                        <a href="#" class="logo">
+                            <img src="img/zalo.svg" alt="Zalo logo">
+                        </a>
+                        <a href="#" class="logo">
+                            <img src="img/instagram.svg" alt="Instagram logo">
+                        </a>
+                        <a href="#" class="logo">
+                            <img src="img/twitter.svg" alt="Twitter logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>
