@@ -1,0 +1,154 @@
+.content_order_title {
+    background-color: #fff;
+    margin: 10px;
+    border-left: 10px solid rgb(199, 199, 11);
+    width: 98%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.content_order_title h2 {
+    margin-left: 10px;
+    color: rgb(51, 108, 214);
+}
+
+.content_order_form {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.content_order_search span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.content_order_search input {
+    width: 120px;
+    border: none;
+    height: 30px;
+    border-bottom: 2px solid #bebebe;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+
+.content_order_search button {
+    width: 100px;
+    border: none;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgb(34, 231, 44);
+    border-radius: 5px;
+}
+
+.content_order_search button:hover {
+    background-color: chartreuse;
+    cursor: pointer;
+}
+
+
+.content_order_filter {
+    margin-top: 20px;
+}
+
+.content_order_filter button {
+    width: 100px;
+    border: none;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgb(34, 37, 231);
+    border-radius: 5px;
+    color: #fff;
+}
+
+.content_order_filter button:hover {
+    background-color: rgb(0, 174, 255);
+    cursor: pointer;
+}
+
+.content_order_filter span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.content_order_filter input {
+    width: 120px;
+    border: none;
+    height: 30px;
+    border-bottom: 2px solid #bebebe;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.content_order_list {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+.order_table {
+    border-collapse: collapse;
+    margin: 25px 0px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.order_table {
+    border-collapse: collapse;
+    margin: 25px 0px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+}
+
+.order_table thead tr {
+    background-color: rgb(2, 4, 83);
+    color: #fff;
+    font-weight: bold;
+    height: 50px;
+
+}
+
+.order_table th,
+.order_table td {
+    padding: 8px;
+}
+
+.order_table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.order_table tbody tr:last-of-type {
+    border-bottom: 2px solid #03acca;
+}
+
+.order_table tbody tr:hover {
+    background-color: #ddddddec;
+}
+
+.order_table tbody tr button {
+    border-radius: 5px;
+}
+
+.order_table tbody tr button:hover {
+    background-color: rgba(86, 139, 236, 0.884);
+    transform: scale(1.1);
+    color: white;
+    font-weight: bold;
+}

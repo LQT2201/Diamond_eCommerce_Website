@@ -9,26 +9,29 @@
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/admin-view.css">
     <link rel="stylesheet" href="./css/admin_content_product.css">
+    <link rel="stylesheet" href="./css/admin_content_category.css">
+    <link rel="stylesheet" href="./css/admin_content_order.css">
+    <link rel="stylesheet" href="/css/admin_content_account.css">
+    <link rel="stylesheet" href="./css/admin_content_report.css">
 
     <title>Document</title>
 </head>
 
 <body>
-    <div class="grid">
-        <div class="row" style="justify-content: center;">
-            <div class="col l-2 menu-tab">
+    <div class="grid wide container">
+        <div class="row">
+            <div class="col l-2 m-0 menu-tab">
                 <div class="row dashboard">
                     <span><ion-icon name="speedometer-outline"></ion-icon>Bảng điều khiển</span>
                 </div>
                 <div class="row product">
-
                     <span>
                         <ion-icon name="pricetags-outline"></ion-icon>
                         Sản phẩm
                     </span>
                 </div>
                 <div class="row category">
-                    <span><ion-icon name="albums-outline"></ion-icon>Danh mục sản phẩm</span>
+                    <span><ion-icon name="albums-outline"></ion-icon>Danh mục</span>
                 </div>
                 <div class="row order">
                     <span><ion-icon name="calendar-clear-outline"></ion-icon>Đơn hàng</span>
@@ -40,23 +43,23 @@
                     <span><ion-icon name="people-outline"></ion-icon>Quản lý tài khoản</span>
                 </div>
             </div>
-            <div class="col l-9 content">
-                <div class="row content_product">
-                    <div class="row content_product_title">
+            <div class="col l-9 m-12 content">
+                <div class="content product">
+                    <div class="content_product_title">
                         <h2>Sản phẩm</h2>
                     </div>
-                    <div class="row content_product_form">
+                    <div class="content_product_form">
                         <div class="row content_product_action">
                             <div class="col l-6 product_action_add">
                                 <button>Thêm sản phẩm</button>
                             </div>
-                            <div class="col l-5 product_action_search">
+                            <div class="col l-6 m-12 product_action_search">
                                 <span>Tìm kiếm: </span>
                                 <input type="text" placeholder="Tên sản phẩm">
                                 <button><ion-icon name="search-outline"></ion-icon></button>
                             </div>
                         </div>
-                        <div class="row content_product_filter">
+                        <div class="content_product_filter">
                             <select>
                                 <option>Danh mục</option>
                             </select>
@@ -65,64 +68,294 @@
                             <button>Lọc</button>
                         </div>
                         <div class="row content_product_list">
-                            <div class="row product_list_title">
-                                <div class="col l-1 product_select_all">
-                                    <input type="checkbox">
-                                </div>
-                                <div class="col l-2 product_category">
-                                    <span>Danh mục</span>
-                                </div>
-                                <div class="col l-2 product_name">
-                                    <span>Tên sản phẩm</span>
-                                </div>
-                                <div class="col l-2 product_image">
-                                    <span>Hình ảnh</span>
-                                </div>
-                                <div class="col l-2 product_price">
-                                    <span>Giá</span>
-                                </div>
-                                <div class="col l-1 product_count">
-                                    <span>Số lượng</span>
-                                </div>
-                                <div class="col l-1 product_edit">
-
-                                </div>
-                                <div class="col l-1 product_delete">
-
-                                </div>
-                            </div>
-                            <div class="row product_list">
-                                <div class="col l-1 product_select_all">
-                                    <input type="checkbox">
-                                </div>
-                                <div class="col l-2 product_category">
-                                    <span>Vòng tay</span>
-                                </div>
-                                <div class="col l-2 product_name">
-                                    <span>Lắc tay pnj</span>
-                                </div>
-                                <div class="col l-2 product_image">
-                                    <span>Hình ảnh</span>
-                                </div>
-                                <div class="col l-2 product_price">
-                                    <span>15900000đ</span>
-                                </div>
-                                <div class="col l-1 product_count">
-                                    <span>10</span>
-                                </div>
-                                <div class="col l-1 product_edit">
-                                    <button>Sửa</button>
-                                </div>
-                                <div class="col l-1 product_delete">
-                                    <button>Xóa</button>
-                                </div>
-                            </div>
+                            <table class="product_table">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Danh mục</th>
+                                        <th>Hình ảnh</th>
+                                        <th>Số lượng</th>
+                                        <th>Giá</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nhẫn PNJ cao cấp</td>
+                                        <td>Nhẫn</td>
+                                        <td>Hình ảnh</td>
+                                        <td>10</td>
+                                        <td>12.000.000 đ</td>
+                                        <td><button id="product_btn_edit">Sửa</button></td>
+                                        <td><button>Xóa</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nhẫn PNJ cao cấp</td>
+                                        <td>Nhẫn</td>
+                                        <td>Hình ảnh</td>
+                                        <td>10</td>
+                                        <td>12.000.000 đ</td>
+                                        <td><button id="product_btn_edit">Sửa</button></td>
+                                        <td><button>Xóa</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-
                 </div>
+                <div class="content category">
+                    <div class="content_category_title">
+                        <h2>Danh mục</h2>
+                    </div>
+                    <div class="content_category_form">
+                        <div class="category_search">
+                            <input type="text" placeholder="Nhập tên danh mục">
+                        </div>
+                    </div>
+                </div> <!--Chưa xong-->
+
+                <div class="content order">
+                    <div class="content_order_title">
+                        <h2>Đơn hàng</h2>
+                    </div>
+                    <div class="content_order_form">
+                        <div class="content_order_search">
+                            <span>Bắt đầu</span>
+                            <input type="date">
+                            <span>Kết thúc</span>
+                            <input type="date">
+                            <button>Tìm kiếm</button>
+                        </div>
+                        <div class="content_order_filter">
+                            <span>Giá từ</span>
+                            <input type="number">
+                            <span>đến</span>
+                            <input type="number">
+                            <button>Lọc</button>
+                        </div>
+                    </div>
+                    <div class="content_order_list">
+                        <table class="order_table">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên tài khoản</th>
+                                    <th>SĐT</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Ngày đặt hàng</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Trạng thái</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>user</td>
+                                    <td>0948346245</td>
+                                    <td>Quảng Trị</td>
+                                    <td>10/10/2023</td>
+                                    <td>100000</td>
+                                    <td>Đang xử lý...</td>
+                                    <td><button>Chi tiết</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>user</td>
+                                    <td>0948346245</td>
+                                    <td>Quảng Trị</td>
+                                    <td>10/10/2023</td>
+                                    <td>100000</td>
+                                    <td>Đang xử lý...</td>
+                                    <td><button>Chi tiết</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content report">
+                    <div class="content_order_title">
+                        <h2>Thống kê</h2>
+                    </div>
+                    <div class="report_infor">
+                        <div class="action_infor">
+                            <span>Tháng:</span>
+                            <select title="Tháng">
+                                <option>Tháng 1</option>
+                            </select>
+                            <span>Năm:</span>
+                            <select>
+                                <option>2023</option>
+                            </select>
+                            <button>Xem</button>
+                        </div>
+                        <div class="report_result">
+                            <table class="table_report">
+                                <thead>
+                                    <tr>
+
+                                        <th>Ngày</th>
+                                        <th>Số đơn hàng</th>
+                                        <th>Doanh thu</th>
+                                        <th>Chi tiết</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>20</td>
+                                        <td>1000000</td>
+                                        <td><button>Xem</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>20</td>
+                                        <td>1000000</td>
+                                        <td><button>Xem</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div> <!--Đang bí ý tưởng???-->
+
+                <div class="content account">
+                    <div class="content_order_title">
+                        <h2>Quản lý tài khoản</h2>
+                    </div>
+                    <div class="content_account_staff">
+                        <div class="account_staff_list">
+                            <h3>Quản lý thông tin nhân viên</h3>
+                            <button class="add_staff_account_btn">Thêm tài khoản staff</button>
+                            <div class="add_account_staff">
+                                <div class="staff_type">
+                                    <span>Loại tài khoản</span>
+                                    <select>
+                                        <option>Quản trị viên</option>
+                                    </select>
+                                </div>
+                                <div class="staff_name">
+                                    <span>Họ tên</span>
+                                    <input type="text">
+                                </div>
+                                <div class="staff_username">
+                                    <span>Tên đăng nhập</span>
+                                    <input type="text">
+                                </div>
+                                <div class="staff_password">
+                                    <span>Mật khẩu</span>
+                                    <input type="password">
+                                </div>
+                                <div class="staff_confirmpassword">
+                                    <span>Nhập lại mật khẩu</span>
+                                    <input type="password">
+                                </div>
+                                <div class="staff_email">
+                                    <span>Email</span>
+                                    <input type="email">
+                                </div>
+                                <div class="staff_phone">
+                                    <span>Số điện thoại</span>
+                                    <input type="tel">
+                                </div>
+                                <div class="staff_create">
+                                    <span></span>
+                                    <button>Xác nhận</button>
+                                </div>
+                            </div>
+                            <table class="staff_account">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Tên đăng nhập</th>
+                                        <th>Chủ tài khoản</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Email</th>
+                                        <th>Loại tài khoản</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>user123</td>
+                                        <td>Nguyễn Văn Phong</td>
+                                        <td>0948346245</td>
+                                        <td>21522461@gmail.com</td>
+                                        <td>Administrator</td>
+                                        <td><button>Xóa tài khoản</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>user123</td>
+                                        <td>Nguyễn Văn Phong</td>
+                                        <td>0948346245</td>
+                                        <td>21522461@gmail.com</td>
+                                        <td>Administrator</td>
+                                        <td><button>Xóa tài khoản</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="account_user_list">
+                            <h3>Quản lý thông tin khách hàng</h3>
+                            <table class="user_account">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Tên đăng nhập</th>
+                                        <th>Chủ tài khoản</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Email</th>
+                                        <th>Loại tài khoản</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>user123</td>
+                                        <td>Nguyễn Văn Phong</td>
+                                        <td>0948346245</td>
+                                        <td>21522461@gmail.com</td>
+                                        <td>Vip</td>
+                                        <td><button>Xóa tài khoản</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>user123</td>
+                                        <td>Nguyễn Văn Phong</td>
+                                        <td>0948346245</td>
+                                        <td>21522461@gmail.com</td>
+                                        <td>Normal</td>
+                                        <td><button>Xóa tài khoản</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>user123</td>
+                                        <td>Nguyễn Văn Phong</td>
+                                        <td>0948346245</td>
+                                        <td>21522461@gmail.com</td>
+                                        <td>Normal</td>
+                                        <td><button>Xóa tài khoản</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </div>
+
+    <script src="./js/admin-view.js"></script>
     </div>
 
 

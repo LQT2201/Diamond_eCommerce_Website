@@ -1,0 +1,88 @@
+.table_report {
+    border-collapse: collapse;
+    margin: 25px 0px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.table_report {
+    border-collapse: collapse;
+    margin: 25px 0px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+}
+
+.table_report thead tr {
+    background-color: rgb(2, 4, 83);
+    color: #fff;
+    font-weight: bold;
+    height: 50px;
+
+}
+
+.table_report th,
+.table_report td {
+    padding: 8px;
+}
+
+.table_report tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table_report tbody tr:last-of-type {
+    border-bottom: 2px solid #03acca;
+}
+
+.table_report tbody tr:hover {
+    background-color: #ddddddec;
+}
+
+.table_report tbody tr button {
+    border-radius: 5px;
+}
+
+.table_report tbody tr button:hover {
+    background-color: rgba(0, 225, 255, 0.884);
+    transform: scale(1.1);
+    color: white;
+    font-weight: bold;
+}
+
+.action_infor {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px
+}
+
+.action_infor span {
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+.action_infor select {
+    width: 150px;
+    margin-right: 10px;
+    height: 30px;
+}
+
+.action_infor button {
+    padding: 10px;
+    border: none;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: #03acca;
+    color: white;
+}
+
+.action_infor button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}

@@ -5,7 +5,8 @@
 
 
 .menu-tab div {
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -14,9 +15,8 @@
     align-items: center;
     text-align: center;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
-    width: 80%;
     padding: 10px;
     border-radius: 5px;
 }
@@ -28,9 +28,32 @@
 .menu-tab span:hover {
     background-color: rgb(149, 190, 243);
     color: black;
+    width: 95%;
 }
 
 .content {
-
+    flex: 0 0 83%;
+    max-width: 100%;
+    width: 100%;
     background-color: #f1f1f1;
+}
+
+.content.product {
+    display: none;
+}
+
+.content.category {
+    display: none;
+}
+
+.content.order {
+    display: block;
+}
+
+.content.report {
+    display: none;
+}
+
+.content.account {
+    display: none;
 }
