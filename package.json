@@ -19,7 +19,8 @@
   "homepage": "https://github.com/LQT2201/Diamond_eCommerce_Website#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^7.1.2"
+    "express-handlebars": "^7.1.2",
+    "mongoose": "^8.0.1"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

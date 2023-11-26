@@ -1,8 +1,15 @@
+const Test1 = require('../models/Colection1');
+
 
 class ProductController {
     
+
     //  [GET] hiển thị trang homepage
     index(req,res) {
+
+        // Test1.find({})
+        //     .then(results => res.send(results))
+           
         res.render('pages/homepage', {
             title: 'HomePage',
             style: '/css/homepage.css',

@@ -6,6 +6,10 @@ const { engine } = require('express-handlebars');
 const morgan = require('morgan')
 
 const route = require('./routes/index.route')
+const db = require('./config/db/index');
+
+// Connect database
+db.connect();
 
 // Middleware để phục vụ các tệp tĩnh từ thư mục "public"
 app.use(express.static(path.join(__dirname, 'public')));

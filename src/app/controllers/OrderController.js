@@ -1,13 +1,18 @@
 
 class OrderController {
     
-    // Hiển thị form thêm order
-    showAddForm() {
-        
+    //  [GET] hiện thị lịch sử đơn hàng
+    getOrder(req,res) {
+        res.render('pages/account/orders', {
+            title: 'Orders',
+            style: '/css/orders.css',
+        });
     }
+    
+    // CÁC XỬ LÍ TRANG ADMIN
 
-    // Thêm đơn hàng vào db
-    addOrder() {
+    // Thực hiện xóa đơn hàng
+    deleteOrder() {
 
     }
 

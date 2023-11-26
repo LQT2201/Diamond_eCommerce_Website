@@ -9,7 +9,12 @@ class ProductController {
         });
     }
     
-    // PHÍA DƯỚI LÀ CÁC XỬ LÍ TRANG ADMIN
+    // CÁC XỬ LÍ TRANG ADMIN
+
+    // Hiển thị màn hình thêm sản phẩm
+    showProduct(req,res) {
+        res.render('admin/admin');
+    }
 
     // Hiển thị màn hình thêm sản phẩm
     showAddForm(req,res) {
