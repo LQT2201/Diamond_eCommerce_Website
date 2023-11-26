@@ -4,21 +4,25 @@ const router = express.Router();
 const productController = require('../app/controllers/ProductController');
 
 // Hiển thị chi tiết sản phẩm cho user
-router.get('/products/:id', productController.getProductDetail);
+router.get('/product-detail/:id', productController.getProductDetail);
 
-// Hiển thị form thêm sản phẩm
-router.get('/products/add', productController.showAddForm);
+// Hiển thị chi tiết sản phẩm cho ADMIN
+router.get('/admin/products', productController.showProduct);
 
-// Thêm sản phẩm
-router.post('/products/add', productController.addProduct);
+// // Hiển thị form thêm sản phẩm
+// router.get('/products/add', productController.showAddForm);
 
-// Hiển thị form sửa sản phẩm
-router.get('/products/:id/edit', productController.showEditForm);
+// // Thêm sản phẩm
+// router.post('/products/add', productController.addProduct);
 
-// Sửa sản phẩm
-router.post('/products/:id/edit', productController.editProduct);
+// // Hiển thị form sửa sản phẩm
+// router.get('/products/:id/edit', productController.showEditForm);
 
-// Xóa sản phẩm
-router.get('/products/:id/delete', productController.deleteProduct);
+// // Sửa sản phẩm
+// router.post('/products/:id/edit', productController.editProduct);
+
+// // Xóa sản phẩm
+// router.get('/products/:id/delete', productController.deleteProduct);
+
 
 module.exports = router; 

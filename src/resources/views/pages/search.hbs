@@ -1,1 +1,347 @@
-<h1>search screen</h1>
+    <div style="text-align: center; font-size:20px">
+        Đây là breadcrumb
+    </div>
+
+    <section class="productPage">
+        <div class="grid wide">
+            <div class="row">
+                <!--  Begin filter  -->
+                <div class="col l-3 c-12">
+                    <div class="product-filter-acrrodion">
+                        <div class="product-filter-acrrodion__toggle">Thẻ div này dùng để làm reponsive</div>
+                        <div class="product-filter-acrrodion__dropdown">
+                            <!-- Begin_Filter- -->
+                            <div class="product-filter">
+                                <div class="product-filter__title">
+                                    <span>Giá tiền</span>
+                                </div>
+                                <div class="product-filter__content">
+                                   <div class="product-filter__inputPrice">
+                                    <div class="product-filter__inputPrice--wrap">
+                                        <div class="product-filter__inputPrice--text">Từ</div>
+                                        <div class="product-filter__inputPrice--input">
+                                            <input type="text" value="0Đ">
+                                        </div>
+                                    </div>
+                                    <div class="product-filter__inputPrice--wrap">
+                                        <div class="product-filter__inputPrice--text">Đến</div>
+                                        <div class="product-filter__inputPrice--input">
+                                            <input type="text" value="10000Đ">
+                                        </div>
+                                    </div>
+                                   </div>
+                                </div>
+                            </div>
+
+                            <div class="product-filter">
+                                <div class="product-filter__title">
+                                    <span>Chất liệu</span>
+                                </div>
+                                <div class="product-filter__content">
+                                    <div class="product-filter__list">
+                                        <ul>
+                                            <li class="active">
+                                                <a href="#" title="Tất cả">
+                                                    <span>Tất cả</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Kim cương</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Đá quý</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Vàng</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Bạc</span>
+                                                </a>
+                                            </li> 
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-filter">
+                                <div class="product-filter__title">
+                                    <span>Loại trang sức</span>
+                                </div>
+                                <div class="product-filter__content">
+                                    <div class="product-filter__list">
+                                        <ul>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Bông tai</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Nhẫn</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Vòng</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Dây chuyền</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Mặt dây chuyền</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Lắc</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-filter">
+                                <div class="product-filter__title">
+                                    <span>Giới tính</span>
+                                </div>
+                                <div class="product-filter__content">
+                                    <div class="product-filter__list">
+                                        <ul>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Nam</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Nữ</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Tất cả">
+                                                    <span>Unisex</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                   <!-- End_Filter- -->
+                        </div>
+                    </div>
+                </div>
+                <!--  End filter   -->
+                <div class="col l-9 c-12">
+                    <div class="product-head">
+                        <div class="product-head__title">
+                            <h1>Tất cả</h1>
+                        </div>
+                        <div class="product-head__tools">
+                            <select name="sort_by" id="sort_by">
+                                <option value="0">Sắp xếp theo</option>
+                                <option value="1">Giá từ cao đến thấp</option>
+                                <option value="2">Giá từ thấp đến cao</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l-4 m-4 c-6">
+                            <div class="component-product">
+                                <div class="component-product__image">
+                                    <a href="">
+                                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="component-product__title">
+                                    <a href="">
+                                        <span>Bánh zzzzzzzzzzzzzzzzzzzzzzzzzzz</span>
+                                    </a>
+                                </div>
+
+                                <div class="component-product__price">60.000đ</div>
+                            </div>
+                        </div>
+
+                        <div class="col l-4 m-4 c-6">
+                            <div class="component-product">
+                                <div class="component-product__image">
+                                    <a href="">
+                                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="component-product__title">
+                                    <a href="">
+                                        <span>Bông tai Vàng 10K đính đá ECZ PNJ Sunnyva XMXMY006000</span>
+                                    </a>
+                                </div>
+
+                                <div class="component-product__price">60.000đ</div>
+                            </div>
+                        </div>
+
+                        <div class="col l-4 m-4 c-6">
+                            <div class="component-product">
+                                <div class="component-product__image">
+                                    <a href="">
+                                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="component-product__title">
+                                    <a href="">
+                                        <span>Bông tai Vàng 10K đính đá ECZ PNJ Sunnyva XMXMY006000</span>
+                                    </a>
+                                </div>
+
+                                <div class="component-product__price">60.000đ</div>
+                            </div>
+                        </div>
+
+                        <div class="col l-4 m-4 c-6">
+                            <div class="component-product">
+                                <div class="component-product__image">
+                                    <a href="">
+                                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="component-product__title">
+                                    <a href="">
+                                        <span>Bông tai Vàng 10K đính đá ECZ PNJ Sunnyva XMXMY006000</span>
+                                    </a>
+                                </div>
+
+                                <div class="component-product__price">60.000đ</div>
+                            </div>
+                        </div>
+
+                        <div class="col l-4 m-4 c-6">
+                            <div class="component-product">
+                                <div class="component-product__image">
+                                    <a href="">
+                                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="component-product__title">
+                                    <a href="">
+                                        <span>Bông tai Vàng 10K đính đá ECZ PNJ Sunnyva XMXMY006000</span>
+                                    </a>
+                                </div>
+
+                                <div class="component-product__price">60.000đ</div>
+                            </div>
+                        </div>
+
+                        <div class="col l-4 m-4 c-6">
+                            <div class="component-product">
+                                <div class="component-product__image">
+                                    <a href="">
+                                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="component-product__title">
+                                    <a href="">
+                                        <span>Bông tai Vàng 10K đính đá ECZ PNJ Sunnyva XMXMY006000</span>
+                                    </a>
+                                </div>
+
+                                <div class="component-product__price">60.000đ</div>
+                            </div>
+                        </div>
+
+                        <div class="col l-4 m-4 c-6">
+                            <div class="component-product">
+                                <div class="component-product__image">
+                                    <a href="">
+                                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="component-product__title">
+                                    <a href="">
+                                        <span>Bông tai Vàng 10K đính đá ECZ PNJ Sunnyva XMXMY006000</span>
+                                    </a>
+                                </div>
+
+                                <div class="component-product__price">60.000đ</div>
+                            </div>
+                        </div>
+
+                        <div class="col l-4 m-4 c-6">
+                            <div class="component-product">
+                                <div class="component-product__image">
+                                    <a href="">
+                                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="component-product__title">
+                                    <a href="">
+                                        <span>Bông tai Vàng 10K đính đá ECZ PNJ Sunnyva XMXMY006000</span>
+                                    </a>
+                                </div>
+
+                                <div class="component-product__price">60.000đ</div>
+                            </div>
+                        </div>
+
+                        <div class="col l-4 m-4 c-6">
+                            <div class="component-product">
+                                <div class="component-product__image">
+                                    <a href="">
+                                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="component-product__title">
+                                    <a href="">
+                                        <span>Bông tai Vàng 10K đính đá ECZ PNJ Sunnyva XMXMY006000</span>
+                                    </a>
+                                </div>
+
+                                <div class="component-product__price">60.000đ</div>
+                            </div>
+                        </div>
+
+                        <div class="col l-4 m-4 c-6">
+                            <div class="component-product">
+                                <div class="component-product__image">
+                                    <a href="">
+                                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="component-product__title">
+                                    <a href="">
+                                        <span>Bông tai Vàng 10K đính đá ECZ PNJ Sunnyva XMXMY006000</span>
+                                    </a>
+                                </div>
+
+                                <div class="component-product__price">60.000đ</div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>

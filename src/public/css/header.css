@@ -18,6 +18,7 @@ header li a {
     text-decoration: none;
     text-align: center;
     color: black;
+    font-size: 14px;
 }
 header ul {
     list-style-type: none;

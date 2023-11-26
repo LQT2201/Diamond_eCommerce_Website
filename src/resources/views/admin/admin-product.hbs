@@ -1,1 +1,92 @@
-<h1>product</h1>
+<div class="grid wide container">
+        <div class="row">
+            <div class="col l-2 m-0 menu-tab">
+                <div class="row dashboard">
+                    <span><ion-icon name="speedometer-outline"></ion-icon>Bảng điều khiển</span>
+                </div>
+                <div class="row product">
+                    <span>
+                        <ion-icon name="pricetags-outline"></ion-icon>
+                        Sản phẩm
+                    </span>
+                </div>
+                <div class="row category">
+                    <span><ion-icon name="albums-outline"></ion-icon>Danh mục</span>
+                </div>
+                <div class="row order">
+                    <span><ion-icon name="calendar-clear-outline"></ion-icon>Đơn hàng</span>
+                </div>
+                <div class="row report">
+                    <span><ion-icon name="bar-chart-outline"></ion-icon>Thống kê</span>
+                </div>
+                <div class="row account">
+                    <span><ion-icon name="people-outline"></ion-icon>Quản lý tài khoản</span>
+                </div>
+            </div>
+            <div class="col l-9 m-12 content">
+                <div class="content product">
+                    <div class="content_product_title">
+                        <h2>Sản phẩm</h2>
+                    </div>
+                    <div class="content_product_form">
+                        <div class="row content_product_action">
+                            <div class="col l-6 product_action_add">
+                                <button>Thêm sản phẩm</button>
+                            </div>
+                            <div class="col l-6 m-12 product_action_search">
+                                <span>Tìm kiếm: </span>
+                                <input type="text" placeholder="Tên sản phẩm">
+                                <button><ion-icon name="search-outline"></ion-icon></button>
+                            </div>
+                        </div>
+                        <div class="content_product_filter">
+                            <select>
+                                <option>Danh mục</option>
+                            </select>
+                            <input type="number" placeholder="Giá bắt đầu">
+                            <input type="number" placeholder="Giá kết thúc">
+                            <button>Lọc</button>
+                        </div>
+                        <div class="row content_product_list">
+                            <table class="product_table">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Danh mục</th>
+                                        <th>Hình ảnh</th>
+                                        <th>Số lượng</th>
+                                        <th>Giá</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nhẫn PNJ cao cấp</td>
+                                        <td>Nhẫn</td>
+                                        <td>Hình ảnh</td>
+                                        <td>10</td>
+                                        <td>12.000.000 đ</td>
+                                        <td><button id="product_btn_edit">Sửa</button></td>
+                                        <td><button>Xóa</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nhẫn PNJ cao cấp</td>
+                                        <td>Nhẫn</td>
+                                        <td>Hình ảnh</td>
+                                        <td>10</td>
+                                        <td>12.000.000 đ</td>
+                                        <td><button id="product_btn_edit">Sửa</button></td>
+                                        <td><button>Xóa</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

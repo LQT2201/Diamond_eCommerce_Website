@@ -13,7 +13,9 @@ class ProductController {
 
     // Hiển thị màn hình thêm sản phẩm
     showProduct(req,res) {
-        res.render('admin/admin');
+        res.render('admin/admin-product',{
+            style: '/css/admin-product.css',
+        });
     }
 
     // Hiển thị màn hình thêm sản phẩm

@@ -25,7 +25,11 @@ class AccountController {
     // [GET] /wishlist
     // Hiện thị thông tin wishlist
     showWishlist(req,res) {
-        res.render('pages/account/wishlist-cart');
+        res.render('pages/account/wishlist-cart',{
+            title: 'Wishlist cart',
+            style: '/css/wishlist-cart.css',
+
+        });
     }
 
     
