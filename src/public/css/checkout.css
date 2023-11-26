@@ -18,6 +18,10 @@ ul {
     }
 }
 
+.row {
+    width: 100%;
+}
+
 
 
 
@@ -227,6 +231,7 @@ ul {
 .progress-lists {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .progress-lists li {
@@ -296,6 +301,7 @@ ul {
     background-color: #fbf9f1;
     margin: 14px 0px;
     border-radius: 10px;
+    width: 100%;
 }
 
 .content_title span {
@@ -317,21 +323,46 @@ ul {
 /*  
     Thông tin cá nhân
 */
-.sex {
-    margin: 0px 10px;
+.row.sex {
+    margin: 0px 20px;
+}
+
+.sex label {
+    font-size: 14px;
 }
 
 label.sex:after {
     padding-left: 3px;
     color: #ea7162;
     content: "*";
-    font-size: 14px;
-    line-height: 1px;
+    font-size: 18px;
+}
+
+.infor {
+    width: 100%;
+}
+
+.sex {
+    align-items: center;
+}
+
+
+.infor_content {
+    width: 100%;
 }
 
 .infor_user {
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+.infor_1 {
+    justify-content: center;
+}
+
+.infor_2 {
+    justify-content: center;
 }
 
 .infor_user input {
@@ -343,11 +374,13 @@ label.sex:after {
     border: 1px solid #a8a8a8;
 }
 
+
 .infor_btn {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 5px 0px;
+    width: 100%;
 }
 
 .infor_btn button {
@@ -371,6 +404,15 @@ label.sex:after {
 
 
 /* Giao diện giao hàng */
+
+.select_shipment {
+    width: 100%;
+    justify-content: center;
+}
+
+.select_shipment div {
+    /* flex: 0%; */
+}
 
 .select_shipment button {
     width: 100%;
@@ -401,10 +443,19 @@ label.sex:after {
     border: 1px solid #a8a8a8;
 }
 
+.location_infor_1 {
+    justify-content: center;
+}
+
+.location_infor_2 {
+    justify-content: center;
+}
+
+
 .location_infor input {
     width: 100%;
-    height: 40px;
-    padding: 4px 15px;
+    height: 30px;
+    padding: 4px 0px;
     border-radius: 5px;
     margin: 5px 0px;
     border: 1px solid #a8a8a8;
@@ -467,12 +518,16 @@ label.sex:after {
     font-size: 13px;
 }
 
-.shipment_content {
+.row.shipment_content {
     display: block;
 }
 
-.onstore_content {
-    display: none;
+.row.onstore_content {
+    display: block;
+}
+
+.onstore_location {
+    justify-content: center;
 }
 
 .onstore_location select {
@@ -485,7 +540,7 @@ label.sex:after {
 }
 
 .store_address select {
-    width: 96%;
+    width: 100%;
     height: 40px;
     padding: 4px 8px;
     border-radius: 5px;
@@ -505,3 +560,10 @@ label.sex:after {
 .store_note {
     margin-bottom: 10px;
 }
+
+
+
+
+
+/* 
+Fix css */
