@@ -6,6 +6,7 @@ class CartController {
         res.render('pages/cart', {
             title: 'Cart',
             style: '/css/cart.css',
+            isAdmin:1,
         });
     }
 
@@ -15,6 +16,7 @@ class CartController {
         res.render('pages/checkout', {
             title: 'Order',
             style: '/css/checkout.css',
+            isAdmin:1,
         });
     }
     
