@@ -1,248 +1,154 @@
 <div class="grid wide">
-    <div class="row button_back">
-      <button>Tiếp tục mua hàng</button>
-    </div>
+  <div class="row button_back">
+    <button>Tiếp tục mua hàng</button>
+  </div>
 
-    <div class="row cart">
-      <div class="col-sm-4 cart_content">
-        <div class="row cart_title">
-          <h2>Thông tin giỏ hàng</h2>
+  <div class="row cart">
+   
+
+    <div class="col l-12 infor_content">
+      <div class="row checkout-step">
+        <div class="row checkout-progress">
+          <ul class="progress-lists">
+            <li> Thông tin người mua
+            </li>
+            <li>Hình thức nhận hàng</li>
+            <li>Đặt hàng</li>
+            <li>Thanh toán</li>
+          </ul>
         </div>
-        <div class="row des_cart">
-          <div class="col-sm-4 image_product">
-            <image
-              src="https://cdn.pnj.io/images/thumbnails/120/120/detailed/135/gl0000y001883-lac-tay-vang-18k-pnj-1.png">
-            </image>
+
+        <div class="row infor">
+          <div class="row content_title">
+            <span>1</span>
+            <h2>Thông tin cá nhân</h2>
           </div>
-          <div class="col-sm-8 element_product">
-            <div class="row product_name">
-              <span>Lắc tay Vàng 18K PNJ 0000Y001883</span>
+          <div class="row infor_content">
+            <div class="row sex">
+              <input type="radio" name="male_female" value="male"><label class="sex" for="male_female">Nam</label>
+              <input type="radio" name="male_female" value="female"><label class="sex" for="male_female">Nữ</label>
             </div>
-            <div class="row product_key">
-              <div class="col-sm-2 key_element">
-                <span>Mã:</span>
+          </div>
+          <div class="row infor_user">
+            <div class="row infor_1">
+              <div class="col l-5 m-12 infor_name">
+                <input type="text" placeholder="Tên">
               </div>
-              <div class="col-sm-10 key_code">
-                <span>GL0000Y001883</span>
-              </div>
-            </div>
-            <div class="row product_cost">
-              <div class="col-sm-5 cost_element">
-                <span>Giá:</span>
-              </div>
-              <div class="col-sm-6 cost_number">
-                <span>15.976.000</span>
+              <div class="col l-5 m-12 infor_sdt">
+                <input type="text" placeholder="Số điện thoại">
               </div>
             </div>
-            <div class="row product_size">
-              <div class="col-sm-5 size_element">
-                <span>Kích thước:</span>
+            <div class="row infor_2">
+              <div class="col l-5 m-12 infor_email">
+                <input type="text" placeholder="Email">
               </div>
-              <div class="col-sm-6 size_option">
-                <div class="row size_option_title">
-                  <span>Chọn chiều dài (cm):</span>
-                </div>
-                <div class="row size_option_select">
+              <div class="col l-5 m-12 infor_birth">
+                <input type="text" placeholder="Ngày sinh">
+              </div>
+            </div>
+          </div>
+          <div class="row infor_btn">
+            <button>Tiếp tục</button>
+          </div>
+
+        </div>
+
+        <div class="row location">
+          <div class="row content_title">
+            <span>2</span>
+            <h2>Hình thức nhận hàng</h2>
+          </div>
+          <div class="row select_shipment">
+            <div class="col l-5 m-12 btn_online">
+              <button class="btn_shipment_online" onclick="show_display('shipment_content')">Giao hàng tận
+                nơi</button>
+            </div>
+            <div class="col l-5 m-12 btn_offline">
+              <button class="btn_shipment_offline" onclick="show_display('onstore_content')">Nhận hàng tại
+                quầy</button>
+            </div>
+          </div>
+          <div class="row shipment_content">
+            <div class="row location_infor">
+              <div class="row location_infor_1">
+                <div class="col l-5 m-12 location_province">
                   <select>
-                    <option>17</option>
-                    <option>20</option>
+                    <option>- Chọn Tỉnh/TP (*) -</option>
+                  </select>
+                </div>
+                <div class="col l-5 m-12 location_district">
+                  <select>
+                    <option>- Chọn Quận/Huyện (*) -</option>
                   </select>
                 </div>
               </div>
-            </div>
-            <div class="row product_count">
-              <div class="col-sm-5 count_element">
-                <span>Số lượng:</span>
-              </div>
-              <div class="col-sm-6 count_number">
-                <button>-</button>
-                <input type="text" value="1" size="1">
-                <button>+</button>
-              </div>
-            </div>
-
-            <div class="row delete_product">
-              <button>Xóa</button>
-            </div>
-          </div>
-
-
-        </div>
-        <div class="row cart-totals">
-          <div class="row cart-clearfix">
-            <div class="row totals_product">
-              <div class="col-sm-5 totals_product_element">
-                <span>Tạm tính: </span>
-              </div>
-              <div class="col-sm-7 totals_product_cost">
-                <span>15.976.000</span>
-              </div>
-            </div>
-            <div class="row totals_delivery">
-              <div class="col-sm-5 totals_delivery_element">
-                <span>Phí vận chuyển: </span>
-              </div>
-              <div class="col-sm-7 totals_delivery_cost">
-                <span>Miễn phí</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="row total-cart">
-            <div class="col-sm-5 totals_cart_element">
-              <span>Thành tiền: </span>
-            </div>
-            <div class="col-sm-7 totals_cart_cost">
-              <span>15.976.000</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-sm-8 infor_content">
-        <div class="row checkout-step">
-          <div class="row checkout-progress">
-            <ul class="progress-lists">
-              <li> Thông tin người mua
-              </li>
-              <li>Hình thức nhận hàng</li>
-              <li>Đặt hàng</li>
-              <li>Thanh toán</li>
-            </ul>
-          </div>
-
-          <div class="row infor">
-            <div class="row content_title">
-              <span>1</span>
-              <h2>Thông tin cá nhân</h2>
-            </div>
-            <div class="row infor_content">
-              <div class="row sex">
-                <input type="radio" name="male_female" value="male"><label class="sex" for="male_female">Nam</label>
-                <input type="radio" name="male_female" value="female"><label class="sex" for="male_female">Nữ</label>
-              </div>
-            </div>
-            <div class="row infor_user">
-              <div class="row infor_1">
-                <div class="col-sm-6 infor_name">
-                  <input type="text" placeholder="Tên">
-                </div>
-                <div class="col-sm-6 infor_sdt">
-                  <input type="text" placeholder="Số điện thoại">
-                </div>
-              </div>
-              <div class="row infor_2">
-                <div class="col-sm-6 infor_email">
-                  <input type="text" placeholder="Email">
-                </div>
-                <div class="col-sm-6 infor_birth">
-                  <input type="text" placeholder="Ngày sinh">
-                </div>
-              </div>
-            </div>
-            <div class="row infor_btn">
-              <button>Tiếp tục</button>
-            </div>
-
-          </div>
-
-          <div class="row location">
-            <div class="row content_title">
-              <span>2</span>
-              <h2>Hình thức nhận hàng</h2>
-            </div>
-            <div class="row select_shipment">
-              <div class="col-sm-6 btn_online">
-                <button class="btn_shipment_online" onclick="show_display('shipment_content')">Giao hàng tận
-                  nơi</button>
-              </div>
-              <div class="col-sm-6 btn_offline">
-                <button class="btn_shipment_offline" onclick="show_display('onstore_content')">Nhận hàng tại
-                  quầy</button>
-              </div>
-            </div>
-            <div class="row shipment_content">
-              <div class="row location_infor">
-                <div class="row location_infor_1">
-                  <div class="col-sm-6 location_province">
-                    <select>
-                      <option>- Chọn Tỉnh/TP (*) -</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-6 location_district">
-                    <select>
-                      <option>- Chọn Quận/Huyện (*) -</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="row location_infor_2">
-                  <div class="col-sm-6 location_ward">
-                    <select>
-                      <option>- Chọn Phường/Xã (*) -</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-6 location_building">
-                    <input type="text" placeholder="Nhập Địa chỉ khách hàng *">
-                  </div>
-                </div>
-                <div class="row note_shipment">
-                  <input type="text" placeholder="Ghi chú khác">
-                </div>
-              </div>
-              <div class="row method_shipment">
-                <div class="row title_method">
-                  <h2>Phương thức vận chuyển:</h2>
-                </div>
-                <div class="row method_content">
-                  <div class="col-sm-0 select_method">
-                    <input type="radio">
-                  </div>
-                  <div class="col-sm-6 des_method">
-                    <div class="row des_title">
-                      <span>Miễn phí giao hàng nhanh</span>
-                    </div>
-                    <div class="row des_delivery">
-                      <span>Dự kiến nhận hàng: 1-7 ngày</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row onstore_content">
-              <div class="row onstore_location">
-                <div class="col-sm-6 store_province">
+              <div class="row location_infor_2">
+                <div class="col l-5 m-12 location_ward">
                   <select>
-                    <option>Quảng Trị</option>
+                    <option>- Chọn Phường/Xã (*) -</option>
                   </select>
                 </div>
-                <div class="col-sm-6 store_district">
-                  <select>
-                    <option>Huyện Hải Lăng</option>
-                  </select>
+                <div class="col l-5 m-12 location_building">
+                  <input type="text" placeholder="  - Nhập Địa chỉ khách hàng * -   ">
                 </div>
               </div>
-              <div class="row store_address">
-                <select>
-                  <option>
-                    Tạm hết tại cửa hàng, bạn có thể chọn Giao hàng tận nơi
-                  </option>
-                </select>
-              </div>
-              <div class="row store_note">
+              <div class="row note_shipment">
                 <input type="text" placeholder="Ghi chú khác">
               </div>
             </div>
+            <div class="row method_shipment">
+              <div class="row title_method">
+                <h2>Phương thức vận chuyển:</h2>
+              </div>
+              <div class="row method_content">
+                <div class="col l-0 select_method">
+                  <input type="radio">
+                </div>
+                <div class="col l-5 m-12 des_method">
+                  <div class="row des_title">
+                    <span>Miễn phí giao hàng nhanh</span>
+                  </div>
+                  <div class="row des_delivery">
+                    <span>Dự kiến nhận hàng: 1-7 ngày</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div class="row button_confirm">
-            <button>Đặt hàng</button>
+          <div class="row onstore_content">
+            <div class="row onstore_location">
+              <div class="col l-5 m-12 store_province">
+                <select>
+                  <option>Quảng Trị</option>
+                </select>
+              </div>
+              <div class="col l-5 m-12 store_district">
+                <select>
+                  <option>Huyện Hải Lăng</option>
+                </select>
+              </div>
+            </div>
+            <div class="row store_address">
+              <select>
+                <option>
+                  Tạm hết tại cửa hàng, bạn có thể chọn Giao hàng tận nơi
+                </option>
+              </select>
+            </div>
+            <div class="row store_note">
+              <input type="text" placeholder="Ghi chú khác">
+            </div>
           </div>
-
         </div>
 
-
+        <div class="row button_confirm">
+          <button>Đặt hàng</button>
+        </div>
 
       </div>
+
+
+
     </div>
+  </div>
 </div>

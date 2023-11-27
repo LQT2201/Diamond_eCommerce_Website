@@ -1,4 +1,5 @@
 
+
 class AccountController {
     
     // [GET] /account 
@@ -8,6 +9,7 @@ class AccountController {
             title: 'Account-detail',
             style: '/css/account-detail.css',
             script: '/js/account-detail.js',
+            isAdmin: 1,
         });
     }
     //[GET] /login
@@ -32,7 +34,7 @@ class AccountController {
         res.render('pages/account/orders-history',{
             title: 'Order history',
             style: '/css/orders-history.css',
-            
+            isAdmin:1,
         });
     }
 

@@ -12,11 +12,19 @@
 </head>
 <body>
     <div class="app">
-        {{> header}}
+
+        {{#if isAdmin}}
+            {{> header }}
+        {{/if}}
+        
         <div class="app__content">
             {{{body}}}
         </div>
-        {{> footer}}
+
+        {{#if isAdmin}}
+            {{> footer }}
+        {{/if}}
+
     </div>
 
     <script src="{{script}}"></script>
