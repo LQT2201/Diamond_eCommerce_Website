@@ -2,7 +2,7 @@
 class AccountController {
     
     // [GET] /account 
-    // Hiện thị thông tin tài khoản 
+    // Hiển thị thông tin tài khoản 
     showAccount(req,res) {
         res.render('pages/account/account-detail',{
             title: 'Account-detail',
@@ -10,8 +10,22 @@ class AccountController {
             script: '/js/account-detail.js',
         });
     }
-
-
+    //[GET] /login
+    // Hiển thị trang đăng nhập tài khoản
+    login(req, res) {
+        res.render('pages/account/login',{
+            title:'Login',
+            style: '/css/login.css',
+        })
+    }
+    //[GET] /signup
+    //Hiển thị trang đăng ký tài khoản
+    signup(req, res) {
+        res.render('pages/account/signup', {
+            title:'Signup',
+            style:'/css/signup.css',
+        })
+    }
     // [GET] /orders-history 
     // Hiện thị lịch sử đơn hàng 
     showOrders(req,res) {

@@ -1,6 +1,9 @@
 html {
-    font-size: 10px;
+    font-size: 13px;
     font-family: Roboto,sans-serif;
+}
+body {
+    margin: 0px;
 }
 .grid {
     width: 100%;

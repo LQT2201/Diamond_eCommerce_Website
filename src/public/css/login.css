@@ -1,0 +1,31 @@
+.app__content .container {
+    margin-top: 2em;
+}
+
+form label span {
+    color: red;
+}
+input[type=email], input[type=password] {
+    width: 100%;
+    display: inline-block;
+}
+.container .row {
+    justify-content: center;
+}
+.container .row:first-child {
+    text-align: center;
+}
+.form-lft {
+    display: inline-block;
+}
+.forgot-pass {
+    direction: rtl;
+}
+.action button {
+    width: 100%;
+    cursor: pointer;
+}
+.form-group {
+    margin-top: 16px;
+    margin-bottom: 16px
+}
