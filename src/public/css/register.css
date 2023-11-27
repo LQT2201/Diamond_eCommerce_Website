@@ -1,0 +1,102 @@
+.register_row{
+    display: flex;
+    flex-direction: column;
+    }
+    .register_title{
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+    
+    .grid.wide {
+      background-color: #f3e0be;
+      height: 400px;
+      width: 45%;
+      border: none;
+      padding: 5px;
+      border-radius: 30px;
+      margin-top: 20px;
+    }
+    .login_input{
+      display: flex;
+      font-size: 15px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .login_input input{
+      border: none;
+      padding: 5px;
+      border-radius: 8px;
+      width: 45%;
+      height: 25px;
+    }
+    .password_input{
+      display: flex;
+      font-size: 15px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .password_input input{
+      border: none;
+      padding: 5px;
+      border-radius: 8px;
+      width: 45%;
+      height: 25px;
+    }
+    
+    .password_retype{
+      display: flex;
+      font-size: 15px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .password_retype input{
+      border: none;
+      padding: 5px;
+      border-radius: 8px;
+      width: 45%;
+      height: 25px;
+    }
+    .confirm{
+      display: flex;
+      align-items: center;
+      margin-bottom: 200px;
+    }
+    .confirm .confirm_register{
+      display: flex;
+      width: 50%;
+      justify-content: end;
+      margin-right: 10px;
+    }
+    .confirm .cancel_register{
+      display: flex;
+      width: 50%;
+      justify-content: start;
+      margin-left: 10px;
+    }
+    .confirm .confirm_register button{
+      border: none;
+      padding: 5px;
+      border-radius: 20px;
+      background-color: rgb(111, 174, 16);
+      width: 100px;
+      color: #fff;
+    }
+    .confirm .cancel_register button{
+      border: none;
+      padding: 5px;
+      border-radius: 20px;
+      background-color: #e8171f;;
+      width: 100px;
+      color: #fff
+    }
+    .confirm .confirm_register button:hover{
+      transform: scale(1.1);
+      background-color: green;
+    }
+    .confirm .cancel_register button:hover{
+      transform: scale(1.1);
+      background-color: orange;
+    }

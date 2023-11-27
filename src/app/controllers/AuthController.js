@@ -2,7 +2,15 @@
 class AuthController {
     // Hiện thị trang đăng kí
     showRegisterForm(req,res) {
-        res.render('pages/auth/register')
+        res.render('pages/auth/register',{
+            tite:'hhghkkh',
+            style:'/css/register.css',
+        })
+    }
+
+    //Xử lí chứ năng đăng kí
+    register(req,res) {
+
     }
 
     //Xử lí chứ năng đăng kí
