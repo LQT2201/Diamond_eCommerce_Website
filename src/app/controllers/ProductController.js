@@ -6,7 +6,7 @@ class ProductController {
         res.render('pages/product-detail', {
             title: 'Product-detail',
             style: '/css/product-detail.css',
-            isAdmin: 1,
+            isAdmin: 0,
         });
     }
     
@@ -16,7 +16,7 @@ class ProductController {
     showProduct(req,res) {
         res.render('admin/admin-product',{
             style: '/css/admin-product.css',
-            isAdmin:0,
+            isAdmin: 0,
         });
     }
 

@@ -13,17 +13,17 @@
 <body>
     <div class="app">
 
-        {{#if isAdmin}}
+        {{#unless isAdmin}}
             {{> header }}
-        {{/if}}
+        {{/unless}}
         
         <div class="app__content">
             {{{body}}}
         </div>
 
-        {{#if isAdmin}}
+        {{#unless isAdmin}}
             {{> footer }}
-        {{/if}}
+        {{/unless}}
 
     </div>
 

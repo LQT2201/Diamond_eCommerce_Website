@@ -6,7 +6,7 @@ class OrderController {
         res.render('pages/account/orders', {
             title: 'Orders',
             style: '/css/orders.css',
-            isAmin: 1,
+            isAmin: 0,
         });
     }
     

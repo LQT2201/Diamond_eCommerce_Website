@@ -17,7 +17,7 @@ class ProductController {
                 res.render('pages/homepage',{
                     title:'Homepage',
                     style: '/css/homepage.css',
-                    isAdmin: 1,
+                    isAdmin: 0,
                     product,
                 })
             })
@@ -42,16 +42,16 @@ class ProductController {
         res.render('pages/search',{
             title: 'Search',
             style: '/css/search.css',
-            isAdmin:1,
+            isAdmin: 0,
         });
     }
 
     //  [GET] hiển thị trang about us
     about(req,res) {
         res.render('pages/about-us',{
-            title: 'AboutUs',
+            title: 'About Us',
             style: '/css/about-us.css',
-            isAdmin: 1,
+            isAdmin: 0,
         });
     }
 

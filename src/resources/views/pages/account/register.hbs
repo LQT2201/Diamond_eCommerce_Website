@@ -7,32 +7,31 @@
         </div>
         <div class="row">
             <div class="col l-2">
-                <form id="accountLogin" action="" method="post">
+                <form id="accountRegister" action="" method="post">
                     <div class="form-group">
                         <label for="fullname">
                             <div class="form-lft">
                                 <b>Họ tên</b>
                                 <span>*</span>
                             </div>
-                            <input type="text" name="fname" required>
+                            <input type="text" name="fname" id="fname" required>
                         </label>
                     </div>
                     <div class="form-group">
-                        <label for="email">
+                        <label for="username">
                             <div class="form-lft">
-                                <b>Email</b>
+                                <b>Tên tài khoản</b>
                                 <span>*</span>
                             </div>
-                            <input type="email" name="email" required>
+                            <input type="text" name="username" id="username" required>
                         </label>
                     </div>
                     <div class="form-group">
                         <label for="phone">
                             <div class="form-lft">
                                 <b>Số điện thoại</b>
-                                <span>*</span>
                             </div>
-                            <input type="tel" name="phone" required>
+                            <input type="text" name="phone" id="phone">
                         </label>
                     </div>
                     <div class="form-group">
@@ -41,16 +40,7 @@
                                 <b>Mật khẩu</b>
                                 <span>*</span>
                             </div>
-                            <input type="password" name="pass" required>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">
-                            <div class="form-lft">
-                                <b>Xác nhận mật khẩu</b>
-                                <span>*</span>
-                            </div>
-                            <input type="password" name="pass" required>
+                            <input type="password" name="pass" id="password" required>
                         </label>
                     </div>
                     <div class="action">
