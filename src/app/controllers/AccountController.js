@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const secretKey = "c83c121ed9634881eb16d9df31714b63b2d07d0bd00d9859949b35ed46d15d8a";
 const expiresIn = 7 * 3600 * 24;
+const util = require('../../until/token')
+
 class AccountController {
     // [GET] /account 
     // Hiển thị thông tin tài khoản 
@@ -11,7 +13,7 @@ class AccountController {
             title: 'Account-detail',
             style: '/css/account-detail.css',
             script: '/js/account-detail.js',
-            isAdmin: 0,
+            user: req.user.toObject(),
         });
     }
     //[GET] /login
@@ -41,6 +43,7 @@ class AccountController {
             title: 'Order history',
             style: '/css/orders-history.css',
             isAdmin: 0,
+            user: req.user.toObject(),
         });
     }
 
@@ -51,6 +54,7 @@ class AccountController {
             title: 'Wishlist cart',
             style: '/css/wishlist-cart.css',
             isAdmin: 0,
+            user: req.user.toObject(),
         });
     }
     async register(req, res) {
@@ -74,9 +78,11 @@ class AccountController {
                 user.tokens.push(token);
                 await user.save();
                 if(!user) {
-                    return res.status(409).send("Register failed. Please try again!")
+                    return res.status(409).send("Register failed. Please try again!");
                 }
-                return res.status(200).send(user);
+                res.cookie("jwt", token);
+                console.log(res.user);
+                return res.status(200).send(token);
             }
         } catch (error) {
             console.log(error);
@@ -102,7 +108,8 @@ class AccountController {
             });
             user.tokens.push(token);
             await user.save();
-            return res.status(201).send(user);
+            res.cookie("jwt", token);
+            return res.status(201).send(token);
         } catch (error) {
             console.log(error);
             res.status(401).send(error);
@@ -110,17 +117,18 @@ class AccountController {
     }
     async logout(req, res) {
         try{
-            const username = req.user.username;
+            const token = util.getToken(req);
+            const user = jwt.verify(token, secretKey);
             await User.findOneAndUpdate(
-                { username : username },
+                { username :  user.username},
                 { $pull: { tokens: token } },
                 { safe: true }
             );
-            return res.status(200).send("Logged out succesful");
+            return res.redirect('/');
         }
         catch(err){
             console.log(err);
-            return res.status(500).send(err);
+            return res.redirect('/');
         }
     }
 }

@@ -9,10 +9,10 @@ input[type=text], input[type=password] {
     width: 97%;
     display: inline-block;
 }
-.container .row {
+.loginPage .container .row {
     justify-content: center;
 }
-.container .row:first-child {
+.loginPage .container .row:first-child {
     text-align: center;
 }
 .form-lft {

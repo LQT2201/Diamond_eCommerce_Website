@@ -19,6 +19,7 @@ registerForm.addEventListener("submit", async (e) => {
     });
     if(response.status == 200) {
       alert("Đăng ký tài khoản thành công!");
+      r
     }
     else {
       alert("Đăng ký thất bại!");

@@ -5,8 +5,8 @@
 form label span {
     color: red;
 }
-input[type=email], input[type=password], input[type=text], input[type=tel] {
-    width: 100%;
+input[type=password], input[type=text], input[type=tel] {
+    width: 97%;
     display: inline-block;
 }
 .container .row {

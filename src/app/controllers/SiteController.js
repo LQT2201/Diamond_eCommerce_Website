@@ -7,10 +7,6 @@ class ProductController {
 
     //  [GET] hiển thị trang homepage
     index(req,res,next) {
-
-
-        
-
         Product.find({})
             .then(product => {
                 product = product.map(product => product.toObject())

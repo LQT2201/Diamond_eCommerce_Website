@@ -39,7 +39,9 @@ header .header-menu ul {
 header .header-top li {
     margin-top: -10px;
 }
-
+header .header-top .row {
+    justify-content: space-between;
+}
 .sticky {
     position: fixed;
     top: 0;
