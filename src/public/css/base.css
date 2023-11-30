@@ -1,9 +1,11 @@
-html {
-    font-size: 13px;
-    font-family: Roboto,sans-serif;
+
+:root {
+    --blue__dark: #F9F7F7;
 }
-body {
-    margin: 0px;
+
+html {
+    font-size: 10px;
+    font-family: Roboto,sans-serif;
 }
 .grid {
     width: 100%;
