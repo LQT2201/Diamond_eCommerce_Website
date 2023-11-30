@@ -1,8 +1,9 @@
 // models/Category.js
-const ObjectId = Schema.ObjectId;
 const mongoose = require('mongoose');
+const ObjectId = Schema.ObjectId;
+const Schema = mongoose.Schema;
 
-const categorySchema = new mongoose.Schema({
+const categorySchema = new Schema({
   name: String,
   description: String,
   url: String

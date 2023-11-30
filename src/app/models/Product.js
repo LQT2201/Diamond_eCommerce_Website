@@ -1,8 +1,10 @@
 // models/Product.js
-const ObjectId = Schema.ObjectId;
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const ObjectId = Schema.ObjectId;
 
-const productSchema = new mongoose.Schema({
+
+const productSchema = new Schema({
   name: String,
   sku: String,
   brand: String,

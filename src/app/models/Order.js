@@ -1,8 +1,8 @@
 // models/Order.js
 const ObjectId = Schema.ObjectId;
 const mongoose = require('mongoose');
-
-const orderSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+const orderSchema = new Schema({
     products: [{
         product_id: String,
         product_quantity: Number,
