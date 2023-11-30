@@ -18,10 +18,7 @@ const verifyAccessToken = async (req) => {
           username: decodedUser.username,
           tokens: {$in: [token]}
       });
-      if(!user){
-          return {isLogged: false, user: null};
-      }
-      if(user.username != decodedUser.username){
+      if(!user || user.username != decodedUser.username){
           return {isLogged: false, user: null};
       }
     } catch (err) {
@@ -38,8 +35,7 @@ const verifyAccessToken = async (req) => {
   return {isLogged: true, user: user};
 }
 class Authentication {
-  
-  async verifyToken(req, res, next) {
+  async isAuth(req, res, next) {
     const {isLogged, user} = await verifyAccessToken(req);
     if(req.url === '/login' || req.url === '/register') {
       if(!isLogged) {

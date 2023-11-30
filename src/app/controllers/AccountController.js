@@ -60,6 +60,7 @@ class AccountController {
     async register(req, res) {
         try {
             const { username, password, fullname } = req.body;
+            const phone = req.body.phone || null;
             if(!username || !password || !fullname) {
                 return res.status(400).send("Missing information");
             }
@@ -74,14 +75,17 @@ class AccountController {
                     username: username,
                     password: await bcrypt.hash(password, 10),
                     fullname: fullname,
+                    phone: phone,
                 });
                 user.tokens.push(token);
                 await user.save();
                 if(!user) {
                     return res.status(409).send("Register failed. Please try again!");
                 }
-                res.cookie("jwt", token);
-                console.log(res.user);
+                res.cookie("jwt", token, { 
+                    maxAge: expiresIn,
+                    httpOnly: true,
+                });
                 return res.status(200).send(token);
             }
         } catch (error) {
@@ -108,7 +112,10 @@ class AccountController {
             });
             user.tokens.push(token);
             await user.save();
-            res.cookie("jwt", token);
+            res.cookie("jwt", token, { 
+                maxAge: expiresIn,
+                httpOnly: true,
+            });
             return res.status(201).send(token);
         } catch (error) {
             console.log(error);

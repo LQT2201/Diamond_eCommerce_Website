@@ -15,6 +15,7 @@ class ProductController {
                     style: '/css/homepage.css',
                     isAdmin: 0,
                     product,
+                    user: req.user?.toObject(),
                 })
             })
 

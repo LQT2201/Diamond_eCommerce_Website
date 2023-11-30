@@ -8,9 +8,8 @@ registerForm.addEventListener("submit", async (e) => {
   const data = JSON.stringify({
     username, fullname, phone, password
   });
-  const url = 'http://127.0.0.1:3000/account-register';
   try {
-    const response = await fetch(url, {
+    const response = await fetch('/account-register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/JSON'
@@ -18,8 +17,7 @@ registerForm.addEventListener("submit", async (e) => {
       body: data,
     });
     if(response.status == 200) {
-      alert("Đăng ký tài khoản thành công!");
-      r
+      window.location.href = '/';
     }
     else {
       alert("Đăng ký thất bại!");
