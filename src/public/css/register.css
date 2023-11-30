@@ -8,15 +8,27 @@ form label span {
 input[type=password], input[type=text], input[type=tel] {
     width: 97%;
     display: inline-block;
+    height: 25px;
+    margin-top: 5px;
 }
+
+small[id="passwordHelp"]{
+    color : red;
+    text-align: center;
+    font-size: 10px;
+}
+
 .container .row {
     justify-content: center;
 }
 .container .row:first-child {
     text-align: center;
+    font-size: large;
+    color : green;
 }
 .form-lft {
     display: inline-block;
+    font-size: 15px;
 }
 .action button {
     width: 100%;
@@ -25,4 +37,25 @@ input[type=password], input[type=text], input[type=tel] {
 .form-group {
     margin-top: 16px;
     margin-bottom: 16px
+}
+.allow button {
+    border: 2px solid green;
+    border-radius: 10px;
+    color: green;
+    margin-right: 20px ;
+    background-color: greenyellow;
+}
+.cancel button {
+    border: 2px solid green;
+    border-radius: 10px;
+    color: gray;
+    margin-left: 20px;
+    background-color: orange;
+
+}
+.allow:hover {
+    transform: scale(1.2)
+}
+.cancel:hover {
+    transform: scale(1.2)
 }
