@@ -40,6 +40,7 @@ class ProductController {
             title: 'Search',
             style: '/css/search.css',
             isAdmin: 0,
+            user: req.user?.toObject(),
         });
     }
 
@@ -49,6 +50,7 @@ class ProductController {
             title: 'About Us',
             style: '/css/about-us.css',
             isAdmin: 0,
+            user: req.user?.toObject(),
         });
     }
 

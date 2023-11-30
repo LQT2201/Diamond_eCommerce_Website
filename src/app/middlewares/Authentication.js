@@ -37,23 +37,9 @@ const verifyAccessToken = async (req) => {
 class Authentication {
   async isAuth(req, res, next) {
     const {isLogged, user} = await verifyAccessToken(req);
-    if(req.url === '/login' || req.url === '/register') {
-      if(!isLogged) {
-        next();
-      }
-      else {
-        res.redirect('/account');
-      }
-    }
-    else {
-      if(isLogged){
-        req.user = user;
-        next();
-      }
-      else {
-        res.redirect('/login');
-      }
-    }
+    req.user = user || null;
+    req.isLogged = true;
+    next();
   }
 }
 

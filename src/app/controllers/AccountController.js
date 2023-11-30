@@ -9,6 +9,9 @@ class AccountController {
     // [GET] /account 
     // Hiển thị thông tin tài khoản 
     showAccount(req,res) {
+        if(!req.user)
+            res.redirect('/login');
+        else
         res.render('pages/account/account-detail',{
             title: 'Account-detail',
             style: '/css/account-detail.css',
@@ -19,6 +22,9 @@ class AccountController {
     //[GET] /login
     // Hiển thị trang đăng nhập tài khoản
     showLogin(req, res) {
+        if(req.user)
+            res.redirect('/account');
+        else
         res.render('pages/account/login',{
             title:'Login',
             style: '/css/login.css',
@@ -29,6 +35,9 @@ class AccountController {
     //[GET] /register
     //Hiển thị trang đăng ký tài khoản
     showRegister(req, res) {
+        if(req.user)
+            res.redirect('/account');
+        else
         res.render('pages/account/register', {
             title:'Register',
             style:'/css/register.css',
@@ -39,6 +48,8 @@ class AccountController {
     // [GET] /orders-history 
     // Hiện thị lịch sử đơn hàng 
     showOrders(req,res) {
+        if(!req.user)
+            res.redirect('/login');
         res.render('pages/account/orders-history',{
             title: 'Order history',
             style: '/css/orders-history.css',
@@ -50,12 +61,17 @@ class AccountController {
     // [GET] /wishlist
     // Hiện thị thông tin wishlist
     showWishlist(req,res) {
-        res.render('pages/account/wishlist-cart',{
-            title: 'Wishlist cart',
-            style: '/css/wishlist-cart.css',
-            isAdmin: 0,
-            user: req.user.toObject(),
-        });
+        if(!req.user){
+            res.redirect('/login');
+        }
+        else{
+            res.render('pages/account/wishlist-cart',{
+                title: 'Wishlist cart',
+                style: '/css/wishlist-cart.css',
+                isAdmin: 0,
+                user: req.user.toObject(),
+            });
+        }
     }
     async register(req, res) {
         try {
