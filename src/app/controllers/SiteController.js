@@ -1,4 +1,6 @@
 const Test1 = require('../models/Colection1');
+const Product = require('../models/Product');
+
 
 
 class ProductController {
@@ -7,14 +9,27 @@ class ProductController {
     //  [GET] hiển thị trang homepage
     index(req,res) {
 
-        // Test1.find({})
-        //     .then(results => res.send(results))
-           
-        res.render('pages/homepage', {
-            title: 'HomePage',
-            style: '/css/homepage.css',
-        });
+        Product.find({})
+            .then( item => {
+                /*Fix bug */
+                item = item.map(item => item.toObject())
+                res.render('pages/homepage',{
+                    item,
+                    style: '/css/homepage.css'
+                })
+            });
+  
     }
+
+
+    //     // Test1.find({})
+    //     //     .then(results => res.send(results))
+           
+    //     res.render('pages/homepage', {
+    //         title: 'HomePage',
+    //         style: '/css/homepage.css',
+    //     });
+    // }
 
     //  [GET] hiện thị trang search
     search(req,res) {

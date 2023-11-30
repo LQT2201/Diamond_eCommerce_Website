@@ -1,6 +1,7 @@
 
 class ProductController {
-    
+    // [GET] thông tin sản phẩm
+ 
     //  [GET]  chi tiết sản phẩm product-detail
     getProductDetail(req,res) {
         res.render('pages/product-detail', {
