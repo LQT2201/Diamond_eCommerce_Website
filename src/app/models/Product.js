@@ -1,10 +1,18 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+// models/Product.js
 const ObjectId = Schema.ObjectId;
+const mongoose = require('mongoose');
 
-const  Product = new Schema({
-    name:{type: String},
-    createAt:{type:Date, default:Date.now},
-  });
+const productSchema = new mongoose.Schema({
+  name: String,
+  sku: String,
+  brand: String,
+  category: String,
+  description: String,
+  price: Number,
+  thumbnail: String,
+  url: String
+  // Thêm các trường khác nếu cần
+});
 
-module.exports = mongoose.model('product', Product);
+const Product = mongoose.model('Product', productSchema);
+module.exports = Product;
