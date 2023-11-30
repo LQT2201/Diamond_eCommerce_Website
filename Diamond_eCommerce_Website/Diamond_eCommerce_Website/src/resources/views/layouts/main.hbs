@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{style}}">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/base.css">
+    
+</head>
+<body>
+    <div class="app">
+
+        {{#unless isAdmin}}
+            {{> header }}
+        {{/unless}}
+        
+        <div class="app__content">
+            {{{body}}}
+        </div>
+
+        {{#unless isAdmin}}
+            {{> footer }}
+        {{/unless}}
+
+    </div>
+
+    <script src="{{script}}"></script>
+</body>
+</html>

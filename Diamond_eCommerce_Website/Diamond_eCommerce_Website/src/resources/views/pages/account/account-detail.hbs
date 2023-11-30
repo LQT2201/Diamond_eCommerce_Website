@@ -1,0 +1,118 @@
+
+<div class="userPage">
+        <div class="grid wide container">
+            
+            <div class="row">
+                <!-- - Begin  -->
+                <div class="col l-3">
+                    <div class="menu-profile">
+                        <div class="menu-profile__info">
+                            <div class="profile-avatar">
+                                <img src="https://hasaki.vn/images/graphics/account-full.svg" alt="">
+                            </div>
+                            <div class="profile-name">
+                                <strong>Lương Quốc Toàn</strong>
+                            </div>
+                            <a href="">Chỉnh sửa tài khoản</a>
+                        </div>
+                        <div class="menu-profile__list">
+                            <div class="item-account">
+                                <a href="/user.html" class="active">Thông tin tài khoản</a>
+                            </div>
+                            <div class="item-account">
+                                <a href="/order.html">Đơn hàng của tôi</a>
+                            </div>
+                            <div class="item-account">
+                                <a href="#">Giỏ hàng yêu thích</a>
+                            </div>
+                            <div class="item-account">
+                                <a href="#">Hỏi đáp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l-9">
+                    <div class="content-profile">
+                        <div class="title-h2">
+                            <h2>THÔNG TIN TÀI KHOẢN</h2>
+                        </div>
+                        <form id="send-infor" method="post" novalidate="novalidate">
+                            <div class="form-group row">
+                                <label class="col l-6">Họ tên<span>*</span>
+                                    <input type="text" class="fullname" id="fullname" name="fullname" value="Đinh Nguyên Minh Hải">
+                                </label>
+
+                                 <label class="col l-6">Email<span>*</span>
+                                    <input type="email" class="email" id="email" name="email" value="dinhnguyenminhhai@gmail.com">
+                                </label>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col l-6">Số điện thoại<span>*</span>
+                                    <input type="text" class="phonenumber" id="phonenumber" name="phonenumber" value="0399066641">
+                                </label>
+                                <label class="col l-6">Ngày sinh<span>*</span>
+                                    <input type="date" id="birthday" name="birthday">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Giới tính<span>*</span></label>
+                                <div class="gt-norn">
+                                    <label class="radio-inline">
+                                        Nam
+                                        <input type="radio" value="0" name="gender" checked="">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-inline">
+                                        Nữ
+                                        <input type="radio" value="1" name="gender">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-inline">
+                                        Khác
+                                        <input type="radio" value="2" name="gender">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Địa chỉ
+                                    <input type="text" name="address">
+                                </label>
+                            </div>
+                            <div class="form-group account-1">
+                                <label class="radio-inline">
+                                    Thay đổi mật khẩu
+                                    <input type="checkbox" name="fixpass" id="fixpass" value="1">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="show-change-pass">
+                                <div class="form-group">
+                                    <label>Mật khẩu cũ<span>*</span>
+                                        <input type="password" class="oldpassword" name="oldpass">
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label>Mật khẩu<span>*</span>
+                                        <input type="password" class="password" id="pass" name="pass">
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label>Xác nhận mật khẩu<span>*</span>
+                                        <input type="password" class="repassword" name="repass" id="repass">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="action">
+                                <button type="submit">Lưu</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- - End  -->
+            </div>
+        </div>
+    </div>
+

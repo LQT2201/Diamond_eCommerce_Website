@@ -1,0 +1,78 @@
+header {
+    background-color: #F9F7F7;
+    box-shadow: 0 0px 9px 1px #e0e0e0;
+}
+header .row {
+    justify-content: center;
+    align-items: center;
+}
+header a img {
+    width: 88px;
+}
+header li {
+    float:left;
+}
+header li a {
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+}
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+header #header-brand {
+    text-align: center;
+}
+header #header-right li{
+    float: right;
+}
+header .header-menu ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+header .header-top li {
+    margin-top: -10px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+.search-block {
+    display: flex;
+    align-items: center;
+}
+
+#search_input {
+    padding: 8px;
+    border: 1px solid #ccc; /* Thêm đường viền để tạo định dạng cho ô nhập liệu */
+    border-radius: 5px;
+    margin-right: 10px; /* Tăng khoảng cách giữa ô nhập liệu và nút tìm kiếm */
+    width: 200px; /* Điều chỉnh chiều rộng của ô nhập liệu */
+}
+
+header button {
+    background-color: #112D4E;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Định dạng khi rê chuột qua nút tìm kiếm */
+header button:hover {
+    background-color: #DBE2EF;
+    color: #000;
+}
+
+

@@ -1,0 +1,563 @@
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set black background color, white text and some padding */
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+
+    .row.content {
+        height: auto;
+    }
+}
+
+.row {
+    width: 100%;
+}
+
+
+
+
+
+
+/*
+        Content
+    */
+
+.button_back {
+    margin: 10px;
+}
+
+.button_back button {
+    display: flex;
+    background-color: #002d5c;
+    width: 180px;
+    height: 35px;
+    color: #fff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_back button::before {
+    content: "\0003C";
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+
+.button_back button:hover {
+    background-color: #205a99;
+    transform: scale(1.1);
+}
+
+.cart_content {
+    border: 1px solid #bebebe;
+    background-color: #fff;
+}
+
+.cart_content h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #002d5c;
+}
+
+
+.element_product {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.product_cost {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.cost_number span::after {
+    content: 'đ';
+}
+
+.product_size {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.product_size select {
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #bebebe;
+}
+
+
+
+.product_count {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.product_count button {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    color: #bebebe;
+}
+
+.product_count button:hover {
+    transform: scale(1.5);
+}
+
+.product_count input {
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #bebebe;
+}
+
+.delete_product button {
+    background: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.delete_product button::before {
+    content: '\1F5D1';
+    font-size: 20px;
+}
+
+.delete_product button:hover {
+    color: red;
+}
+
+.cart-totals {
+    border-top: 2px solid #002d5c;
+    margin-top: 10px;
+}
+
+.cart-clearfix {
+    padding: 10px 0px;
+    border-bottom: 2px solid #002d5c;
+}
+
+.totals_product {
+    display: flex;
+    font-size: 14px;
+}
+
+.totals_product_element {
+    padding: 0;
+}
+
+.totals_product_cost {
+    padding: 0;
+    text-align: end;
+}
+
+.totals_product_cost span::after {
+    content: 'đ';
+}
+
+.totals_delivery {
+    padding: 0;
+    font-size: 14px;
+}
+
+
+.totals_delivery_element {
+    padding: 0;
+}
+
+.totals_delivery_cost {
+    padding: 0;
+    text-align: end;
+}
+
+.totals_delivery_cost span {
+    font-weight: bold;
+}
+
+.total-cart {
+    display: flex;
+    margin: 10px 0px;
+    align-items: center;
+}
+
+.totals_cart_element {
+    padding: 0;
+    font-weight: bold;
+}
+
+.totals_cart_cost {
+    padding: 0;
+    font-weight: bold;
+    color: red;
+    font-size: 18px;
+    text-align: end;
+}
+
+.totals_cart_cost span::after {
+    content: 'đ';
+}
+
+
+
+/*
+    checkout-step
+    */
+
+.checkout-progress {
+    margin: 20px;
+    width: 100%;
+}
+
+.progress-lists {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.progress-lists li {
+    list-style: none;
+    display: inline-block;
+    width: 20%;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    color: #bebebe;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.progress-lists li:before {
+    content: '\2713';
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border: 2px solid #bebebe;
+    border-radius: 100%;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    background-color: #fff;
+    font-size: 2em;
+    color: #bebebe;
+}
+
+.progress-lists li:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #ddd;
+    top: 25px;
+    left: -50%;
+    z-index: -1;
+}
+
+.progress-lists li:first-child:after {
+    content: none;
+}
+
+.progress-lists li.active {
+    color: green;
+}
+
+.progress-lists li.active:before {
+    border-color: green;
+    color: green;
+}
+
+.progress-lists li.active+li:after {
+    background-color: green;
+}
+
+/*  
+    Tiêu đề content
+*/
+.content_title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #002d5c;
+    padding: 18px;
+    background-color: #fbf9f1;
+    margin: 14px 0px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.content_title span {
+    font-size: 16px;
+    margin: 0px 5px 0px 16px;
+    font-weight: bold;
+    border: 2px solid #002d5c;
+    padding: 3px 10px;
+    border-radius: 50%;
+}
+
+.content_title h2 {
+    font-size: 16px;
+    margin: 0px 5px 0px 16px;
+    font-weight: bold;
+}
+
+
+/*  
+    Thông tin cá nhân
+*/
+.row.sex {
+    margin: 0px 20px;
+}
+
+.sex label {
+    font-size: 14px;
+}
+
+label.sex:after {
+    padding-left: 3px;
+    color: #ea7162;
+    content: "*";
+    font-size: 18px;
+}
+
+.infor {
+    width: 100%;
+}
+
+.sex {
+    align-items: center;
+}
+
+
+.infor_content {
+    width: 100%;
+}
+
+.infor_user {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.infor_1 {
+    justify-content: center;
+}
+
+.infor_2 {
+    justify-content: center;
+}
+
+.infor_user input {
+    width: 100%;
+    height: 40px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin: 5px 12px;
+    border: 1px solid #a8a8a8;
+}
+
+
+.infor_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0px;
+    width: 100%;
+}
+
+.infor_btn button {
+    background-color: #002d5c;
+    line-height: 22px;
+    width: 180px;
+    height: 35px;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.infor_btn button:hover {
+    background: -webkit-linear-gradient(right, #004085, #0253aa);
+    transform: scale(1.1);
+
+}
+
+
+/* Giao diện giao hàng */
+
+.select_shipment {
+    width: 100%;
+    justify-content: center;
+}
+
+.select_shipment div {
+    /* flex: 0%; */
+}
+
+.select_shipment button {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: transparent;
+
+}
+
+.btn_online button {
+    background: #002d5c;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn_offline button {
+    background: "#bebebe";
+    color: "black";
+    font-weight: 600;
+}
+
+.location select {
+    width: 100%;
+    height: 40px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    border: 1px solid #a8a8a8;
+}
+
+.location_infor_1 {
+    justify-content: center;
+}
+
+.location_infor_2 {
+    justify-content: center;
+}
+
+
+.location_infor input {
+    width: 100%;
+    height: 30px;
+    padding: 4px 0px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    border: 1px solid #a8a8a8;
+}
+
+.note_shipment input {
+    width: 97.5%;
+    height: 40px;
+    padding: 4px 15px;
+    border-radius: 5px;
+    margin: 5px 15px;
+    border: 1px solid #a8a8a8;
+}
+
+.title_method h2 {
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+.method_content {
+    display: flex;
+    border: 1px solid #003468;
+    height: 70px;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px 15px 5px 10px;
+    line-height: 25px;
+}
+
+.des_title span {
+    font-size: 14px;
+    font-weight: 700;
+    color: #003468;
+}
+
+.des_delivery span {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.button_confirm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.button_confirm button {
+    background-color: #002d5c;
+    line-height: 22px;
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.row.shipment_content {
+    display: block;
+}
+
+.row.onstore_content {
+    display: block;
+}
+
+.onstore_location {
+    justify-content: center;
+}
+
+.onstore_location select {
+    width: 100%;
+    height: 40px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    border: 1px solid #a8a8a8;
+}
+
+.store_address select {
+    width: 100%;
+    height: 40px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin: 5px 15px;
+    border: 1px solid #a8a8a8;
+}
+
+.store_note input {
+    width: 96%;
+    height: 40px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin: 5px 15px;
+    border: 1px solid #a8a8a8;
+}
+
+.store_note {
+    margin-bottom: 10px;
+}
+

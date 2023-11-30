@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.userPage {
+    background-color:#fff ;
+    margin-top: 2em;
+}
+
+.menu-profile {
+    background: #F9F7F7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.menu-profile__info{
+    padding:15px 20px;
+    border-bottom:1px solid #f7f7f7;
+}
+
+.menu-profile__info a {
+    text-decoration: none;
+    color: #999;
+}
+
+.menu-profile__info a:hover {
+    text-decoration: none;
+    color:#000 ;
+}
+
+.profile-avatar{
+    width:50px;
+    height:50px;
+    overflow:hidden;
+    border-radius:50%;
+    float:left;
+    margin-right:10px;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.profile-avatar img{
+    max-width: 100%;
+}
+
+.profile-name {
+    font-size: 16px;
+}
+
+.menu-profile__list{
+    background-color: #fff;
+    width: 100%;
+    float: left;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+}
+
+.menu-profile__item{
+    padding:10px 20px;
+    display:block;
+    position:relative;
+  }
+  .menu-profile__item.active{
+    background:#f7f7f7;
+    color:#ff6600;
+    font-weight: 700;
+  }
+
+
+    .menu-link {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-left: 5em;
+    }
+    .account-information {
+        padding-left: 6.5em;
+    }
+    .info-left {
+        background-color: #f5f4f4;
+    }
+
+.item-account {
+    border-top: 1px solid #dbdbdb;
+}
+.item-account a {
+    text-decoration: none;
+    color: #333;
+}
+.item-account a.active {
+    color: #da2032 !important;
+}
+.item-account a:hover {
+    color: #da2032 !important;
+}
+.item-account {
+    padding: 6px 5px;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.title-h2 {
+    max-height: 2.25em;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+    display: block;
+    color: #212529;
+}
+
+.title-h2 h2:before{
+    content: '';
+    width: 35%;
+    background: #da2032;
+    height: 2px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    z-index: 1;
+}
+
+/* slash */
+
+.content-profile {
+    max-width: 100%px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 99%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.input-group {
+    width: 100%;
+}
+
+.input-group label {
+    width: 100%;
+}
+
+.input-group input {
+    width: calc(100% - 10px);
+}
+
+.input-group input:first-child {
+    margin-right: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.action button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action button:hover {
+    background-color: #45a049;
+}
+
+.show-change-pass {
+    display: none;
+}
+
+#fixpass:checked + .show-change-pass {
+    display: block;
+}
+
+.gt-norn {
+    display: flex;
+}
