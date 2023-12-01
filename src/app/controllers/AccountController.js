@@ -3,28 +3,20 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const secretKey = "c83c121ed9634881eb16d9df31714b63b2d07d0bd00d9859949b35ed46d15d8a";
 const expiresIn = 7 * 3600 * 24;
-const util = require('../../until/token')
-
 class AccountController {
     // [GET] /account 
     // Hiển thị thông tin tài khoản 
     showAccount(req,res) {
-        if(!req.user)
-            res.redirect('/login');
-        else
         res.render('pages/account/account-detail',{
             title: 'Account-detail',
             style: '/css/account-detail.css',
             script: '/js/account-detail.js',
-            user: req.user.toObject(),
+            isAdmin: 0,
         });
     }
     //[GET] /login
     // Hiển thị trang đăng nhập tài khoản
     showLogin(req, res) {
-        if(req.user)
-            res.redirect('/account');
-        else
         res.render('pages/account/login',{
             title:'Login',
             style: '/css/login.css',
@@ -35,9 +27,6 @@ class AccountController {
     //[GET] /register
     //Hiển thị trang đăng ký tài khoản
     showRegister(req, res) {
-        if(req.user)
-            res.redirect('/account');
-        else
         res.render('pages/account/register', {
             title:'Register',
             style:'/css/register.css',
@@ -48,35 +37,25 @@ class AccountController {
     // [GET] /orders-history 
     // Hiện thị lịch sử đơn hàng 
     showOrders(req,res) {
-        if(!req.user)
-            res.redirect('/login');
         res.render('pages/account/orders-history',{
             title: 'Order history',
             style: '/css/orders-history.css',
             isAdmin: 0,
-            user: req.user.toObject(),
         });
     }
 
     // [GET] /wishlist
     // Hiện thị thông tin wishlist
     showWishlist(req,res) {
-        if(!req.user){
-            res.redirect('/login');
-        }
-        else{
-            res.render('pages/account/wishlist-cart',{
-                title: 'Wishlist cart',
-                style: '/css/wishlist-cart.css',
-                isAdmin: 0,
-                user: req.user.toObject(),
-            });
-        }
+        res.render('pages/account/wishlist-cart',{
+            title: 'Wishlist cart',
+            style: '/css/wishlist-cart.css',
+            isAdmin: 0,
+        });
     }
     async register(req, res) {
         try {
             const { username, password, fullname } = req.body;
-            const phone = req.body.phone || null;
             if(!username || !password || !fullname) {
                 return res.status(400).send("Missing information");
             }
@@ -91,18 +70,13 @@ class AccountController {
                     username: username,
                     password: await bcrypt.hash(password, 10),
                     fullname: fullname,
-                    phone: phone,
                 });
                 user.tokens.push(token);
                 await user.save();
                 if(!user) {
-                    return res.status(409).send("Register failed. Please try again!");
+                    return res.status(409).send("Register failed. Please try again!")
                 }
-                res.cookie("jwt", token, { 
-                    maxAge: expiresIn,
-                    httpOnly: true,
-                });
-                return res.status(200).send(token);
+                return res.status(200).send(user);
             }
         } catch (error) {
             console.log(error);
@@ -128,11 +102,7 @@ class AccountController {
             });
             user.tokens.push(token);
             await user.save();
-            res.cookie("jwt", token, { 
-                maxAge: expiresIn,
-                httpOnly: true,
-            });
-            return res.status(201).send(token);
+            return res.status(201).send(user);
         } catch (error) {
             console.log(error);
             res.status(401).send(error);
@@ -140,18 +110,17 @@ class AccountController {
     }
     async logout(req, res) {
         try{
-            const token = util.getToken(req);
-            const user = jwt.verify(token, secretKey);
+            const username = req.user.username;
             await User.findOneAndUpdate(
-                { username :  user.username},
+                { username : username },
                 { $pull: { tokens: token } },
                 { safe: true }
             );
-            return res.redirect('/');
+            return res.status(200).send("Logged out succesful");
         }
         catch(err){
             console.log(err);
-            return res.redirect('/');
+            return res.status(500).send(err);
         }
     }
 }

@@ -7,6 +7,10 @@ class ProductController {
 
     //  [GET] hiển thị trang homepage
     index(req,res,next) {
+
+
+        
+
         Product.find({})
             .then(product => {
                 product = product.map(product => product.toObject())
@@ -15,7 +19,6 @@ class ProductController {
                     style: '/css/homepage.css',
                     isAdmin: 0,
                     product,
-                    user: req.user?.toObject(),
                 })
             })
 
@@ -40,7 +43,6 @@ class ProductController {
             title: 'Search',
             style: '/css/search.css',
             isAdmin: 0,
-            user: req.user?.toObject(),
         });
     }
 
@@ -50,7 +52,6 @@ class ProductController {
             title: 'About Us',
             style: '/css/about-us.css',
             isAdmin: 0,
-            user: req.user?.toObject(),
         });
     }
 

@@ -3,28 +3,21 @@
         <div class="container">
             <div class="header-top">
                 <div class="row no-gutters">
-                    <div class="col l-4">
+                    <div class="col l-2">
                         <ul>
-                            <li><a href="/about-us">Về cửa hàng</a></li>
+                            <li><a href="/aboutus.html">Về cửa hàng</a></li>
                             <li><a href="tel:+1800">1800</a></li>
                         </ul>
                     </div>
-                    <div class="col l-1" id="header-brand">
-                        <a href="/about-us">
+                    <div class="col l-6" id="header-brand">
+                        <a href="#">
                             <img src="/image/logo.png" alt="Logo">
                         </a>
                     </div>
-                    <div class="col l-4" id="header-right">
+                    <div class="col l-2" id="header-right">
                         <ul>
-                            <li><a href="/wishlist-cart">Giỏ hàng</a></li>
-                            {{#if user}}
-                                <li><a href="/logout">Thoát</a></li>
-                                <li><a href="/account">Chào: {{user.fullname}}</a></li>
-                                
-                            {{/if}}
-                            {{#unless user}}
-                            <li><a href="/login">Tài khoản</a></li>
-                            {{/unless}}
+                            <li><a href="#">Giỏ hàng</a></li>
+                            <li><a href="#">Tài khoản</a></li>
                         </ul>
                     </div>
                 </div>

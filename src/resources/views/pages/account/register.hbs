@@ -14,7 +14,7 @@
                                 <b>Họ tên</b>
                                 <span>*</span>
                             </div>
-                            <input type="text" name="fname" id="fname" required>
+                            <input type="text" name="fname" id="fname" required placeholder="Ex: Lê Văn A">
                         </label>
                     </div>
                     <div class="form-group">
@@ -23,7 +23,7 @@
                                 <b>Tên tài khoản</b>
                                 <span>*</span>
                             </div>
-                            <input type="text" name="username" id="username" required>
+                            <input type="text" name="username" id="username" required placeholder="Ex: levana123">
                         </label>
                     </div>
                     <div class="form-group">
@@ -41,10 +41,18 @@
                                 <span>*</span>
                             </div>
                             <input type="password" name="pass" id="password" required>
+                            <small id="passwordHelp" class="form-text text-muted"><em>Mật khẩu gồm 6 kí tự bao gồm chữ và số, có ít nhất một kí tự viết hoa.</em></small>
                         </label>
                     </div>
                     <div class="action">
-                        <button type="submit">Đăng ký</button>
+                        <div class = "row" >
+                            <div class="allow">
+                                <button type="submit">Đăng ký</button>
+                            </div>
+                            <div class="cancel">
+                                <button type="submit">Hủy bỏ</button>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>

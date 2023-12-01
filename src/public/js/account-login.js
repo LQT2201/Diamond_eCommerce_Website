@@ -6,8 +6,9 @@ loginForm.addEventListener("submit", async (e) => {
   const data = JSON.stringify({
     username, password
   });
+  const url = 'http://127.0.0.1:3000/account-login';
   try {
-    const response = await fetch('/account-login', {
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/JSON'
@@ -15,7 +16,7 @@ loginForm.addEventListener("submit", async (e) => {
       body: data,
     });
     if(response.status == 201) {
-      window.location.href = '/';
+      alert("Đăng nhập tài khoản thành công!");
     }
     else {
       alert("Đăng nhập thất bại!");
