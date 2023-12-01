@@ -20,6 +20,7 @@ const Product = new Schema({
   slug: String,
   quantity: Number,
   sizes: [Number],
+  size_title: String,
 });
 
 module.exports = mongoose.model('product', Product);

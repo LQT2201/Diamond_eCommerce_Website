@@ -3,12 +3,12 @@
     <div class="breadcrumb">
       <a href="#">Trang chủ</a>
       <span>&gt;</span>
-      <a href="#">Trang sức kim cương</a>
+      <a href="#">{{product.category}}</a>
       <span>&gt;</span>
-      <a class="active">Dây chuyền Vàng trắng Ý 18K PNJ Unisex </a>
+      <a href="#">{{product.material}}</a>
+      <span>&gt;</span>
+      <a class="active">{{product.name}}</a>
     </div>
-
-
     <div class="row body-product">
       <!--Gallery -->
       <div class="col l-7 product-images">
@@ -48,7 +48,7 @@
         </div>
 
         <div class="product-selector">
-          <h3 class="product-size-title">Chọn chiều dài (cm):</h3>
+          <h3 class="product-size-title">Chọn {{product.size_title}}:</h3>
           <div class="product-size-list">
             {{#each product.sizes}}
             <span class="product-size">{{this}}</span>
@@ -59,26 +59,6 @@
         <div class="row product-stock-wrapper">
             <span class="product-stock-status">Còn {{product.quantity}} sản phẩm</span>
         </div>
-
-        <div class="product-voucher">
-          <p class="product-voucher-title">Ưu Đãi:</p>
-          <div class="product-voucher-option">
-            <span class="option-item">
-              <img src="https://cdn.pnj.io/images/2023/vnpay48x48.png" alt="" class="option-item-img">
-              <span class="option-item-p">
-                Mã <b>PNJVNPAY</b> tự động hiển thị 50k cho đơn từ 2 triệu khi quét <b>VNPAY-QR</b>
-              </span>
-            </span>
-
-            <span class="option-item">
-              <img src="https://cdn.pnj.io/images/2023/logo-momo.svg" alt="" class="option-item-img">
-              <span class="option-item-p">
-                Nhập mã <b>MMQUYPHAI</b> giảm 2% tối đa 200K khi thanh toán qua <b>MOMO</b>
-              </span>
-            </span>
-          </div>
-        </div>
-
         <div class="add-to-cart-wrapper">
           <button class="add-to-cart-btn">
             <span class="add-to-cart-span-tittle"> Mua ngay</span>
