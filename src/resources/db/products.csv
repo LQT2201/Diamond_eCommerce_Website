@@ -1,0 +1,11 @@
+name,sku,brand,category,material,origin,description,price,thumbnail,url
+Nhẫn bạch kim,bk00020,PNJ,nhẫn,bạch kim,VN,description,2000,abc.png,abc
+Lắc tay vàng,vg02010,PNJ, lắc tay,vàng,VN,description,2000,abc.png,abc
+Vòng tay bạc,bc01030,PNJ,vàng tay,bạc,VN,description,2000,abc.png,abc
+Dây chuyền vàng,vg03010,PNJ,dây chuyền,vàng,VN,description,2000,abc.png,abc
+Bông tay nạm kim cương,kc04000,PNJ,bông tay,kim cương,VN,description,2000,abc.png,abc
+Nhẫn vàng,vg00010,PNJ,nhẫn,vàng,VN,description,2000,abc.png,abc
+Nhẫn bạc ,bc00030,PNJ,nhẫn,bạc,VN,description,2000,abc.png,abc
+Nhẫn đính kim cương,kc00000,PNJ,nhẫn,kim cương,VN,description,2000,abc.png,abc
+Mặt dây chuyền kim cương,kc05000,PNJ,mặt dây chuyền,kim cương,VN,description,2000,abc.png,abc
+Kiềng vàng,vg06010,PNJ,kiềng,vàng,VN,description,2000,abc.png,abc
