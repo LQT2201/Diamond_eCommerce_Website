@@ -1,4 +1,5 @@
 const Product = require('../models/Product')
+const Category = require('../models/Category')
 const util = require('../../until/util')
 class ProductController {
     
@@ -17,7 +18,7 @@ class ProductController {
         }
         else{
             res.render('pages/product-detail', {
-                title: 'Product-detail',
+                title: 'Product detail',
                 style: '/css/product-detail.css',
                 isAdmin: 0,
                 product: product,
@@ -32,7 +33,7 @@ class ProductController {
     adminShowProduct(req,res) {
         res.render('admin/admin-product',{
             style: '/css/admin-product.css',
-            isAdmin: 0,
+            isAdmin: 1,
         });
     }
 
@@ -56,6 +57,8 @@ class ProductController {
                 thumbnail,
                 quantity,
             } = req.body;
+            const slug = util.slugify(name + sku);
+            const url = '/products/${slug}';
             let product = Product.findOne({
                 sku: sku,
             });
@@ -73,13 +76,18 @@ class ProductController {
                 price: price,
                 thumbnail: thumbnail,
                 quantity: quantity,
+                slug: slug,
+                url: url,
             });
-            product.slug = util.slugify(product.name);
-            product.url = '/products/${slug}';
-            await product.save();
             if(!product) {
                 return res.status(400).send("Product create failed. Please try again");
             }
+            await Category.findOneAndUpdate(
+                { name: product.category },
+                { upsert: true, new: true },
+                { $push: { products: product } },
+            );
+            return res.status(201).send(product);
         } catch (error) {
             console.log(error);
             return res.status(409).send(error);

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
-const Product = new Schema({
+const productSchema = new Schema({
   name: String,
   sku: {
     type: String,
@@ -22,5 +22,5 @@ const Product = new Schema({
   sizes: [Number],
   size_title: String,
 });
-
-module.exports = mongoose.model('product', Product);
+const Product =  mongoose.model('product', productSchema);
+module.exports = Product;

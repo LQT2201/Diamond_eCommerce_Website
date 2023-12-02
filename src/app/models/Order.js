@@ -1,17 +1,17 @@
 // models/Order.js
+const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+
+const Product = require('../models/Product');
+
 const orderSchema = new Schema({
-    products: [{
-        product_id: String,
-        product_quantity: Number,
-        product_size: String,
-    }],
-    total_quantity: Number,
-    total_Price: Number,
-    address: String,
+  username: String,
+  products: [Product.schema],
+  total_quantity: Number,
+  total_Price: Number,
+  address: String,
   // Thêm các trường khác nếu cần
 });
-const Order = mongoose.model('Order', OrderSchema);
+const Order = mongoose.model('Order', orderSchema);
 module.exports = Order;
