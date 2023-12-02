@@ -1,60 +1,84 @@
     /* Existing styles... */
 
     /* Dropdown styles */
-    .dropbtn{
-        font-size: 25px;
-        color: white;
-        background-color: black;
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: antiquewhite;
+    }
+    .title{
+        font-size: 40px;
+        color: black;
+        background-color: white;
         padding: 15px;
+        margin-bottom: 20px;
     }
     .dropdown {
+        background-color: white;
         text-align: center;
-        padding-top: 40px;
-        padding-left: 20%;
-        padding-right: 20%;
+        padding: 20px;
     }
 
     .dropdown-content a {
-        font-size: 20px;
+        font-size: 30px;
         color: #333;
         padding-top: 5px;
         display: block;
         text-align: center;
         text-decoration: none;
         background-color: white;
-    }
-    .line {
-        padding: 2px;
-        background-color: blue;
-        background-position: center;
-        width: 20%;
-        margin: 0 auto;
-        margin-bottom: 5px;
-
+        margin-bottom: 20px;
+        background-color: #f1f1f1;
     }
     .dropdown-content {
         font-size: 15px;
-        border: 2px solid black;
+        
     }
     .dropdown-content p{
         text-align: justify;
-        font-size: medium;
+        font-size: 20px;
         font-family: 'Arial', sans-serif;
         background-color: white;
         margin: 0;
         padding-inline: 50px;
-    }
-    .dropdown-content a:hover {
-        background-color: #f1f1f1;
+        padding-bottom: 20px;
     }
 
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-    .title{
+    .childtitle{
         text-align: center;
 
     }
-    .content{
-        font-size: sma;
+
+    .members{
+        text-align: center;
+        font-size: 30px;
+        background-color: white;
     }
+    .member{
+        margin-top: 20px;
+        display: flex;
+    }
+    .member img{
+        width: 100px;
+        height: auto;
+    }
+    .item{
+        overflow: hidden;
+        flex: 1 0 25%;
+    }
+    .members h4{
+        background-color: #f1f1f1;
+    }
+    .grid .wide{
+        background-color: white;
+    }
+    .member2{
+        display: flex;
+    }
+    .member2 img{
+        width: 100px;
+        height: auto;
+    }
+    
