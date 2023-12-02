@@ -7,7 +7,13 @@ const Product = require('../models/Product');
 
 const orderSchema = new Schema({
   username: String,
-  products: [Product.schema],
+  products: [{
+    product: Product.schema,
+    product_quantity: {
+      type: Number,
+      min: 0,
+    }
+  }],
   total_quantity: Number,
   total_Price: Number,
   address: String,

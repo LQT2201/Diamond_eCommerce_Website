@@ -8,7 +8,16 @@ const getToken = (req) =>{
   }
   return token;
 }
-
+const getAdminToken = (req) =>{
+  let token;
+  if (req.headers.authorization && req.headers.authorization.startsWith("Bearer ")) {
+    token = req.headers.authorization.split(' ')[1]
+  }
+  else {
+    token = req.headers["x-access-token"] || req.cookies['jwt-admin'] || null;
+  }
+  return token;
+}
 //Reference https://byby.dev/js-slugify-string
 const slugify = (name) => {
   return String(name).normalize('NFKD') // split accented characters into their base characters and diacritical marks
@@ -20,4 +29,4 @@ const slugify = (name) => {
   .replace(/-+/g, '-'); // remove consecutive hyphens
 }
 
-module.exports = { getToken , slugify};
+module.exports = { getToken , slugify, getAdminToken};

@@ -2,7 +2,7 @@ const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const secretKey = "c83c121ed9634881eb16d9df31714b63b2d07d0bd00d9859949b35ed46d15d8a";
-const expiresIn = 7 * 3600 * 24;
+const expiresIn = 7 * 3600 * 24 * 1000;
 const util = require('../../until/util')
 
 class AccountController {
