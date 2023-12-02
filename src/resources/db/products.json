@@ -1,0 +1,35 @@
+[
+    {
+      "name": "Nhẫn vàng",
+      "sku": "nn010",
+      "brand": "PNJ",
+      "category": "Trang sức vàng",
+      "material": "Vàng",
+      "origin": "Việt Nam",
+      "description": "Vòng cổ ngọc trai cao cấp, thiết kế độc đáo và sang trọng.",
+      "price": 5000000,
+      "thumbnail": "path/to/image1.jpg",
+      "url": "localhost:3000/nn010",
+      "slug": "nhan-vang",
+      "quantity": 50,
+      "sizes": [16, 18, 20],
+      "size_title": "Kích thước"
+    },
+    {
+      "name": "Bông tai vàng 18k",
+      "sku": "bt010",
+      "brand": "PNJ",
+      "category": "Trang sức vàng",
+      "material": "Vàng 18k",
+      "origin": "Italy",
+      "description": "Bông tai vàng 18k, kiểu dáng thanh lịch và trẻ trung.",
+      "price": 8000000,
+      "thumbnail": "path/to/image2.jpg",
+      "url": "https://example.com/product/ts002",
+      "slug": "bong-tai-vang-18k",
+      "quantity": 30,
+      "sizes": [12,14,16],
+      "size_title": "Kích thước"
+    }
+  ]
+  

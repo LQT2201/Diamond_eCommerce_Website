@@ -1,9 +1,60 @@
-h1 {
-    font-size: large;
-}
-h2 {
-    font-size: medium;
-}
-h3 {
-    font-size: small;
-}
+    /* Existing styles... */
+
+    /* Dropdown styles */
+    .dropbtn{
+        font-size: 25px;
+        color: white;
+        background-color: black;
+        padding: 15px;
+    }
+    .dropdown {
+        text-align: center;
+        padding-top: 40px;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    .dropdown-content a {
+        font-size: 20px;
+        color: #333;
+        padding-top: 5px;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        background-color: white;
+    }
+    .line {
+        padding: 2px;
+        background-color: blue;
+        background-position: center;
+        width: 20%;
+        margin: 0 auto;
+        margin-bottom: 5px;
+
+    }
+    .dropdown-content {
+        font-size: 15px;
+        border: 2px solid black;
+    }
+    .dropdown-content p{
+        text-align: justify;
+        font-size: medium;
+        font-family: 'Arial', sans-serif;
+        background-color: white;
+        margin: 0;
+        padding-inline: 50px;
+    }
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .title{
+        text-align: center;
+
+    }
+    .content{
+        font-size: sma;
+    }
