@@ -18,7 +18,7 @@ input[type=text], input[type=password] {
 .form-lft {
     display: inline-block;
 }
-.forgot-pass {
+.register {
     direction: rtl;
 }
 .action button {

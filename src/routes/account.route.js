@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
+const multer = require('multer')
+const upload = multer();
 const accountController = require('../app/controllers/AccountController');
 const authentication = require('../app/middlewares/Authentication')
 
@@ -14,5 +15,5 @@ router.get('/logout', authentication.isAuth, accountController.logout);
 
 router.post('/account-register', accountController.register);
 router.post('/account-login', accountController.login);
-
+router.post('/change-information', authentication.isAuth, upload.none(), accountController.changeInformation);
 module.exports = router;

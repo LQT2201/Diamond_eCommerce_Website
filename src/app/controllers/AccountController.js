@@ -153,6 +153,47 @@ class AccountController {
             return res.redirect('/');
         }
     }
+    async changeInformation(req, res) {
+        if(!req.user)
+            return res.redirect('/login');
+        try {
+            console.log(req.body);
+            const user = await User.findOne({
+                username: req.user.username,
+                tokens: {$in: [util.getToken(req)]}
+            });
+            if(!user)
+                return res.status(401).send(error);
+            user.fullname = req.body.fullname ? req.body.fullname : user.fullname;
+            user.phone = req.body.phone ? req.body.phone : user.phone;
+            user.address = req.body.address ? req.body.address : user.address;
+            if(req.body.fixpass === '1' && req.body.pass && req.body.repass) {
+                if(!req.body.pass === req.body.repass)
+                    return res.status(401).send("New password are not matched");
+                const isValid = await bcrypt.compare(req.body.oldpass, user.password);
+                console.log(isValid);
+                if(!isValid)
+                    return res.status(401).send('Wrong current password');
+                user.password = await bcrypt.hash(req.body.pass, 10);
+                const username = user.username;
+                let token = jwt.sign({username}, secretKey, {
+                    expiresIn: expiresIn,
+                });
+                await user.updateOne(
+                    { tokens: [token] },
+                )
+                res.cookie("jwt", token, { 
+                    maxAge: expiresIn,
+                    httpOnly: true,
+                });
+            }
+            await user.save();
+            return res.status(200).send('Change user information success.');
+        } catch (error) {
+            console.log(error);
+            return res.status(401).send(error);
+        }
+    }
 }
 
 module.exports = new AccountController;

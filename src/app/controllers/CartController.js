@@ -15,7 +15,7 @@ class CartController {
             res.render('pages/cart', {
                 title: 'Cart',
                 style: '/css/cart.css',
-                isAdmin: 0,
+                user: req.user.toObject(),
                 cart: cart,
             });
         }
@@ -24,12 +24,21 @@ class CartController {
 
     // Xử lý quá trình thanh toán
     // Hiển thị trang thanh toán hoặc chuyển hướng đến cổng thanh toán
-    checkout(req,res) {
-        res.render('pages/checkout', {
-            title: 'Order',
-            style: '/css/checkout.css',
-            isAdmin: 0,
-        });
+    async checkout(req,res) {
+        if(!req.isLogged) {
+            res.redirect('/login');
+        }
+        else{
+            const cart = await Cart.findOne({ 
+                username: req.user.username 
+            })?.lean();
+            res.render('pages/checkout', {
+                title: 'Order',
+                style: '/css/checkout.css',
+                user: req.user.toObject(),
+                cart: cart,
+            });
+        }
     }
     
     // [POST] Xử lý thêm sản phẩm vào giỏ hàng
