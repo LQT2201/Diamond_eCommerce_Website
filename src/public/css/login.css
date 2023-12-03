@@ -5,18 +5,21 @@
 form label span {
     color: red;
 }
-input[type=password], input[type=text], input[type=tel] {
+input[type=text], input[type=password] {
     width: 97%;
     display: inline-block;
 }
-.container .row {
+.loginPage .container .row {
     justify-content: center;
 }
-.container .row:first-child {
+.loginPage .container .row:first-child {
     text-align: center;
 }
 .form-lft {
     display: inline-block;
+}
+.forgot-pass {
+    direction: rtl;
 }
 .action button {
     width: 100%;

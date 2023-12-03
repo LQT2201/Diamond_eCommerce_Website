@@ -258,19 +258,19 @@ a:active,a:focus,a:hover {
 /* beign-component_product */
 .component-product {
     margin-bottom: 30px;
-    box-shadow: 0 0 10px rgba(63, 114, 175, 0.1);
+    background: linear-gradient(to top, #F3F3F3, #FFFFFF);
+    border-radius: 10px;
 }
 
-
-
-.component-product:hover {
-    box-shadow: 0 4px 10px rgba(63, 114, 175, 0.3);
-}
 
 .component-product__image {
     margin-bottom: 20px;
-    padding: 10px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    overflow: hidden;
 }
+
 
 .component-product__image a {
     display: block;
@@ -278,26 +278,37 @@ a:active,a:focus,a:hover {
 }
 
 
-.component-product__image a:hover img {
-    transform: scale(1.15);
-}
-
 .component-product__image img {
     width: 100%;
-    transition: all .3s linear;
+}
+
+.component-product__image img:last-child {
+    opacity: 0;
+    transition: transform 0.5s ease-in;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.component-product__image:hover img:last-child {
+    width: 100%;
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 .component-product__title {
-    margin-bottom: 5px;
-   
+   padding: 0px 20px 0 20px;
 }
 
 .component-product__title a {
+    text-decoration: none;
     display: block;
     max-height: 52px;
     font-size: 16px;
     line-height: 26px;
-    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     text-align: center;
     overflow: hidden;
     color: #112D4E;
@@ -306,11 +317,11 @@ a:active,a:focus,a:hover {
 .component-product__price {
     font-size: 16px;
     line-height: 24px;
-    font-weight: 300;
     color: #3F72AF;
     text-align: center;
     padding-bottom: 20px;
 }
+
 
 /* end-component_product */
 

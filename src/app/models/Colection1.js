@@ -7,4 +7,4 @@ const  Colection1 = new Schema({
     createAt:{type:Date, default:Date.now},
   });
 
-  module.exports = mongoose.model('colection1', Colection1);
+module.exports = mongoose.model('colection1', Colection1);
