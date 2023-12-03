@@ -1,0 +1,83 @@
+[
+    {
+        "name": "Nhẫn",
+        "subcategories":[
+            {
+                "name":"Nhẫn kim cương"
+            },
+            {
+                "name":"Nhẫn vàng"
+            },
+            {
+                "name":"Nhẫn bạc"
+            },
+            {
+                "name":"Nhẫn bạch kim"
+            }
+        ]
+    },
+    {
+        "name":"Dây chuyền",
+        "subcategories":[
+            {
+                "name":"Dây chuyền vàng"
+            },
+            {
+                "name":"Dây chuyền bạc"
+            },
+            {
+                "name":"Dây chuyền bạch kim"
+            }
+        ]
+    },
+    {
+        "name":"Bông tai",
+        "subcategories":[
+            {
+                "name":"Bông tai vàng"
+            },
+            {
+                "name":"Bông tai kim cương"
+            },
+            {
+                "name":"Bông tai ruby"
+            },
+            {
+                "name":"Bông tai bạc"
+            }
+        ]
+    },
+    {
+        "name":"Mặt dây chuyền",
+        "subcategories":[
+            {
+                "name":"Mặt dây chuyền kim cương"
+            },
+            {
+                "name": "Mặt dây chuyền vàng"
+            },
+            {
+                "name": "Mặt dây chuyền ruby"
+            }
+        ]
+    },
+    {
+        "name":"Kiềng",
+        "subcategories":[
+            {
+                "name":"Kiềng vàng"
+            }
+        ]
+    },
+    {
+        "name":"Lắc",
+        "subcategories":[
+            {
+                "name":"Lắc tay vàng"
+            },
+            {
+                "name":"Lắc tay bạc"
+            }
+        ]
+    }
+]
