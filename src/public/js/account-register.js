@@ -20,7 +20,7 @@ registerForm.addEventListener("submit", async (e) => {
       window.location.href = '/';
     }
     else {
-      alert("Đăng ký thất bại! " + await response.text());
+      alert("Đăng ký thất bại!");
     }
   } catch (error) {
     console.log(error);

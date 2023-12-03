@@ -1,75 +1,391 @@
-<h1> slider thêm sau </h1>    
+<!-- Begin slider -->
+<section>
+    <div class="slider" >
+        <ul class="slider-dots">
+            <li class="slider-dot active" data-index = "0"></li>
+            <li class="slider-dot" data-index = "1"></li>
+            <li class="slider-dot" data-index = "2"></li>
+            <li class="slider-dot" data-index = "3"></li>
+        </ul>
+        <div class="slider-wrapper">
+            <div class="slider-main">
+                <div class="slider-item"> 
+                    <img src="/image/baner-1.jpg" alt="">
+                </div>
+                <div class="slider-item">
+                    <img src="/image/baner-2.jpg" alt="">
+                </div>
+                <div class="slider-item">
+                    <img src="/image/baner-3.jpg" alt="">
+                </div>
+                <div class="slider-item">
+                    <img src="/image/baner-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <img class="slider-next" src="/image/next.png" alt="">
+        <img class="slider-prev" src="/image/prev.png" alt="">
+    </div>
+</section>
+<!-- End slider -->
 
+<!-- Begin banner -->
+<section>
+    <div class="banner" >
+        <div class="banner-item"> 
+            <img src="/image/banner.jpg" alt="">
+        </div>
+        <div class="banner-item">
+            <img src="/image/banner-1.png" alt="">
+        </div>
+        <div class="banner-item">
+            <img src="/image/banner.jpg" alt="">
+        </div>
+    </div>
+</section>
+<!-- end banner -->
+
+<!-- Begin content -->
 <div class="grid wide">
-    <div class="row">
-        <div class="col l-3 m-4 c-6">
+    <!-- Begin slick -->
+    <div class="row slick">
+        <div class="col l-12">
+            <div class="row no-gutters slick-title">
+                <h2>Xu hướng tìm kiếm</h2>
+            </div>
+            <div class="row no-gutters slick-content">
+                <div class="slick-wrapper">
+                    <div class="slick-main">
+                        <div class="slick-item"> 
+                            <div class="slick-item-inner">
+                                <a href="" >
+                                    <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
+                                    <span class="slick-item__title">Dây chuyền </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="slick-item"> 
+                            <div class="slick-item-inner">
+                                <a href="">
+                                    <span> 
+                                    <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
+                                    </span>
+                                    <span class="slick-item__title">Dây </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="slick-item"> 
+                            <div class="slick-item-inner">
+                                <a href="">
+                                    <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
+                                    <span class="slick-item__title">Dây </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="slick-item"> 
+                            <div class="slick-item-inner">
+                                <a href="">
+                                    <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
+                                    <span class="slick-item__title">Dây </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="slick-item"> 
+                            <div class="slick-item-inner">
+                                <a href="">
+                                    <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
+                                    <span class="slick-item__title">Dây </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="slick-item"> 
+                            <div class="slick-item-inner">
+                                <a href="">
+                                    <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
+                                    <span class="slick-item__title">Dây </span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <img class="slick-next" src="/image/next.png" alt="">
+                <img class="slick-prev" src="/image/prev.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- End slick -->
+
+    <h2 style="font-size: 2rem;">Sản phẩm nổi bật</h2>
+    <div class="row listProduct">
+        {{!-- <div class="col l-3 m-4 c-6">
             <div class="component-product">
                 <div class="component-product__image">
                     <a href="">
-                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
+                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_1.jpg" alt="">
+                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_2.jpg" alt="">
                     </a>
                 </div>
 
                 <div class="component-product__title">
                     <a href="">
-                        <span>Bánh zzzzzzzzzzzzzzzzzzzzzzzzzzz</span>
+                        <span>Dây chuyền chữ thập banshee</span>
                     </a>
                 </div>
 
-                <div class="component-product__price"></div>
+                <div class="component-product__price">60.00đ</div>
+                <button>Thêm vào giỏ hàng</button>
             </div>
-        </div>                  
-        
-        <div class="col l-3 m-4 c-6">
-            <div class="component-product">
-                <div class="component-product__image">
-                    <a href="">
-                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
-                    </a>
-                </div>
+        </div>                   --}}
+    </div>
 
-                <div class="component-product__title">
-                    <a href="">
-                        <span>Bánh zzzzzzzzzzzzzzzzzzzzzzzzzzz</span>
-                    </a>
-                </div>
+    <div class="cart">
+        <h2>
+            CART
+        </h2>
 
-                <div class="component-product__price">60.000đ</div>
-            </div>
-        </div>  
-        <div class="col l-3 m-4 c-6">
-            <div class="component-product">
-                <div class="component-product__image">
-                    <a href="">
-                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
-                    </a>
-                </div>
+        <div class="listCart">
 
-                <div class="component-product__title">
-                    <a href="">
-                        <span>Bánh zzzzzzzzzzzzzzzzzzzzzzzzzzz</span>
-                    </a>
+            {{!-- <div class="item">
+                <img src="/image/banner.jpg">
+                <div class="content">
+                    <div class="name">CoPilot / Black / Automatic</div>
+                    <div class="price">$550 / 1 product</div>
                 </div>
-
-                <div class="component-product__price">60.000đ</div>
-            </div>
-        </div>  
-        <div class="col l-3 m-4 c-6">
-            <div class="component-product">
-                <div class="component-product__image">
-                    <a href="">
-                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
-                    </a>
+                <div class="quantity">
+                    <button>-</button>
+                    <span class="value">3</span>
+                    <button>+</button>
                 </div>
+            </div> --}}
 
-                <div class="component-product__title">
-                    <a href="">
-                        <span>Bánh zzzzzzzzzzzzzzzzzzzzzzzzzzz</span>
-                    </a>
-                </div>
+        </div>
 
-                <div class="component-product__price">60.000đ</div>
-            </div>
-        </div>  
+        <div class="buttons">
+            <button class="close" style="color: aliceblue;">
+                CLOSE
+            </button>
+            <button class="checkout">
+                <a href="/cart/checkout">CHECKOUT</a>
+            </button>
+        </div>
     </div>
 </div>
+<!-- End content -->
+
+<script>
+    window.addEventListener("load", function () {
+        const slider =document.querySelector('.slider');
+        const sliderMain =document.querySelector('.slider-main');
+        const sliderItems =document.querySelectorAll('.slider-item');
+        const nextBtn =document.querySelector('.slider-next');
+        const prevBtn =document.querySelector('.slider-prev');
+        const dotItem =document.querySelectorAll('.slider-dot');
+        const sliderItemWidth = sliderItems[0].offsetWidth;
+        const slidesLength =sliderItems.length;
+
+        let index = 0;
+        let positionX = 0;
+
+        [...dotItem].forEach((item) =>
+            item.addEventListener("click",function(e) {
+                [...dotItem].forEach(el => el.classList.remove("active"));
+                e.target.classList.add("active");
+                slideIndex = parseInt(e.target.dataset.index);
+                index =slideIndex;
+                positionX = -1 * sliderItemWidth *index;
+                console.log(positionX)
+                sliderMain.style = `transform: translateX(${positionX}px)`;
+            })
+        );
+        
+        
+        nextBtn.addEventListener("click", function () {
+            handlleChangeSlide(1);
+        });
+
+        prevBtn.addEventListener("click", function () {
+            handlleChangeSlide(-1);
+        });
+
+        function handlleChangeSlide(direction) {
+            if(direction === 1) {
+                
+                if(index >= slidesLength-1) {
+                    index = slidesLength-1;
+                    return;
+                }
+                positionX = positionX - sliderItemWidth;
+                sliderMain.style.transform = `translateX(${positionX}px)`;
+                index++;
+                
+            } else if(direction === -1) {     
+                if(index <= 0 ) {
+                    index = 0;
+                    return;
+                }
+                positionX = positionX + sliderItemWidth;
+                sliderMain.style.transform = `translateX(${positionX}px)`;
+                index--;
+            }
+            [...dotItem].forEach(el => el.classList.remove("active"))
+            dotItem[index].classList.add("active");
+        }
+
+    });
+</script>
+
+<script>
+    let iconCart = document.querySelector('.iconCart');
+    let cart = document.querySelector('.cart');
+    let close = document.querySelector('.close');
+
+    iconCart.addEventListener('click', function(){
+        if(cart.style.right == '-100%'){
+            cart.style.right = '0';
+            
+        }else{
+            cart.style.right = '-100%';
+            
+        }
+    })
+    close.addEventListener('click', function (){
+        cart.style.right = '-100%';
+    })
+
+    let products = null;
+    //get data from json
+    fetch('product.json')
+        .then(response => response.json())
+        .then(data => {
+            products = data;
+            addDataToHTML();
+        })
+
+    //show data
+    function addDataToHTML() {
+        let listProductHTML = document.querySelector('.listProduct');
+        listProductHTML.innerHTML = '';
+
+        if(products != null) {
+            products.forEach(product => {
+                let newProduct = document.createElement('div');
+                newProduct.classList.add('col', 'l-3', 'm-4', 'c-6');
+                newProduct.innerHTML = 
+                `<div class="component-product">
+                <div class="component-product__image">
+                    <a href="/product-detail/${product.id}">
+                        <img src="${product.image[0]}" alt="">
+                        <img src="${product.image[1]}" alt="">
+                    </a>
+                </div>
+
+                <div class="component-product__title">
+                    <a href="/product-detail/${product.id}">
+                        <span>${product.name}</span>
+                    </a>
+                </div>
+
+                <div class="component-product__price">$${product.price}</div>
+                <button onclick="addCart(${product.id})">Thêm vào giỏ hàng</button>
+                </div>`;
+
+                listProductHTML.appendChild(newProduct);
+            });
+        }
+    }
+    
+    let listCart = [];
+    function checkCart() {
+        var cookieVale = document.cookie
+        .split(';')
+        .find(row => row.startsWith('listCart='));
+        if(cookieValue) {
+            listCart = JSON.parse(cookieVale.split('=')[1]);
+        }else {
+            listCart = [];
+        }
+        
+    }
+
+    checkCart();
+
+    function addCart($idProduct){
+    let productsCopy = JSON.parse(JSON.stringify(products));
+    //// If this product is not in the cart
+    if(!listCart[$idProduct]) 
+    {
+        listCart[$idProduct] = productsCopy.filter(product => product.id == $idProduct)[0];
+        listCart[$idProduct].quantity = 1;
+    }else{
+        //If this product is already in the cart.
+        //I just increased the quantity
+        listCart[$idProduct].quantity++;
+    }
+    document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
+
+    addCartToHTML();
+}
+addCartToHTML();
+function addCartToHTML(){
+    // clear data default
+    let listCartHTML = document.querySelector('.listCart');
+    listCartHTML.innerHTML = '';
+
+    let totalHTML = document.querySelector('.totalQuantity');
+    let totalQuantity = 0;
+    // if has product in Cart
+    if(listCart){
+        listCart.forEach(product => {
+            if(product){
+                let newCart = document.createElement('div');
+                newCart.classList.add('item');
+                newCart.innerHTML = 
+                    `<img src="${product.image[0]}">
+                    <div class="content">
+                        <div class="name">${product.name}</div>
+                        <div class="price">$${product.price} / 1 product</div>
+                    </div>
+                    <div class="quantity">
+                        <button onclick="changeQuantity(${product.id}, '-')">-</button>
+                        <span class="value">${product.quantity}</span>
+                        <button onclick="changeQuantity(${product.id}, '+')">+</button>
+                    </div>`;
+                listCartHTML.appendChild(newCart);
+                totalQuantity = totalQuantity + product.quantity;
+            }
+        })
+    }
+    totalHTML.innerText = totalQuantity;
+}
+
+function changeQuantity($idProduct, $type){
+    switch ($type) {
+        case '+':
+            listCart[$idProduct].quantity++;
+            break;
+        case '-':
+            listCart[$idProduct].quantity--;
+
+            // if quantity <= 0 then remove product in cart
+            if(listCart[$idProduct].quantity <= 0){
+                delete listCart[$idProduct];
+            }
+            break;
+    
+        default:
+            break;
+    }
+    // save new data in cookie
+    document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
+    // reload html view cart
+    addCartToHTML();
+}
+
+    
+</script>

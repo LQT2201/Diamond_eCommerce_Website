@@ -1,154 +1,114 @@
 <div class="grid wide">
-  <div class="row button_back">
-    <button>Tiếp tục mua hàng</button>
-  </div>
-
-  <div class="row cart">
-   
-
-    <div class="col l-12 infor_content">
-      <div class="row checkout-step">
-        <div class="row checkout-progress">
-          <ul class="progress-lists">
-            <li> Thông tin người mua
-            </li>
-            <li>Hình thức nhận hàng</li>
-            <li>Đặt hàng</li>
-            <li>Thanh toán</li>
-          </ul>
-        </div>
-
-        <div class="row infor">
-          <div class="row content_title">
-            <span>1</span>
-            <h2>Thông tin cá nhân</h2>
-          </div>
-          <div class="row infor_content">
-            <div class="row sex">
-              <input type="radio" name="male_female" value="male"><label class="sex" for="male_female">Nam</label>
-              <input type="radio" name="male_female" value="female"><label class="sex" for="male_female">Nữ</label>
+  <div class="row checkoutPage">
+    <div class="col l-6 returnCart">
+        <a href="/"> Tiếp tục mua sắm </a>
+        <h1>Danh sách sản phẩm</h1>
+        <div class="items">
+          <div class="item">
+            <img src="/image/baner-1.jpg" alt="">
+            <div class="item__info">
+              <div class="item__info__name">  Product 1</div>
+              <div class="item__info__price"> 10.000D</div>
             </div>
-          </div>
-          <div class="row infor_user">
-            <div class="row infor_1">
-              <div class="col l-5 m-12 infor_name">
-                <input type="text" placeholder="Tên">
-              </div>
-              <div class="col l-5 m-12 infor_sdt">
-                <input type="text" placeholder="Số điện thoại">
-              </div>
-            </div>
-            <div class="row infor_2">
-              <div class="col l-5 m-12 infor_email">
-                <input type="text" placeholder="Email">
-              </div>
-              <div class="col l-5 m-12 infor_birth">
-                <input type="text" placeholder="Ngày sinh">
-              </div>
-            </div>
-          </div>
-          <div class="row infor_btn">
-            <button>Tiếp tục</button>
-          </div>
-
-        </div>
-
-        <div class="row location">
-          <div class="row content_title">
-            <span>2</span>
-            <h2>Hình thức nhận hàng</h2>
-          </div>
-          <div class="row select_shipment">
-            <div class="col l-5 m-12 btn_online">
-              <button class="btn_shipment_online" onclick="show_display('shipment_content')">Giao hàng tận
-                nơi</button>
-            </div>
-            <div class="col l-5 m-12 btn_offline">
-              <button class="btn_shipment_offline" onclick="show_display('onstore_content')">Nhận hàng tại
-                quầy</button>
-            </div>
-          </div>
-          <div class="row shipment_content">
-            <div class="row location_infor">
-              <div class="row location_infor_1">
-                <div class="col l-5 m-12 location_province">
-                  <select>
-                    <option>- Chọn Tỉnh/TP (*) -</option>
-                  </select>
-                </div>
-                <div class="col l-5 m-12 location_district">
-                  <select>
-                    <option>- Chọn Quận/Huyện (*) -</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row location_infor_2">
-                <div class="col l-5 m-12 location_ward">
-                  <select>
-                    <option>- Chọn Phường/Xã (*) -</option>
-                  </select>
-                </div>
-                <div class="col l-5 m-12 location_building">
-                  <input type="text" placeholder="  - Nhập Địa chỉ khách hàng * -   ">
-                </div>
-              </div>
-              <div class="row note_shipment">
-                <input type="text" placeholder="Ghi chú khác">
-              </div>
-            </div>
-            <div class="row method_shipment">
-              <div class="row title_method">
-                <h2>Phương thức vận chuyển:</h2>
-              </div>
-              <div class="row method_content">
-                <div class="col l-0 select_method">
-                  <input type="radio">
-                </div>
-                <div class="col l-5 m-12 des_method">
-                  <div class="row des_title">
-                    <span>Miễn phí giao hàng nhanh</span>
-                  </div>
-                  <div class="row des_delivery">
-                    <span>Dự kiến nhận hàng: 1-7 ngày</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row onstore_content">
-            <div class="row onstore_location">
-              <div class="col l-5 m-12 store_province">
-                <select>
-                  <option>Quảng Trị</option>
-                </select>
-              </div>
-              <div class="col l-5 m-12 store_district">
-                <select>
-                  <option>Huyện Hải Lăng</option>
-                </select>
-              </div>
-            </div>
-            <div class="row store_address">
-              <select>
-                <option>
-                  Tạm hết tại cửa hàng, bạn có thể chọn Giao hàng tận nơi
-                </option>
-              </select>
-            </div>
-            <div class="row store_note">
-              <input type="text" placeholder="Ghi chú khác">
-            </div>
+            <div class="item__quantity">123</div>
+            <div class="item__returnPrice">$20</div>
           </div>
         </div>
-
-        <div class="row button_confirm">
-          <button>Đặt hàng</button>
-        </div>
-
-      </div>
-
-
-
     </div>
+
+    <div class="col l-6 checkout">
+        <h1>Checkout</h1>
+        <form action="">
+          <div class="group">
+            <label for="fullName" >Họ và tên</label>
+            <input type="text" name="fullName">
+          </div>
+          <div class="group">
+            <label for="phone" >Số điện thoại</label>
+            <input type="text" name="phone">
+          </div>
+          <div class="group">
+            <label for="address" >Địa chỉ</label>
+            <input type="text" name="address">
+          </div>
+          <div class="group">
+            <label for="" ></label>
+            <select name="" id="">
+              <option value="">TP.HCM</option>   
+              <option value="">Hải Phòng</option>           
+            </select>
+          </div>
+          <div class="group">
+            <label for="" ></label>
+            <select name="" id="">
+              <option value="">Bình Chánh</option>   
+              <option value="">Thủ Đức</option>           
+            </select>
+          </div>
+        </form>
+        <div class="total">
+          <div class="total-inner">
+            <h2>Số lượng:</h2>
+            <div class="totalQuantity"></div>
+          </div>
+          <div class="total-inner">
+            <h2>Tổng tiền:</h2>
+            <div class="totalPrice"></div>
+          </div>
+          <button class="buttonCheckout">
+            CHECKOUT
+          </button>
+        </div>
+
+        
+    </div>
+    
   </div>
 </div>
+
+
+<script>
+  let listCart = [];
+function checkCart(){
+        var cookieValue = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('listCart='));
+        if(cookieValue){
+            listCart = JSON.parse(cookieValue.split('=')[1]);
+        }
+}
+checkCart();
+addCartToHTML();
+function addCartToHTML(){
+    // clear data default
+    let listCartHTML = document.querySelector('.returnCart .items');
+    listCartHTML.innerHTML ='';
+
+    let totalQuantityHTML = document.querySelector('.totalQuantity');
+    let totalPriceHTML = document.querySelector('.totalPrice');
+    let totalQuantity = 0;
+    let totalPrice = 0;
+    // if has product in Cart
+    if(listCart){
+        listCart.forEach(product => {
+            if(product){
+                let newCart = document.createElement('div');
+                newCart.classList.add('item');
+                newCart.innerHTML = 
+                    `<img src="${product.image[0]}" alt="">
+                      <div class="item__info">
+                        <div class="item__info__name"> ${product.name}</div>
+                        <div class="item__info__price"> $${product.price}</div>
+                      </div>
+                      <div class="item__quantity">${product.quantity}</div>
+                      <div class="item__returnPrice">$${product.price * product.quantity}</div>`;
+                listCartHTML.appendChild(newCart);
+                totalQuantity = totalQuantity + product.quantity;
+                totalPrice = totalPrice + (product.price * product.quantity);
+            }
+        })
+    }
+    totalQuantityHTML.innerText = totalQuantity;
+    totalPriceHTML.innerText = '$' + totalPrice;
+}
+</script>

@@ -6,15 +6,32 @@ class ProductController {
 
 
     //  [GET] hiển thị trang homepage
-    async index(req, res, next) {
-        let products = await Product.find({}).lean();
-        res.render('pages/homepage', {
-            title: 'Hompage',
-            style:'/css/homepage.css',
-            isAdmin: 0,
-            products: products || null,
-            user: req.user?.toObject(),
-        })
+    index(req,res,next) {
+        Product.find({})
+            .then(product => {
+                product = product.map(product => product.toObject())
+                res.render('pages/homepage',{
+                    title:'Homepage',
+                    style: '/css/homepage.css',
+                    isAdmin: 0,
+                    product,
+                    user: req.user?.toObject(),
+                })
+            })
+
+
+        // Test1.find({})
+        //     .then(test1 => {
+        //         test1 = test1.map(test1 => test1.toObject())
+        //         res.render('',{test1})
+        //     })
+                // .catch(next);
+
+        // res.render('pages/homepage', {
+        //     title: 'HomePage',
+        //     style: '/css/homepage.css',
+        //     isAdmin: true,
+        // });
     }
 
     //  [GET] hiện thị trang search
