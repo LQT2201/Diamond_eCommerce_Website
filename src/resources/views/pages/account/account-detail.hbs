@@ -36,25 +36,18 @@
                         <div class="title-h2">
                             <h2>THÔNG TIN TÀI KHOẢN</h2>
                         </div>
-                        <form id="send-infor" method="post" novalidate="novalidate">
+                        <form id="send-infor" action="" method="post" novalidate="novalidate" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <label class="col l-6">Họ tên<span>*</span>
                                     <input type="text" class="fullname" id="fullname" name="fullname" value="{{user.fullname}}">
                                 </label>
-
-                                 <label class="col l-6">Email<span>*</span>
-                                    <input type="email" class="email" id="email" name="email" value="">
-                                </label>
-                            </div>
-
-                            <div class="form-group row">
                                 <label class="col l-6">Số điện thoại<span>*</span>
-                                    <input type="text" class="phonenumber" id="phonenumber" name="phonenumber" value="{{user.phone}}">
+                                    <input type="text" class="phone" id="phone" name="phone" value="{{user.phone}}">
                                 </label>
                             </div>
                             <div class="form-group">
                                 <label>Địa chỉ
-                                    <input type="text" name="address" value="{{user.address}}">
+                                    <input type="text" name="address" value="{{user.address}}" autocomplete="street-address">
                                 </label>
                             </div>
                             <div class="form-group account-1">
@@ -67,17 +60,17 @@
                             <div class="show-change-pass">
                                 <div class="form-group">
                                     <label>Mật khẩu cũ<span>*</span>
-                                        <input type="password" class="oldpassword" name="oldpass">
+                                        <input type="password" class="oldpassword" autocomplete="current-password" name="oldpass">
                                     </label>
                                 </div>
                                 <div class="form-group">
                                     <label>Mật khẩu<span>*</span>
-                                        <input type="password" class="password" id="pass" name="pass">
+                                        <input type="password" class="password" id="pass" autocomplete="new-password" name="pass">
                                     </label>
                                 </div>
                                 <div class="form-group">
                                     <label>Xác nhận mật khẩu<span>*</span>
-                                        <input type="password" class="repassword" name="repass" id="repass">
+                                        <input type="password" class="repassword" name="repass" autocomplete="new-password" id="repass">
                                     </label>
                                 </div>
                             </div>

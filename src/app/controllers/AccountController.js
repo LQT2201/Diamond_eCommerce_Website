@@ -2,8 +2,8 @@ const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const secretKey = "c83c121ed9634881eb16d9df31714b63b2d07d0bd00d9859949b35ed46d15d8a";
-const expiresIn = 7 * 3600 * 24;
-const util = require('../../until/token')
+const expiresIn = 7 * 3600 * 24 * 1000;
+const util = require('../../until/util')
 
 class AccountController {
     // [GET] /account 
@@ -29,7 +29,6 @@ class AccountController {
             title:'Login',
             style: '/css/login.css',
             script: '/js/account-login.js',
-            isAdmin: 0,
         })
     }
     //[GET] /register
@@ -152,6 +151,47 @@ class AccountController {
         catch(err){
             console.log(err);
             return res.redirect('/');
+        }
+    }
+    async changeInformation(req, res) {
+        if(!req.user)
+            return res.redirect('/login');
+        try {
+            console.log(req.body);
+            const user = await User.findOne({
+                username: req.user.username,
+                tokens: {$in: [util.getToken(req)]}
+            });
+            if(!user)
+                return res.status(401).send(error);
+            user.fullname = req.body.fullname ? req.body.fullname : user.fullname;
+            user.phone = req.body.phone ? req.body.phone : user.phone;
+            user.address = req.body.address ? req.body.address : user.address;
+            if(req.body.fixpass === '1' && req.body.pass && req.body.repass) {
+                if(!req.body.pass === req.body.repass)
+                    return res.status(401).send("New password are not matched");
+                const isValid = await bcrypt.compare(req.body.oldpass, user.password);
+                console.log(isValid);
+                if(!isValid)
+                    return res.status(401).send('Wrong current password');
+                user.password = await bcrypt.hash(req.body.pass, 10);
+                const username = user.username;
+                let token = jwt.sign({username}, secretKey, {
+                    expiresIn: expiresIn,
+                });
+                await user.updateOne(
+                    { tokens: [token] },
+                )
+                res.cookie("jwt", token, { 
+                    maxAge: expiresIn,
+                    httpOnly: true,
+                });
+            }
+            await user.save();
+            return res.status(200).send('Change user information success.');
+        } catch (error) {
+            console.log(error);
+            return res.status(401).send(error);
         }
     }
 }

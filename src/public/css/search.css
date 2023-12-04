@@ -12,13 +12,41 @@ li,ol,ul {
     margin: 0;
     padding: 0
 }
+li:hover {
+    cursor: pointer;;
+}
 
 a {
     color: #000;
     text-decoration: none;
     transition: all .3s linear
 }
+/* breadcrumb */
+.breadcrumb {
+    font-size: 1.4rem;
+    margin: 15px ;
+    text-align: center;
+}
 
+.breadcrumb a {
+    text-decoration: none;
+    color: #a0a0a0;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.breadcrumb span {
+    margin: 0 5px;
+    color: #666;
+}
+
+.breadcrumb .active{
+    color: black;
+}
+/* breadcrumb */
 a:active,a:focus,a:hover {
     text-decoration: none
 }

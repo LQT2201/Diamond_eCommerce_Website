@@ -1,0 +1,32 @@
+body {
+    background-color: #fff;
+    font-family: sans-serif;
+  }
+  
+  .container {
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .content {
+    margin-top: 20px;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+  

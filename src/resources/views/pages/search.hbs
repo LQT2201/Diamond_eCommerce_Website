@@ -1,16 +1,22 @@
-    <div style="text-align: center; font-size:20px">
-        Đây là breadcrumb
+<div class="grid wide body-content">
+    <div class="breadcrumb">
+        <a href="/">Trang chủ</a>
+        <span>&gt;</span>
+        <a href="/search" class="active">Tìm kiếm</a>
     </div>
-
     <section class="productPage">
         <div class="grid wide">
             <div class="row">
                 <!--  Begin filter  -->
                 <div class="col l-3 c-12">
-                    <div class="product-filter-acrrodion">
+                    <form id="apply-filter" class="product-filter-acrrodion" method="get" enctype="multipart/form-data">
                         <div class="product-filter-acrrodion__toggle">Thẻ div này dùng để làm reponsive</div>
                         <div class="product-filter-acrrodion__dropdown">
                             <!-- Begin_Filter- -->
+                            <h1 class="product-filter__title">Bộ lọc</h1>
+                            <a href="/search" title="Tất cả" style="float:right">
+                                <span>Xóa tất cả</span>
+                            </a>
                             <div class="product-filter">
                                 <div class="product-filter__title">
                                     <span>Giá tiền</span>
@@ -20,13 +26,13 @@
                                     <div class="product-filter__inputPrice--wrap">
                                         <div class="product-filter__inputPrice--text">Từ</div>
                                         <div class="product-filter__inputPrice--input">
-                                            <input type="text" value="0Đ">
+                                            <input type="text" value="0">
                                         </div>
                                     </div>
                                     <div class="product-filter__inputPrice--wrap">
                                         <div class="product-filter__inputPrice--text">Đến</div>
                                         <div class="product-filter__inputPrice--input">
-                                            <input type="text" value="10000Đ">
+                                            <input type="text" value="10000">
                                         </div>
                                     </div>
                                    </div>
@@ -40,28 +46,27 @@
                                 <div class="product-filter__content">
                                     <div class="product-filter__list">
                                         <ul>
-                                            <li class="active">
-                                                <a href="#" title="Tất cả">
-                                                    <span>Tất cả</span>
-                                                </a>
-                                            </li>
                                             <li>
-                                                <a href="#" title="Tất cả">
+                                                <input type="checkbox" name="kim-cuong" id="kim-cuong" class="material" value="kim cương">
+                                                <a href="/search?material=kim+cương" title="Kim cương">
                                                     <span>Kim cương</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Tất cả">
+                                                <input type="checkbox" name="da-quy" id="da-quy" class="material" value="đá quý">
+                                                <a href="/search?material=đá+quý" title="Đá quý">
                                                     <span>Đá quý</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Tất cả">
+                                                <input type="checkbox" name="vang" id="vang" class="material" value="vàng">
+                                                <a href="/search?material=vàng" title="Vàng">
                                                     <span>Vàng</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Tất cả">
+                                                <input type="checkbox" name="bac" id="bac" class="material" value="bạc">
+                                                <a href="/search?material=bạc" title="Bạc">
                                                     <span>Bạc</span>
                                                 </a>
                                             </li> 
@@ -78,32 +83,38 @@
                                     <div class="product-filter__list">
                                         <ul>
                                             <li>
-                                                <a href="#" title="Tất cả">
+                                                <input type="checkbox" name="" id="" class="category" value="bông tai">
+                                                <a href="search?category=bông+tai" title="Bông tai">
                                                     <span>Bông tai</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Tất cả">
+                                                <input type="checkbox" name="" id="" class="category" value="nhẫn">
+                                                <a href="search?category=nhẫn" title="Nhẫn">
                                                     <span>Nhẫn</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Tất cả">
-                                                    <span>Vòng</span>
+                                                <input type="checkbox" name="" id="" class="category" value="vòng tay">
+                                                <a href="search?category=vòng+tay" title="Vòng tay">
+                                                    <span>Vòng tay</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Tất cả">
+                                                <input type="checkbox" name="" id="" class="category" value="dây chuyền">
+                                                <a href="search?category=dây+chuyền" title="Dây chuyền">
                                                     <span>Dây chuyền</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Tất cả">
+                                                <input type="checkbox" name="" id="" class="category" value="mặt dây chuyền">
+                                                <a href="/search?category=mặt+dây+chuyền" title="Mặt dây chuyền">
                                                     <span>Mặt dây chuyền</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" title="Tất cả">
+                                                <input type="checkbox" name="" id="" class="category" value="lắc">
+                                                <a href="/search?category=lắc" title="Lắc">
                                                     <span>Lắc</span>
                                                 </a>
                                             </li>
@@ -111,38 +122,10 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="product-filter">
-                                <div class="product-filter__title">
-                                    <span>Giới tính</span>
-                                </div>
-                                <div class="product-filter__content">
-                                    <div class="product-filter__list">
-                                        <ul>
-                                            <li>
-                                                <a href="#" title="Tất cả">
-                                                    <span>Nam</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="Tất cả">
-                                                    <span>Nữ</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="Tất cả">
-                                                    <span>Unisex</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
+                        <button type="submit">Áp dụng bộ lọc</button>
                    <!-- End_Filter- -->
                         </div>
                     </div>
-                </div>
                 <!--  End filter   -->
                 <div class="col l-9 c-12">
                     <div class="product-head">
@@ -158,124 +141,32 @@
                         </div>
                     </div>
                     <div class="row">
+                        {{#each products}}
                         <div class="col l-4 m-4 c-6">
                             <div class="component-product">
                                 <div class="component-product__image">
                                     <a href="">
                                         <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_1.jpg" alt="">
                                         <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_2.jpg" alt="">
+                                    <a href="/products/{{this.slug}}">
+                                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
                                     </a>
                                 </div>
 
                                 <div class="component-product__title">
-                                    <a href="">
-                                        <span>Dây chuyền chuộc tội</span>
+                                    <a href="/products/{{this.slug}}">
+                                        <span>{{this.name}}</span>
                                     </a>
                                 </div>
 
-                                <div class="component-product__price">60.000đ</div>
+                                <div class="component-product__price">{{#formatCurrency this.price}}{{/formatCurrency}}</div>
                             </div>
-                        </div>
-
-                        <div class="col l-4 m-4 c-6">
-                            <div class="component-product">
-                                <div class="component-product__image">
-                                    <a href="">
-                                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_1.jpg" alt="">
-                                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_2.jpg" alt="">
-                                    </a>
-                                </div>
-
-                                <div class="component-product__title">
-                                    <a href="">
-                                        <span>Dây chuyền chuộc tội </span>
-                                    </a>
-                                </div>
-
-                                <div class="component-product__price">60.000đ</div>
-                            </div>
-                        </div>
-
-                        <div class="col l-4 m-4 c-6">
-                            <div class="component-product">
-                                <div class="component-product__image">
-                                    <a href="">
-                                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_1.jpg" alt="">
-                                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_2.jpg" alt="">
-                                    </a>
-                                </div>
-
-                                <div class="component-product__title">
-                                    <a href="">
-                                        <span>Dây chuyền chuộc tội</span>
-                                    </a>
-                                </div>
-
-                                <div class="component-product__price">60.000đ</div>
-                            </div>
-                        </div>
-
-                        <div class="col l-4 m-4 c-6">
-                            <div class="component-product">
-                                <div class="component-product__image">
-                                    <a href="">
-                                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_1.jpg" alt="">
-                                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_2.jpg" alt="">
-                                    </a>
-                                </div>
-
-                                <div class="component-product__title">
-                                    <a href="">
-                                        <span>Dây chuyền chuộc tội</span>
-                                    </a>
-                                </div>
-
-                                <div class="component-product__price">60.000đ</div>
-                            </div>
-                        </div>
-
-                        <div class="col l-4 m-4 c-6">
-                            <div class="component-product">
-                                <div class="component-product__image">
-                                    <a href="">
-                                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_1.jpg" alt="">
-                                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_2.jpg" alt="">
-                                    </a>
-                                </div>
-
-                                <div class="component-product__title">
-                                    <a href="">
-                                        <span>Dây chuyền chuộc tội</span>
-                                    </a>
-                                </div>
-
-                                <div class="component-product__price">60.000đ</div>
-                            </div>
-                        </div>
-
-                        <div class="col l-4 m-4 c-6">
-                            <div class="component-product">
-                                <div class="component-product__image">
-                                    <a href="">
-                                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_1.jpg" alt="">
-                                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_2.jpg" alt="">
-                                    </a>
-                                </div>
-
-                                <div class="component-product__title">
-                                    <a href="">
-                                        <span>Dây chuyền chuộc tội</span>
-                                    </a>
-                                </div>
-
-                                <div class="component-product__price">60.000đ</div>
-                            </div>
-                        </div>
-
-
+                        </div>                       
+                        {{/each}}
                     </div>
 
                 </div>
             </div>
         </div>
     </section>
+</div>

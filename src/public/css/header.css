@@ -6,8 +6,9 @@ header {
     background-color: #F9F7F7; /* Set your desired background color */
     position: sticky;
     top: 0;
-    right: 0;
-    z-index: 10;
+    width: 100%;
+    background-color: #F9F7F7;
+    z-index: 1;
 }
 
 .top-header {

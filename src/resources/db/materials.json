@@ -1,0 +1,32 @@
+[
+    {
+        "name":"Kim cương",
+        "description":"Kim cương tự nhiên, kim cương tổng hợp",
+        "thumbnails":"path.jpg",
+        "price_per_gram":50
+    },
+    {
+        "name":"Vàng",
+        "description":"Vàng 18K, 24k,...",
+        "thumbnails": "path",
+        "price_per_gram":15
+    },
+    {
+        "name":"Bạc",
+        "description":"Bạc 925, 999,...",
+        "thumbnails": "path",
+        "price_per_gram":8
+    },
+    {
+        "name":"Bạch kim",
+        "description":"Bạch kim 750, 925",
+        "thumbnails": "path",
+        "price_per_gram":10
+    },
+    {
+        "name":"Ruby",
+        "description":"Ruby tự nhiên, tổng hợp",
+        "thumbnails": "path",
+        "price_per_gram":11
+    }
+]

@@ -1,136 +1,86 @@
 <div class="grid wide body-content">
 
-      <div class="breadcrumb">
-        <a href="#">Trang chủ</a>
-        <span>&gt;</span>
-        <a href="#">Trang sức kim cương</a>
-        <span>&gt;</span>
-        <a class="active">Dây chuyền Vàng trắng Ý 18K PNJ Unisex </a>
-      </div>
-
-
-      <div class="row body-product">
-        <!--Gallery -->
-        <div class="col l-7 product-images">
-          <div class="product-gallery">
-            <div class="thumbnails">
-                <button class="up-button"><i class="fa fa-chevron-up fa-2x" aria-hidden="true" ></i></button>
-                <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/182/on-GD0000W000948-day-chuyen-vang-trang-y-18k-pnj-2.jpg" alt="Thumbnail 1" class="thumbnail">
-                <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/182/on-GD0000W000948-day-chuyen-vang-trang-y-18k-pnj-2.jpg" alt="Thumbnail 2" class="thumbnail">
-                <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/182/sp-GD0000W000948-day-chuyen-vang-trang-y-18k-pnj-2.png" alt="Thumbnail 3" class="thumbnail">
-                <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/182/on-GD0000W000948-day-chuyen-vang-trang-y-18k-pnj-2.jpg" alt="Thumbnail 3" class="thumbnail">
-                <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/182/on-GD0000W000948-day-chuyen-vang-trang-y-18k-pnj-2.jpg" alt="Thumbnail 3" class="thumbnail">
-                <button class="up-button"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></button>
-            </div>
-            <div class="main-image-outer">
-                <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/182/sp-GD0000W000948-day-chuyen-vang-trang-y-18k-pnj-1.png" alt="Product Image 1" class="main-image">
-            </div>
+    <div class="breadcrumb">
+      <a href="/">Trang chủ</a>
+      <span>&gt;</span>
+      <a href="/search?category={{product.category}}">{{product.category}}</a>
+      <span>&gt;</span>
+      <a href="/search?material={{product.material}}">{{product.material}}</a>
+      <span>&gt;</span>
+      <a class="active">{{product.name}}</a>
+    </div>
+    <div class="row body-product">
+      <!--Gallery -->
+      <div class="col l-7 product-images">
+        <div class="product-gallery">
+          <div class="thumbnails">
+              <button class="up-button"><i class="fa fa-chevron-up fa-2x" aria-hidden="true" ></i></button>
+              <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/182/on-GD0000W000948-day-chuyen-vang-trang-y-18k-pnj-2.jpg" alt="Thumbnail 1" class="thumbnail">
+              <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/182/on-GD0000W000948-day-chuyen-vang-trang-y-18k-pnj-2.jpg" alt="Thumbnail 2" class="thumbnail">
+              <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/182/sp-GD0000W000948-day-chuyen-vang-trang-y-18k-pnj-2.png" alt="Thumbnail 3" class="thumbnail">
+              <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/182/on-GD0000W000948-day-chuyen-vang-trang-y-18k-pnj-2.jpg" alt="Thumbnail 3" class="thumbnail">
+              <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/182/on-GD0000W000948-day-chuyen-vang-trang-y-18k-pnj-2.jpg" alt="Thumbnail 3" class="thumbnail">
+              <button class="up-button"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></button>
+          </div>
+          <div class="main-image-outer">
+              <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/182/sp-GD0000W000948-day-chuyen-vang-trang-y-18k-pnj-1.png" alt="Product Image 1" class="main-image">
           </div>
         </div>
-        <!--Gallery -->
+      </div>
+      <!--Gallery -->
 
-        <!-- Details -->
-        <div class="col l-4 product-details">
+      <!-- Details -->
+      <div class="col l-4 product-details">
 
-          <div class="product-name-wrapper">
-            <img src="https://cdn.pnj.io/images/image-update/2022/10/pnjfast/PNJfast-Giaotrong3h.svg" alt="pnj" class="product-name-image">
-            <h3 class="product-name">Nhẫn trẻ em bạc đính đá Disney|PNJ ZTXMH000002</h3>
+        <div class="product-name-wrapper">
+          <img src="https://cdn.pnj.io/images/image-update/2022/10/pnjfast/PNJfast-Giaotrong3h.svg" alt="pnj" class="product-name-image">
+          <h3 class="product-name">{{product.name}}</h3>
+        </div>
+
+        <div class="product-sku-wrapper">
+          <h4 class="product-sku">Mã: {{product.sku}}</h4>
+        </div>
+
+        <div class="row product-price-wrapper">
+          <div class="col l-6 ">
+            <span class="product-price" id="price">{{#formatCurrency product.price}}{{/formatCurrency}}</span>
           </div>
+        </div>
 
-          <div class="product-sku-wrapper">
-            <h4 class="product-sku">Mã: GD0000W000948</h4>
+        <div class="product-selector">
+          <h3 class="product-size-title">Chọn {{product.size_title}}:</h3>
+          <div class="product-size-list">
+            {{#each product.sizes}}
+            <span class="product-size">{{this}}</span>
+            {{/each}}
           </div>
+        </div>
 
-          <div class="row product-price-wrapper">
-            <div class="col l-6 ">
-              <span class="product-price">Giá bán: 36.600.000 <small>đ</small></span>
-              
-            </div>
-            <div class="col l-6" style="text-align: right;">
-              <span class="product-price-default">Giá gốc: 72.600.000 <small>đ</small></span>
-            </div>
-          </div>
+        <div class="row product-stock-wrapper">
+            <span class="product-stock-status">Còn {{product.quantity}} sản phẩm</span>
+        </div>
+        <div class="add-to-cart-wrapper">
+          <button class="add-to-cart-btn">
+            <span class="add-to-cart-span-tittle"> Mua ngay</span>
+            <span class="add-to-cart-span">Miễn phí giao hàng tận nhà hoặc nhận tại cửa hàng</span>
+          </button>
+        </div>
 
-          <div class="product-selector">
-            <h3 class="product-size-title">Chọn chiều dài (cm):</h3>
-            <div class="product-size-list">
-              <span class="product-size">45</span>
-              <span class="product-size">46</span>
-              <span class="product-size">47</span>
-              <span class="product-size">48</span>
-            </div>
-          </div>
-
-          <div class="row product-stock-wrapper">
-              <span class="product-stock-status">Tình trạng - Còn hàng</span>
-          </div>
-
-          <div class="product-voucher">
-            <p class="product-voucher-title">Ưu Đãi:</p>
-            <div class="product-voucher-option">
-              <span class="option-item">
-                <img src="https://cdn.pnj.io/images/2023/vnpay48x48.png" alt="" class="option-item-img">
-                <span class="option-item-p">
-                  Mã <b>PNJVNPAY</b> tự động hiển thị 50k cho đơn từ 2 triệu khi quét <b>VNPAY-QR</b>
-                </span>
-              </span>
-
-              <span class="option-item">
-                <img src="https://cdn.pnj.io/images/2023/logo-momo.svg" alt="" class="option-item-img">
-                <span class="option-item-p">
-                  Nhập mã <b>MMQUYPHAI</b> giảm 2% tối đa 200K khi thanh toán qua <b>MOMO</b>
-                </span>
-              </span>
-            </div>
-          </div>
-
-          <div class="add-to-cart-wrapper">
-            <button class="add-to-cart-btn">
-              <span class="add-to-cart-span-tittle"> Mua ngay</span>
-              <span class="add-to-cart-span">Miễn phí giao hàng tận nhà hoặc nhận tại cửa hàng</span>
+        <div class="row add-to-cart-wrapper" >
+          <div class="col l-6">
+            <button class="add-to-whilist-btn">
+              <span class="add-to-cart-span-tittle"> <i class="fa fa-cart-plus" aria-hidden="true"></i>  Thêm vào giỏ hàng</span>
+              <span class="add-to-cart-span">Tiến hành thanh toán sau</span>
             </button>
           </div>
 
-          <div class="row add-to-cart-wrapper" >
-            <div class="col l-6">
-              <button class="add-to-whilist-btn">
-                <span class="add-to-cart-span-tittle"> <i class="fa fa-cart-plus" aria-hidden="true"></i>  Thêm vào giỏ hàng</span>
-                <span class="add-to-cart-span">Tiến hành thanh toán sau</span>
-              </button>
-            </div>
-
-            <div class="col l-6">
-              <button class="add-to-whilist-btn">
-                <span class="add-to-cart-span-tittle"> <i class="fa fa-heart" aria-hidden="true"></i> Thêm vào yêu thích</span>
-                <span class="add-to-cart-span">Dễ dàng xem lại sản phẩm</span>
-              </button>
-            </div>
+          <div class="col l-6">
+            <button class="add-to-whilist-btn">
+              <span class="add-to-cart-span-tittle"> <i class="fa fa-heart" aria-hidden="true"></i> Thêm vào yêu thích</span>
+              <span class="add-to-cart-span">Dễ dàng xem lại sản phẩm</span>
+            </button>
           </div>
         </div>
       </div>
-
-      <!-- Comment -->
-        <div class="row no-gutters body-comments-container">
-
-          <div class="col l-12">
-            <h1>Bình luận đánh giá</h1>
-
-          <div class="comment">
-              <div class="comment-header"> <i class="fa fa-user-circle" aria-hidden="true"></i> Bug UIT</div>
-              <div class="comment-body">Sản phẩm rất tuyệt </div>
-          </div>
-          <div class="comment">
-              <div class="comment-header"> <i class="fa fa-user-circle" aria-hidden="true"></i> Dead Meme</div>
-              <div class="comment-body">Sản phẩm như cứt. </div>
-          </div>
-          <!-- More comments... -->
-  
-          <div class="comment-form">
-              <textarea placeholder="Add a comment..."></textarea>
-              <button>Thêm bình luận</button>
-          </div>
-          </div>
-      </div>
-      <!-- Comment -->
-
     </div>
+</div>
