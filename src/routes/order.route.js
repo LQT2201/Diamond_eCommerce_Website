@@ -11,7 +11,7 @@ const Authentication = require('../app/middlewares/Authentication');
 
 // // Thêm sản phẩm
 // router.post('/products/add', productController.addProduct);
-
+router.post('/orders/add', Authentication.isAuth, orderController.addOrder);
 // // Xóa sản phẩm
 // router.get('/products/:id/delete', productController.deleteProduct);
 

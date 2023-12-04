@@ -1,4 +1,5 @@
 const Order = require('../models/Order');
+const Product = require('../models/Product');
 class OrderController {
     
     //  [GET] hiện thị lịch sử đơn hàng
@@ -18,23 +19,44 @@ class OrderController {
         if(!req.isLogged) {
             return res.redirect('/login');
         }
-        const reqOrder = req.body.order;
+        const reqOrder = req.body;
         if(!reqOrder) {
             return res.status(401).send('Order not found');
         }
-        if(reqOrder.username !== req.user.username) {
-            return res.status(401).send("Username not matched");
+        const reqProducts = reqOrder.products;
+        if(!reqProducts || reqProducts.length === 0){
+            return res.status(401).send("Product not found");
         }
         try {
+            const products = [];
+            let total_quantity = 0, total_price = 0;
+            let product;
+            
+            for(const {sku, quantity} of reqProducts) {
+                product = await Product.findOne({sku: sku});
+                if(product.quantity < quantity) {
+                    return res.status(401).send("Insufficient quantity of product");
+                }
+                product.quantity -= quantity;
+                await product.save();
+                total_quantity++;
+                total_price += product.price * quantity;
+                products.push({
+                    product: product,
+                    product_quantity: quantity, 
+                })
+            }
+            if(products.length === 0)
+                return res.status(401).send("Product not found");
             const order = await Order.create({
-                username: reqOrder.username,
-                products: reqOrder.products,
-                total_quantity: reqOrder.total_quantity,
-                total_price: reqOrder.total_price,
+                username: req.username,
+                products: products,
+                total_quantity: total_quantity,
+                total_price: total_price,
                 address: reqOrder.address,
-                status: reqOrder.status,
+                phone: reqOrder.phone,
+                status: "Đang xử lý đơn hàng",
             });    
-
             return res.status(201).send('Order create successful');
         } catch (error) {
             return res.status(401).send(error);

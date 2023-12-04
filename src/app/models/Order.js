@@ -16,8 +16,13 @@ const orderSchema = new Schema({
   }],
   status: String,
   total_quantity: Number,
-  total_Price: Number,
+  total_price: Number,
+  phone: String,
   address: String,
+  createAt: {
+    type: Date, 
+    default: Date.now,
+  }
   // Thêm các trường khác nếu cần
 });
 const Order = mongoose.model('Order', orderSchema);

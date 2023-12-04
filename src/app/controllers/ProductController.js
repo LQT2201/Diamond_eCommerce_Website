@@ -27,15 +27,6 @@ class ProductController {
         }
     }
     
-    // CÁC XỬ LÍ TRANG ADMIN
-
-    // Hiển thị màn hình thêm sản phẩm
-    adminShowProduct(req,res) {
-        res.render('admin/admin-product',{
-            style: '/css/admin-product.css',
-            isAdmin: 1,
-        });
-    }
 
     // Hiển thị màn hình thêm sản phẩm
     showAddForm(req,res) {

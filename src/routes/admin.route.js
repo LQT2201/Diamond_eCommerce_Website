@@ -12,5 +12,6 @@ router.get('/admin/logout', adminAuthentication.isAuth, adminController.logout);
 router.get('/admin/order', adminAuthentication.isAuth, adminController.showOrders);
 router.post('/admin/register', adminController.register);
 router.post('/admin/login', adminController.login);
+router.get('/admin/products', adminAuthentication.isAuth ,adminController.showProducts);
 
 module.exports = router;

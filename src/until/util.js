@@ -28,5 +28,8 @@ const slugify = (name) => {
   .replace(/\s+/g, '-') // replace spaces with hyphens
   .replace(/-+/g, '-'); // remove consecutive hyphens
 }
-
-module.exports = { getToken , slugify, getAdminToken};
+const toObjectId = (id) => {
+  var ObjectId = (require('mongoose').Types.ObjectId);
+  return new ObjectId(id);
+}
+module.exports = { getToken , slugify, getAdminToken, toObjectId};

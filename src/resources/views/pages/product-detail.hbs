@@ -43,7 +43,7 @@
 
         <div class="row product-price-wrapper">
           <div class="col l-6 ">
-            <span class="product-price" id="price">{{#formatCurrency product.price}}{{/formatCurrency}}</span>
+            <span class="product-price" id="price">{{formatCurrency product.price}}</span>
           </div>
         </div>
 
@@ -65,21 +65,11 @@
             <span class="add-to-cart-span">Miễn phí giao hàng tận nhà hoặc nhận tại cửa hàng</span>
           </button>
         </div>
-
-        <div class="row add-to-cart-wrapper" >
-          <div class="col l-6">
+        <div class="add-to-cart-wrapper" >
             <button class="add-to-whilist-btn">
               <span class="add-to-cart-span-tittle"> <i class="fa fa-cart-plus" aria-hidden="true"></i>  Thêm vào giỏ hàng</span>
               <span class="add-to-cart-span">Tiến hành thanh toán sau</span>
             </button>
-          </div>
-
-          <div class="col l-6">
-            <button class="add-to-whilist-btn">
-              <span class="add-to-cart-span-tittle"> <i class="fa fa-heart" aria-hidden="true"></i> Thêm vào yêu thích</span>
-              <span class="add-to-cart-span">Dễ dàng xem lại sản phẩm</span>
-            </button>
-          </div>
         </div>
       </div>
     </div>
