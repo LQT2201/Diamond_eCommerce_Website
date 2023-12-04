@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login-signin.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <span>Use your email for register</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Confirm password">
+                <button>Sign up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <span>Enter your email password</span>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Sign in</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome</h1>
+                    <button class="hidden" id="login">Sign in</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello</h1>
+                    <button class="hidden" id="register">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/login-signin.js"></script>
+</body>
+
+</html>
