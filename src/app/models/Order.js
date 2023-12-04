@@ -1,7 +1,7 @@
 // models/Order.js
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
-const mongoose = require('mongoose');
 
 const Product = require('../models/Product');
 
@@ -14,6 +14,7 @@ const orderSchema = new Schema({
       min: 0,
     }
   }],
+  status: String,
   total_quantity: Number,
   total_Price: Number,
   address: String,

@@ -3,8 +3,8 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const adminSecretKey = "b6d5ddf1cde676bb2290a30f0dec482fd3346022623a3a917bab058b95d766c9";
 const expiresIn = 7 * 3600 * 24 * 1000;
-const util = require('../../until/util')
-
+const util = require('../../until/util');
+const Order = require('../models/Order');
 class AdminController {
   showAdmin(req,res) {
     if(!req.admin)
@@ -17,15 +17,18 @@ class AdminController {
     });
   }
   showAdminLogin(req, res) {
-    if(!req.admin)
-        res.redirect('/pages/account/login');
-    else
-    res.render('admin/admin-account',{
-      title:'Login',
-      isAdmin: 1,
-      style: '/css/login.css',
-      script: '/js/admin-login.js',
-    });
+    if(req.admin) {
+        res.redirect('/admin')
+    }
+    else{
+        res.render('admin/admin-login',{
+            title:'Login',
+            isAdmin: 1,
+            style: '/css/login.css',
+            script: '/js/admin-login.js',
+          });
+    }
+    
   }
   async login(req, res) {
     try {
@@ -54,6 +57,20 @@ class AdminController {
     } catch (error) {
         console.log(error);
         res.status(401).send(error);
+    }
+  }
+  async showOrders(req, res) {
+    if(!req.admin) {
+        res.redirect('/admin/login');
+    }
+    else{
+        const orders = await Order.find({}).lean();
+        res.render('admin/admin-order',{
+            title: 'Admin orders',
+            isAdmin: 1,
+            admin: req.admin.toObject(),
+            orders: orders,
+        })
     }
   }
   async logout(req, res) {

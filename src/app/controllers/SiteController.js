@@ -21,7 +21,7 @@ class ProductController {
     async search(req,res) {
         let products = null;
         try {
-            let {keyword, category, material, sort_type} = req.query;
+            let {keyword, category, material, sort_type, price_from, price_to} = req.query;
             if(keyword instanceof Array) {
                 keyword = keyword.join('|')
             }
@@ -39,6 +39,11 @@ class ProductController {
                     material = [material];
                 }
                 query[0].material = { $in: material }
+            }
+            if(price_from && price_to) {
+                price_from = parseInt(price_from);
+                price_to = parseInt(price_to);
+                query[0].price = {$gte: price_from, $lte: price_to};
             }
             query.push(null);
             if(sort_type === '1') {

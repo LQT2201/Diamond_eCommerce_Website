@@ -11,7 +11,7 @@ class CartController {
         else{
             const cart = await Cart.findOne({ 
                 username: req.user.username 
-            })?.lean();
+            }).lean();
             res.render('pages/cart', {
                 title: 'Cart',
                 style: '/css/cart.css',

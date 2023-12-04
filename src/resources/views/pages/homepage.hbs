@@ -140,7 +140,7 @@
                 </div>
 
                 <div class="component-product__price">$ {{price}}</div>
-                <button class="component-product__btnAdd" onclick="addCart({{_id}})>ADD TO CART</button>
+                <button class="component-product__btnAdd" onclick="addToCart" ></button>
             </div>
         </div>  
         {{/each}}                
@@ -174,9 +174,6 @@
 <!-- End content -->
 
 <script>
-
-    
-
     let iconCart = document.querySelector('.iconCart');
     let cart = document.querySelector('.cart');
     let close = document.querySelector('.close');

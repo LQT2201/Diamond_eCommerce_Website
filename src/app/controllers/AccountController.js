@@ -3,8 +3,8 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const secretKey = "c83c121ed9634881eb16d9df31714b63b2d07d0bd00d9859949b35ed46d15d8a";
 const expiresIn = 7 * 3600 * 24 * 1000;
-const util = require('../../until/util')
-
+const util = require('../../until/util');
+const Order = require('../models/Order');
 class AccountController {
     // [GET] /account 
     // Hiển thị thông tin tài khoản 
@@ -49,12 +49,16 @@ class AccountController {
     showOrders(req,res) {
         if(!req.user)
             res.redirect('/login');
-        res.render('pages/account/orders-history',{
-            title: 'Order history',
-            style: '/css/orders-history.css',
-            isAdmin: 0,
-            user: req.user.toObject(),
-        });
+        else{
+            const orders = Order.find({username: req.user.username}).lean();
+            res.render('pages/account/orders-history',{
+                title: 'Order history',
+                style: '/css/orders-history.css',
+                isAdmin: 0,
+                user: req.user.toObject(),
+                orders: orders,
+            });
+        }
     }
 
     // [GET] /wishlist
