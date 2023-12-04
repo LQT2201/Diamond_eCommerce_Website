@@ -1,0 +1,263 @@
+body {
+    background-color: #f1f1f1;
+}
+
+.content_account_title {
+    background-color: #fff;
+    margin: 10px;
+    border-left: 10px solid rgb(11, 14, 199);
+    width: 98%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.content_account_title h2 {
+    margin-left: 10px;
+    color: rgb(51, 108, 214);
+}
+
+.staff_account {
+    border-collapse: collapse;
+    margin: 25px 0px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.staff_account {
+    text-align: center;
+    border-collapse: collapse;
+    margin: 25px 0px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.staff_account thead tr {
+    background-color: rgb(2, 4, 83);
+    color: #fff;
+    font-weight: bold;
+    height: 50px;
+
+}
+
+.staff_account th,
+.staff_account td {
+    padding: 8px;
+}
+
+.staff_account tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.staff_account tbody tr:last-of-type {
+    border-bottom: 2px solid #03acca;
+}
+
+.staff_account tbody tr:hover {
+    background-color: #ddddddec;
+}
+
+.staff_account tbody tr button {
+    border-radius: 5px;
+}
+
+.staff_account tbody tr button:hover {
+    background-color: rgba(255, 0, 55, 0.884);
+    transform: scale(1.1);
+    color: white;
+    font-weight: bold;
+}
+
+
+.user_account {
+    border-collapse: collapse;
+    margin: 25px 0px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.user_account {
+    border-collapse: collapse;
+    margin: 25px 0px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+}
+
+.user_account thead tr {
+    background-color: rgb(2, 4, 83);
+    color: #fff;
+    font-weight: bold;
+    height: 50px;
+
+}
+
+.user_account th,
+.user_account td {
+    padding: 8px;
+}
+
+.user_account tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.user_account tbody tr:last-of-type {
+    border-bottom: 2px solid #03acca;
+}
+
+.user_account tbody tr:hover {
+    background-color: #ddddddec;
+}
+
+.user_account tbody tr button {
+    border-radius: 5px;
+}
+
+.user_account tbody tr button:hover {
+    background-color: rgba(255, 0, 55, 0.884);
+    transform: scale(1.1);
+    color: white;
+    font-weight: bold;
+}
+
+
+.account_staff_list {
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.account_staff_list h3 {
+    color: blueviolet;
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.add_staff_account_btn {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(133, 245, 133);
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.add_staff_account_btn:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.add_account_staff {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+}
+
+.add_account_staff div {
+    margin: 10px;
+    font-size: 1.1em;
+    display: grid;
+    grid-template-columns: 0.2fr 0.3fr;
+
+}
+
+.add_account_staff div span {
+    font-weight: 700;
+}
+
+.staff_type select {
+    font-size: 16px;
+}
+
+.staff_create button {
+    width: 150px;
+    height: 30px;
+    font-weight: 700;
+    border: none;
+    background-color: #03acca;
+    color: white;
+    border-radius: 10px;
+}
+
+.staff_create button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.account_user_list {
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+
+.account_user_list h3 {
+    color: blueviolet;
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+}
+
+
+.account_action_search {
+    display: flex;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    justify-content: flex-end;
+
+}
+
+.account_action_search span {
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.account_action_search input {
+    border: none;
+    border-bottom: 1px solid #bebebe;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+}
+
+.account_action_search button {
+    margin-left: 10px;
+    border: none;
+    padding: 0;
+    background-color: #fff;
+}
+
+.account_action_search button::after {
+    content: '\1F50D';
+    background-color: #fff;
+    padding: 0;
+    font-size: 16px;
+}
+
+
+.account_action_search button:hover {
+    font-weight: bold;
+    color: green;
+    transform: scale(1.2);
+    cursor: pointer;
+}
