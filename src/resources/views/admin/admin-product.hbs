@@ -1,661 +1,74 @@
-Skip to content
-LQT2201
-/
-Diamond_eCommerce_Website
-
-Type / to search
-
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Commit
-Editcheckout
- main
-@Vanphong157
-Vanphong157 committed 15 hours ago 
-1 parent a44191b
-commit fac3416
- 
-Showing 2 changed files with 266 additions and 204 deletions.
-Filter changed files
-  84 changes: 73 additions & 11 deletions84  
-src/public/css/checkout.css
-@@ -18,6 +18,10 @@ ul {
-    }
-}
-
-.row {
-    width: 100%;
-}
-
-
-
-
-@@ -227,6 +231,7 @@ ul {
-.progress-lists {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.progress-lists li {
-@@ -296,6 +301,7 @@ ul {
-    background-color: #fbf9f1;
-    margin: 14px 0px;
-    border-radius: 10px;
-    width: 100%;
-}
-
-.content_title span {
-@@ -317,21 +323,46 @@ ul {
-/*  
-    Thông tin cá nhân
-*/
-.sex {
-    margin: 0px 10px;
-.row.sex {
-    margin: 0px 20px;
-}
-
-.sex label {
-    font-size: 14px;
-}
-
-label.sex:after {
-    padding-left: 3px;
-    color: #ea7162;
-    content: "*";
-    font-size: 14px;
-    line-height: 1px;
-    font-size: 18px;
-}
-
-.infor {
-    width: 100%;
-}
-
-.sex {
-    align-items: center;
-}
-
-
-.infor_content {
-    width: 100%;
-}
-
-.infor_user {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.infor_1 {
-    justify-content: center;
-}
-
-.infor_2 {
-    justify-content: center;
-}
-
-.infor_user input {
-@@ -343,11 +374,13 @@ label.sex:after {
-    border: 1px solid #a8a8a8;
-}
-
-
-.infor_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 0px;
-    width: 100%;
-}
-
-.infor_btn button {
-@@ -372,6 +405,15 @@ label.sex:after {
-
-/* Giao diện giao hàng */
-
-.select_shipment {
-    width: 100%;
-    justify-content: center;
-}
-
-.select_shipment div {
-    /* flex: 0%; */
-}
-
-.select_shipment button {
-    width: 100%;
-    height: 50px;
-@@ -401,10 +443,19 @@ label.sex:after {
-    border: 1px solid #a8a8a8;
-}
-
-.location_infor_1 {
-    justify-content: center;
-}
-
-.location_infor_2 {
-    justify-content: center;
-}
-
-
-.location_infor input {
-    width: 100%;
-    height: 40px;
-    padding: 4px 15px;
-    height: 30px;
-    padding: 4px 0px;
-    border-radius: 5px;
-    margin: 5px 0px;
-    border: 1px solid #a8a8a8;
-@@ -467,12 +518,16 @@ label.sex:after {
-    font-size: 13px;
-}
-
-.shipment_content {
-.row.shipment_content {
-    display: block;
-}
-
-.onstore_content {
-    display: none;
-.row.onstore_content {
-    display: block;
-}
-
-.onstore_location {
-    justify-content: center;
-}
-
-.onstore_location select {
-@@ -485,7 +540,7 @@ label.sex:after {
-}
-
-.store_address select {
-    width: 96%;
-    width: 100%;
-    height: 40px;
-    padding: 4px 8px;
-    border-radius: 5px;
-@@ -504,4 +559,11 @@ label.sex:after {
-
-.store_note {
-    margin-bottom: 10px;
-}
-}
-
-
-
-
-
-/* 
-Fix css */
- 386 changes: 193 additions & 193 deletions386  
-src/resources/views/pages/checkout.hbs
-@@ -1,248 +1,248 @@
-<div class="grid wide">
-    <div class="row button_back">
-      <button>Tiếp tục mua hàng</button>
-    </div>
-  <div class="row button_back">
-    <button>Tiếp tục mua hàng</button>
-  </div>
-
-    <div class="row cart">
-      <div class="col-sm-4 cart_content">
-        <div class="row cart_title">
-          <h2>Thông tin giỏ hàng</h2>
-  <div class="row cart">
-    {{!-- <div class="col l-4 cart_content">
-      <div class="row cart_title">
-        <h2>Thông tin giỏ hàng</h2>
-      </div>
-      <div class="row des_cart">
-        <div class="col l-4 image_product">
-          <image
-            src="https://cdn.pnj.io/images/thumbnails/120/120/detailed/135/gl0000y001883-lac-tay-vang-18k-pnj-1.png">
-          </image>
-        </div>
-        <div class="row des_cart">
-          <div class="col-sm-4 image_product">
-            <image
-              src="https://cdn.pnj.io/images/thumbnails/120/120/detailed/135/gl0000y001883-lac-tay-vang-18k-pnj-1.png">
-            </image>
+<body>
+  <div class="grid wide container">
+    <div class="row">
+      <div class="content">
+        <div class="content product">
+          <div class="content_product_title">
+            <h2>Sản phẩm</h2>
           </div>
-          <div class="col-sm-8 element_product">
-            <div class="row product_name">
-              <span>Lắc tay Vàng 18K PNJ 0000Y001883</span>
-            </div>
-            <div class="row product_key">
-              <div class="col-sm-2 key_element">
-                <span>Mã:</span>
+          <div class="content_product_form">
+            <div class="row content_product_action">
+              <div class="product_action_add">
+                <button>Thêm sản phẩm</button>
               </div>
-              <div class="col-sm-10 key_code">
-                <span>GL0000Y001883</span>
-              </div>
-        <div class="col l-8 element_product">
-          <div class="row product_name">
-            <span>Lắc tay Vàng 18K PNJ 0000Y001883</span>
-          </div>
-          <div class="row product_key">
-            <div class="col l-2 key_element">
-              <span>Mã:</span>
-            </div>
-            <div class="row product_cost">
-              <div class="col-sm-5 cost_element">
-                <span>Giá:</span>
-              </div>
-              <div class="col-sm-6 cost_number">
-                <span>15.976.000</span>
-              </div>
-            <div class="col l-10 key_code">
-              <span>GL0000Y001883</span>
-            </div>
-            <div class="row product_size">
-              <div class="col-sm-5 size_element">
-                <span>Kích thước:</span>
-              </div>
-              <div class="col-sm-6 size_option">
-                <div class="row size_option_title">
-                  <span>Chọn chiều dài (cm):</span>
-                </div>
-                <div class="row size_option_select">
-                  <select>
-                    <option>17</option>
-                    <option>20</option>
-                  </select>
-                </div>
-              </div>
-          </div>
-          <div class="row product_cost">
-            <div class="col l-5 m-12 cost_element">
-              <span>Giá:</span>
-            </div>
-            <div class="col l-5 m-12 cost_number">
-              <span>15.976.000</span>
-            </div>
-          </div>
-          <div class="row product_size">
-            <div class="col l-5 m-12 size_element">
-              <span>Kích thước:</span>
-            </div>
-            <div class="row product_count">
-              <div class="col-sm-5 count_element">
-                <span>Số lượng:</span>
-            <div class="col l-5 m-12 size_option">
-              <div class="row size_option_title">
-                <span>Chọn chiều dài (cm):</span>
-              </div>
-              <div class="col-sm-6 count_number">
-                <button>-</button>
-                <input type="text" value="1" size="1">
-                <button>+</button>
-              <div class="row size_option_select">
-                <select>
-                  <option>17</option>
-                  <option>20</option>
-                </select>
+              <div class="product_action_search">
+                <span>Tìm kiếm: </span>
+                <input type="text" placeholder="Tên sản phẩm">
+                <button></button>
               </div>
             </div>
-
-            <div class="row delete_product">
-              <button>Xóa</button>
-          </div>
-          <div class="row product_count">
-            <div class="col l-5 m-12 count_element">
-              <span>Số lượng:</span>
-            </div>
-            <div class="col l-5 m-12 count_number">
-              <button>-</button>
-              <input type="text" value="1" size="1">
-              <button>+</button>
-            </div>
-          </div>
-
-          <div class="row delete_product">
-            <button>Xóa</button>
-          </div>
-        </div>
-        <div class="row cart-totals">
-          <div class="row cart-clearfix">
-            <div class="row totals_product">
-              <div class="col-sm-5 totals_product_element">
-                <span>Tạm tính: </span>
-              </div>
-              <div class="col-sm-7 totals_product_cost">
-                <span>15.976.000</span>
-              </div>
-      </div>
-      <div class="row cart-totals">
-        <div class="row cart-clearfix">
-          <div class="row totals_product">
-            <div class="col l-5 m-12 totals_product_element">
-              <span>Tạm tính: </span>
-            </div>
-            <div class="row totals_delivery">
-              <div class="col-sm-5 totals_delivery_element">
-                <span>Phí vận chuyển: </span>
-              </div>
-              <div class="col-sm-7 totals_delivery_cost">
-                <span>Miễn phí</span>
-              </div>
-            <div class="col l-7 totals_product_cost">
-              <span>15.976.000</span>
-            </div>
-          </div>
-
-          <div class="row total-cart">
-            <div class="col-sm-5 totals_cart_element">
-              <span>Thành tiền: </span>
-          <div class="row totals_delivery">
-            <div class="col l-5 m-12 totals_delivery_element">
-              <span>Phí vận chuyển: </span>
-            </div>
-            <div class="col-sm-7 totals_cart_cost">
-              <span>15.976.000</span>
-            <div class="col l-7 totals_delivery_cost">
-              <span>Miễn phí</span>
-            </div>
-          </div>
-        </div>
-        <div class="row total-cart">
-          <div class="col l-5 m-12 totals_cart_element">
-            <span>Thành tiền: </span>
-          </div>
-          <div class="col l-7 totals_cart_cost">
-            <span>15.976.000</span>
-          </div>
-        </div>
-      </div>
-    </div> --}}
-
-
-      <div class="col-sm-8 infor_content">
-        <div class="row checkout-step">
-          <div class="row checkout-progress">
-            <ul class="progress-lists">
-              <li> Thông tin người mua
-              </li>
-              <li>Hình thức nhận hàng</li>
-              <li>Đặt hàng</li>
-              <li>Thanh toán</li>
-            </ul>
-          </div>
-    <div class="col l-12 infor_content">
-      <div class="row checkout-step">
-        <div class="row checkout-progress">
-          <ul class="progress-lists">
-            <li> Thông tin người mua
-            </li>
-            <li>Hình thức nhận hàng</li>
-            <li>Đặt hàng</li>
-            <li>Thanh toán</li>
-          </ul>
-        </div>
-
-          <div class="row infor">
-            <div class="row content_title">
-              <span>1</span>
-              <h2>Thông tin cá nhân</h2>
-            </div>
-            <div class="row infor_content">
-              <div class="row sex">
-                <input type="radio" name="male_female" value="male"><label class="sex" for="male_female">Nam</label>
-                <input type="radio" name="male_female" value="female"><label class="sex" for="male_female">Nữ</label>
-              </div>
-        <div class="row infor">
-          <div class="row content_title">
-            <span>1</span>
-            <h2>Thông tin cá nhân</h2>
-          </div>
-          <div class="row infor_content">
-            <div class="row sex">
-              <input type="radio" name="male_female" value="male"><label class="sex" for="male_female">Nam</label>
-              <input type="radio" name="male_female" value="female"><label class="sex" for="male_female">Nữ</label>
-            </div>
-            <div class="row infor_user">
-              <div class="row infor_1">
-                <div class="col-sm-6 infor_name">
-                  <input type="text" placeholder="Tên">
-                </div>
-                <div class="col-sm-6 infor_sdt">
-                  <input type="text" placeholder="Số điện thoại">
-                </div>
-          </div>
-          <div class="row infor_user">
-            <div class="row infor_1">
-              <div class="col l-5 m-12 infor_name">
-                <input type="text" placeholder="Tên">
-              </div>
-              <div class="row infor_2">
-                <div class="col-sm-6 infor_email">
-                  <input type="text" placeholder="Email">
-                </div>
-                <div class="col-sm-6 infor_birth">
-                  <input type="text" placeholder="Ngày sinh">
-                </div>
-              <div class="col l-5 m-12 infor_sdt">
-                <input type="text" placeholder="Số điện thoại">
-              </div>
-            </div>
-            <div class="row infor_btn">
-              <button>Tiếp tục</button>
-            <div class="row infor_2">
-              <div class="col l-5 m-12 infor_email">
-                <input type="text" placeholder="Email">
-              </div>
-              <div class="col l-5 m-12 infor_birth">
-                <input type="text" placeholder="Ngày sinh">
-              </div>
-            </div>
-
-          </div>
-          <div class="row infor_btn">
-            <button>Tiếp tục</button>
-          </div>
-
-          <div class="row location">
-            <div class="row content_title">
-              <span>2</span>
-              <h2>Hình thức nhận hàng</h2>
-            </div>
-            <div class="row select_shipment">
-              <div class="col-sm-6 btn_online">
-                <button class="btn_shipment_online" onclick="show_display('shipment_content')">Giao hàng tận
-                  nơi</button>
-              </div>
-              <div class="col-sm-6 btn_offline">
-                <button class="btn_shipment_offline" onclick="show_display('onstore_content')">Nhận hàng tại
-                  quầy</button>
-              </div>
-        </div>
-
-        <div class="row location">
-          <div class="row content_title">
-            <span>2</span>
-            <h2>Hình thức nhận hàng</h2>
-          </div>
-          <div class="row select_shipment">
-            <div class="col l-5 m-12 btn_online">
-              <button class="btn_shipment_online" onclick="show_display('shipment_content')">Giao hàng tận
-                nơi</button>
-            </div>
-            <div class="row shipment_content">
-              <div class="row location_infor">
-                <div class="row location_infor_1">
-                  <div class="col-sm-6 location_province">
-                    <select>
-                      <option>- Chọn Tỉnh/TP (*) -</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-6 location_district">
-                    <select>
-                      <option>- Chọn Quận/Huyện (*) -</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="row location_infor_2">
-                  <div class="col-sm-6 location_ward">
-                    <select>
-                      <option>- Chọn Phường/Xã (*) -</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-6 location_building">
-                    <input type="text" placeholder="Nhập Địa chỉ khách hàng *">
-                  </div>
-            <div class="col l-5 m-12 btn_offline">
-              <button class="btn_shipment_offline" onclick="show_display('onstore_content')">Nhận hàng tại
-                quầy</button>
-            </div>
-          </div>
-          <div class="row shipment_content">
-            <div class="row location_infor">
-              <div class="row location_infor_1">
-                <div class="col l-5 m-12 location_province">
-                  <select>
-                    <option>- Chọn Tỉnh/TP (*) -</option>
-                  </select>
-                </div>
-                <div class="row note_shipment">
-                  <input type="text" placeholder="Ghi chú khác">
-                <div class="col l-5 m-12 location_district">
-                  <select>
-                    <option>- Chọn Quận/Huyện (*) -</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row method_shipment">
-                <div class="row title_method">
-                  <h2>Phương thức vận chuyển:</h2>
-              <div class="row location_infor_2">
-                <div class="col l-5 m-12 location_ward">
-                  <select>
-                    <option>- Chọn Phường/Xã (*) -</option>
-                  </select>
-                </div>
-                <div class="row method_content">
-                  <div class="col-sm-0 select_method">
-                    <input type="radio">
-                  </div>
-                  <div class="col-sm-6 des_method">
-                    <div class="row des_title">
-                      <span>Miễn phí giao hàng nhanh</span>
-                    </div>
-                    <div class="row des_delivery">
-                      <span>Dự kiến nhận hàng: 1-7 ngày</span>
-                    </div>
-                  </div>
-                <div class="col l-5 m-12 location_building">
-                  <input type="text" placeholder="  - Nhập Địa chỉ khách hàng * -   ">
-                </div>
-              </div>
-              <div class="row note_shipment">
-                <input type="text" placeholder="Ghi chú khác">
-              </div>
-            </div>
-            <div class="row onstore_content">
-              <div class="row onstore_location">
-                <div class="col-sm-6 store_province">
-                  <select>
-                    <option>Quảng Trị</option>
-                  </select>
-            <div class="row method_shipment">
-              <div class="row title_method">
-                <h2>Phương thức vận chuyển:</h2>
-              </div>
-              <div class="row method_content">
-                <div class="col l-0 select_method">
-                  <input type="radio">
-                </div>
-                <div class="col-sm-6 store_district">
-                  <select>
-                    <option>Huyện Hải Lăng</option>
-                  </select>
-                <div class="col l-5 m-12 des_method">
-                  <div class="row des_title">
-                    <span>Miễn phí giao hàng nhanh</span>
-                  </div>
-                  <div class="row des_delivery">
-                    <span>Dự kiến nhận hàng: 1-7 ngày</span>
-                  </div>
-                </div>
-              </div>
-              <div class="row store_address">
-            </div>
-          </div>
-          <div class="row onstore_content">
-            <div class="row onstore_location">
-              <div class="col l-5 m-12 store_province">
-                <select>
-                  <option>
-                    Tạm hết tại cửa hàng, bạn có thể chọn Giao hàng tận nơi
-                  </option>
-                  <option>Quảng Trị</option>
-                </select>
-              </div>
-              <div class="row store_note">
-                <input type="text" placeholder="Ghi chú khác">
-              <div class="col l-5 m-12 store_district">
-                <select>
-                  <option>Huyện Hải Lăng</option>
-                </select>
-              </div>
-            </div>
-            <div class="row store_address">
+            <div class="content_product_filter">
               <select>
-                <option>
-                  Tạm hết tại cửa hàng, bạn có thể chọn Giao hàng tận nơi
-                </option>
+                <option>Danh mục</option>
               </select>
+              <input type="number" placeholder="Giá bắt đầu">
+              <input type="number" placeholder="Giá kết thúc">
+              <button>Lọc</button>
             </div>
-            <div class="row store_note">
-              <input type="text" placeholder="Ghi chú khác">
+            <div class="row content_product_list">
+              <table class="product_table">
+                <thead>
+                  <tr>
+                    <th>STT</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Danh mục</th>
+                    <th>Hình ảnh</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Nhẫn PNJ cao cấp</td>
+                    <td>Nhẫn</td>
+                    <td>Hình ảnh</td>
+                    <td>10</td>
+                    <td>12.000.000 đ</td>
+                    <td><button id="product_btn_edit">Sửa</button></td>
+                    <td><button>Xóa</button></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Nhẫn PNJ cao cấp</td>
+                    <td>Nhẫn</td>
+                    <td>Hình ảnh</td>
+                    <td>10</td>
+                    <td>12.000.000 đ</td>
+                    <td><button id="product_btn_edit">Sửa</button></td>
+                    <td><button>Xóa</button></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-
-          <div class="row button_confirm">
-            <button>Đặt hàng</button>
-          </div>
-
-        <div class="row button_confirm">
-          <button>Đặt hàng</button>
-        </div>
-
-      </div>
-
-
-
       </div>
     </div>
   </div>
-</div>
-0 comments on commit fac3416
-@LQT2201
-Comment
- 
-Leave a comment
- 
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Editcheckout · LQT2201/Diamond_eCommerce_Website@fac3416
+  </div>
+
+
+</body>
