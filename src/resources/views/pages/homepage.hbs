@@ -139,15 +139,18 @@
                     </a>
                 </div>
 
-                <div class="component-product__price">$ {{price}}</div>
-                <button class="component-product__btnAdd" onclick="addToCart" ></button>
+                <div class="component-product__price">$ {{price}}
+                </div>
+                {{!-- <button class="component-product__btnAdd" onclick="addCart({{_id}})>ADD TO CART</button> --}}
+                <button class="component-product__btnAdd"</button>
             </div>
         </div>  
         {{/each}}                
     </div>
 
-    <div class="cart__overlay"></div>
-<div class="cart">
+    <div class="cart__overlay">
+    </div>
+    <div class="cart">
 
         <div class="cart__title">
             <h2>CART</h2>
@@ -167,13 +170,31 @@
                 <a href="/cart/checkout">CHECKOUT</a>
             </button>
         </div>
-</div>
-
-
+    </div>
+    <!-- Begin ads -->
+    <div class="ads" id ="advertisement">
+        <div class="ads_container">
+            <div class="ads_content">
+                <div class="img_ads">
+                    <div class="skipbtn" id ="skipButton">
+                        <img src="/image/skip_ads.png" alt="Skip">
+                    </div>
+                    <div class="adsshow">
+                        <img src="/image/homepage_ads.jpg" alt="Advertisement">
+                    </div>
+                </div>
+                <a href="https://www.facebook.com/lqt.2201" target="_blank"> CONTACT US </a>
+            </div>
+        </div>
+    </div>
+    <!-- End ads -->
 </div>
 <!-- End content -->
 
 <script>
+
+    
+
     let iconCart = document.querySelector('.iconCart');
     let cart = document.querySelector('.cart');
     let close = document.querySelector('.close');
@@ -324,5 +345,5 @@ function changeQuantity($idProduct, $type){
     addCartToHTML();
 }
 
-    
+
 </script>

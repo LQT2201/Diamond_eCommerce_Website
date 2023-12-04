@@ -13,7 +13,7 @@ class AccountController {
             res.redirect('/login');
         else
         res.render('pages/account/account-detail',{
-            title: 'Account-detail',
+            title: 'Thông tin tài khoản',
             style: '/css/account-detail.css',
             script: '/js/account-detail.js',
             user: req.user.toObject(),
@@ -26,7 +26,7 @@ class AccountController {
             res.redirect('/account');
         else
         res.render('pages/account/login',{
-            title:'Login',
+            title:'Đăng nhập',
             style: '/css/login.css',
             script: '/js/account-login.js',
         })
@@ -38,7 +38,7 @@ class AccountController {
             res.redirect('/account');
         else
         res.render('pages/account/register', {
-            title:'Register',
+            title:'Đăng ký',
             style:'/css/register.css',
             script: '/js/account-register.js',
             isAdmin: 0,

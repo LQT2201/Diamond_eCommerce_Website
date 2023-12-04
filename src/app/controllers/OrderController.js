@@ -9,7 +9,7 @@ class OrderController {
         }
         const orders = Order.find({username: req.user.username}).lean();
         res.render('pages/account/orders', {
-            title: 'Orders',
+            title: 'Đơn hàng',
             style: '/css/orders.css',
             isAmin: 0,
             orders: orders,

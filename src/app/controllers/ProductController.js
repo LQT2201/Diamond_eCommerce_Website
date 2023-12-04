@@ -10,7 +10,7 @@ class ProductController {
         }).lean();
         if(!product) {
             res.render('pages/product-not-found', {
-                title: 'Product not found',
+                title: 'Không tìm thấy',
                 style: '/css/product-notfound.css',
                 slug: req.params.slug,
                 user: req.user?.toObject(),
@@ -18,7 +18,7 @@ class ProductController {
         }
         else{
             res.render('pages/product-detail', {
-                title: 'Product detail',
+                title: 'Thông tin sản phẩm',
                 style: '/css/product-detail.css',
                 isAdmin: 0,
                 product: product,

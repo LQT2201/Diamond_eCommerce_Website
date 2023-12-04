@@ -13,7 +13,7 @@ class AdminController {
         res.redirect('/admin/login');
     else
     res.render('admin/admin-account',{
-        title: 'Admin detail',
+        title: 'Trang quản lí',
         isAdmin: 1,
         admin: req.admin?.toObject(),
     });
