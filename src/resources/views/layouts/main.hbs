@@ -30,5 +30,8 @@
     </div>
 
     <script src="{{script}}"></script>
+    {{#unless isAdmin}}
+        <script src="/js/cart.js"></script>
+    {{/unless}}
 </body>
 </html>

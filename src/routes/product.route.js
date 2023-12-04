@@ -6,8 +6,7 @@ const authentication = require('../app/middlewares/Authentication')
 // Hiển thị chi tiết sản phẩm cho user
 router.get('/products/:slug', authentication.isAuth, productController.showProduct);
 
-// Hiển thị chi tiết sản phẩm cho ADMIN
-router.get('/admin/products', productController.adminShowProduct);
+router.get('/products/get/:sku', productController.getProductBySKU);
 
 
 module.exports = router; 

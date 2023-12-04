@@ -5,16 +5,22 @@ class ProductController {
 
     //  [GET] hiển thị trang homepage
     async index(req, res, next) {
-        let products = await Product.find({}).lean();
-        res.render('pages/homepage', {
-            title: 'Hompage',
-            style:'/css/homepage.css',
-            script:'/js/homepage.js',
-            isAdmin: 0,
-            product: products,
-            jsonProduct:JSON.stringify(products) ,
-            user: req.user?.toObject(),
-        })
+        let products;
+        try {
+            products = await Product.find({}).lean();
+        } catch (error) {
+            console.log(error);
+        }
+        finally {
+            res.render('pages/homepage', {
+                title: 'Hompage',
+                style:'/css/homepage.css',
+                script:'/js/homepage.js',
+                isAdmin: 0,
+                products: products,
+                user: req.user?.toObject(),
+            })
+        }
     }
 
     //  [GET] hiện thị trang search
@@ -56,7 +62,6 @@ class ProductController {
                 })
             }
             products = await Product.find(...query).lean();
-            //console.log(products)
         } catch (error) {
             console.log(error);
         }

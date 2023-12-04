@@ -94,7 +94,20 @@ class ProductController {
             return res.status(409).send(error);
         }
     }
-
+    async getProductBySKU(req, res) {
+        const sku = req.params.sku;
+        if(!sku)
+            return res.status(401).send('SKU not found');
+        try {
+            const product = await Product.findOne({sku : sku});
+            if(!product) {
+                return res.status(401).send("Product not found");
+            }
+            return res.status(200).send(product);
+        } catch (error) {
+            return res.status(401).send(error);
+        }
+    }
     // Hiện thị màn hình sửa sản phẩm
     showEditForm() {
 
