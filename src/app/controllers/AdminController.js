@@ -11,7 +11,7 @@ class AdminController {
         res.redirect('/admin/login');
     else
     res.render('admin/admin-account',{
-        title: 'Admin detail',
+        title: 'Trang quản lí',
         isAdmin: 1,
         admin: req.admin?.toObject(),
     });
@@ -21,7 +21,7 @@ class AdminController {
         res.redirect('/pages/account/login');
     else
     res.render('admin/admin-account',{
-      title:'Login',
+      title:'Đăng nhập',
       isAdmin: 1,
       style: '/css/login.css',
       script: '/js/admin-login.js',

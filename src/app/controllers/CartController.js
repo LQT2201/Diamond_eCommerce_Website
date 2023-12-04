@@ -13,7 +13,7 @@ class CartController {
                 username: req.user.username 
             })?.lean();
             res.render('pages/cart', {
-                title: 'Cart',
+                title: 'Giỏ hàng',
                 style: '/css/cart.css',
                 user: req.user.toObject(),
                 cart: cart,
@@ -33,7 +33,7 @@ class CartController {
                 username: req.user.username 
             })?.lean();
             res.render('pages/checkout', {
-                title: 'Order',
+                title: 'Đơn hàng',
                 style: '/css/checkout.css',
                 user: req.user.toObject(),
                 cart: cart,

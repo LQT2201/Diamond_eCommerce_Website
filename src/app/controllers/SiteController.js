@@ -7,7 +7,7 @@ class ProductController {
     async index(req, res, next) {
         let products = await Product.find({}).lean();
         res.render('pages/homepage', {
-            title: 'Hompage',
+            title: 'Trang chủ',
             style:'/css/homepage.css',
             script:'/js/homepage.js',
             isAdmin: 0,
@@ -62,7 +62,7 @@ class ProductController {
         }
         finally{
             res.render('pages/search',{
-                title: 'Search',
+                title: 'Tìm kiếm',
                 style: '/css/search.css',
                 user: req.user?.toObject(),
                 products: products,
@@ -74,7 +74,7 @@ class ProductController {
     //  [GET] hiển thị trang about us
     about(req,res) {
         res.render('pages/about-us',{
-            title: 'About Us',
+            title: 'Về chúng tôi',
             style: '/css/about-us.css',
             isAdmin: 0,
             user: req.user?.toObject(),

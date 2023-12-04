@@ -4,7 +4,7 @@ class OrderController {
     //  [GET] hiện thị lịch sử đơn hàng
     getOrder(req,res) {
         res.render('pages/account/orders', {
-            title: 'Orders',
+            title: 'Đơn hàng',
             style: '/css/orders.css',
             isAmin: 0,
         });
