@@ -43,7 +43,7 @@
 
         <div class="row product-price-wrapper">
           <div class="col l-6 ">
-            <span class="product-price" id="price">{{formatCurrency product.price}}</span>
+            <span class="product-price" id="price">{{#formatCurrency product.price}}{{/formatCurrency}}</span>
           </div>
         </div>
 
@@ -65,12 +65,166 @@
             <span class="add-to-cart-span">Miễn phí giao hàng tận nhà hoặc nhận tại cửa hàng</span>
           </button>
         </div>
-        <div class="add-to-cart-wrapper" >
-            <button class="add-to-whilist-btn">
-              <span class="add-to-cart-span-tittle"> <i class="fa fa-cart-plus" aria-hidden="true"></i>  Thêm vào giỏ hàng</span>
-              <span class="add-to-cart-span">Tiến hành thanh toán sau</span>
+
+        <div class="row add-to-cart-wrapper" >
+          <div class="col l-6">
+            <button class="add-to-whilist-btn" onclick="addCart({{product.sku}})">
+              
             </button>
+          </div>
+
+          <div class="col l-6">
+            <button class="add-to-whilist-btn">
+              <span class="add-to-cart-span-tittle"> <i class="fa fa-heart" aria-hidden="true"></i> Thêm vào yêu thích</span>
+              <span class="add-to-cart-span">Dễ dàng xem lại sản phẩm</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
 </div>
+
+    <div class="modal-cart">
+        <div class="cart__overlay"></div>
+        <div class="cart">
+
+                <div class="cart__title">
+                    <h2>CART</h2>
+                    
+                </div>
+
+                <div class="listCart">
+
+                </div>
+
+                <div class="buttons">
+                    <button class="close">
+                        EDIT ORDER
+                        <img src="/image/edit.png" alt="" style="margin-left: 10px">
+                    </button>
+                    <button class="checkout">
+                        <a href="/cart/checkout">CHECKOUT</a>
+                    </button>
+                </div>
+        </div>
+    </div>
+
+<script>
+    let iconCart = document.querySelector('.iconCart');
+    let cart = document.querySelector('.cart');
+    let close = document.querySelector('.close');
+    let overlay = document.querySelector('.cart__overlay')
+
+    iconCart.addEventListener('click', function(){
+        if(cart.style.right == '-100%'){
+            cart.style.right = '0';
+            overlay.style.display = 'block';
+
+            
+        }else{
+            overlay.style.display = 'none';
+            cart.style.right = '-100%';
+            
+        }
+    })
+    close.addEventListener('click', function (){
+        cart.style.right = '-100%';
+        overlay.style.display = 'none';
+
+    })
+
+    let products = {{{jsonProduct}}};
+    
+    let listCart = [];
+    function checkCart(){
+        var cookieValue = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('listCart='));
+        if(cookieValue){
+            listCart = JSON.parse(cookieValue.split('=')[1]);
+        }else{
+            listCart = [];
+        }
+    }
+        checkCart();
+    function addCart($skuProduct){
+
+        console.log($skuProduct);
+        let productsCopy = JSON.parse(JSON.stringify(products));
+        console.log(productsCopy);
+        //// If this product is not in the cart
+        console.log(listCart);
+        if(!listCart[$skuProduct]) 
+        {
+            listCart[$skuProduct] = productsCopy.filter(product => product.sku == $skuProduct)[0];
+            console.log(listCart[$skuProduct]);
+            listCart[$skuProduct].quantity = 1;
+        }else{
+            console.log(listCart[$skuProduct]);
+
+            //If this product is already in the cart.
+            //I just increased the quantity
+            listCart[$skuProduct].quantity++;
+        }
+        document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
+
+        addCartToHTML();
+    }
+
+    addCartToHTML();
+    function addCartToHTML(){
+        // clear data default
+        let listCartHTML = document.querySelector('.listCart');
+        listCartHTML.innerHTML = '';
+
+        let totalHTML = document.querySelector('.totalQuantity');
+        let totalQuantity = 0;
+        // if has product in Cart
+        if(listCart){
+            listCart.forEach(product => {
+                if(product){
+                    let newCart = document.createElement('div');
+                    newCart.classList.add('item');
+                    newCart.innerHTML = 
+                        `<img src="${product.thumbnail[0]}">
+                        <div class="content">
+                            <div class="name">${product.name}</div>
+                            <div class="price">$${product.price} / 1 product</div>
+                        </div>
+                        <div class="quantity">
+                            <button onclick="changeQuantity(${product.sku}, '-')">-</button>
+                            <span class="value">${product.quantity}</span>
+                            <button onclick="changeQuantity(${product.sku}, '+')">+</button>
+                        </div>`;
+                    listCartHTML.appendChild(newCart);
+                    totalQuantity = totalQuantity + product.quantity;
+                }
+            })
+        }
+        totalHTML.innerText = totalQuantity;
+    }
+
+    function changeQuantity($skuProduct, $type){
+        switch ($type) {
+            case '+':
+                listCart[$skuProduct].quantity++;
+                break;
+            case '-':
+                listCart[$skuProduct].quantity--;
+
+                // if quantity <= 0 then remove product in cart
+                if(listCart[$skuProduct].quantity <= 0){
+                    delete listCart[$skuProduct];
+                }
+                break;
+        
+            default:
+                break;
+        }
+        // save new data in cookie
+        document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
+        // reload html view cart
+        addCartToHTML();
+    }
+
+</script>

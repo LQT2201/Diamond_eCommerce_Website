@@ -7,7 +7,7 @@ class ProductController {
     async index(req, res, next) {
         let products = await Product.find({}).lean();
         res.render('pages/homepage', {
-            title: 'Trang chủ',
+            title: 'Hompage',
             style:'/css/homepage.css',
             script:'/js/homepage.js',
             isAdmin: 0,
@@ -21,7 +21,7 @@ class ProductController {
     async search(req,res) {
         let products = null;
         try {
-            let {keyword, category, material, sort_type, price_from, price_to} = req.query;
+            let {keyword, category, material, sort_type} = req.query;
             if(keyword instanceof Array) {
                 keyword = keyword.join('|')
             }
@@ -39,11 +39,6 @@ class ProductController {
                     material = [material];
                 }
                 query[0].material = { $in: material }
-            }
-            if(price_from && price_to) {
-                price_from = parseInt(price_from);
-                price_to = parseInt(price_to);
-                query[0].price = {$gte: price_from, $lte: price_to};
             }
             query.push(null);
             if(sort_type === '1') {
@@ -67,7 +62,7 @@ class ProductController {
         }
         finally{
             res.render('pages/search',{
-                title: 'Tìm kiếm',
+                title: 'Search',
                 style: '/css/search.css',
                 user: req.user?.toObject(),
                 products: products,
@@ -79,7 +74,7 @@ class ProductController {
     //  [GET] hiển thị trang about us
     about(req,res) {
         res.render('pages/about-us',{
-            title: 'Về chúng tôi',
+            title: 'About Us',
             style: '/css/about-us.css',
             isAdmin: 0,
             user: req.user?.toObject(),

@@ -5,7 +5,7 @@ const ObjectId = Schema.ObjectId;
 const productSchema = new Schema({
   name: String,
   sku: {
-    type: String,
+    type: Number,
     unique: true,
     index: true,
   },

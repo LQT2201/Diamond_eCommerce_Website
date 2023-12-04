@@ -160,7 +160,7 @@ hr {
     border: 1px solid #ccc;
 }
 
-.order__detail {
+.order__detail__quantity {
 	font-size: 2em;
 }
 
@@ -220,7 +220,3 @@ hr {
 		margin: 1rem;
 	}	
 }
-
-
-
-

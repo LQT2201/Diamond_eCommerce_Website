@@ -26,13 +26,13 @@
                                     <div class="product-filter__inputPrice--wrap">
                                         <div class="product-filter__inputPrice--text">Từ</div>
                                         <div class="product-filter__inputPrice--input">
-                                            <input type="text" value="" class="input-price" id="price_from">
+                                            <input type="text" value="0">
                                         </div>
                                     </div>
                                     <div class="product-filter__inputPrice--wrap">
                                         <div class="product-filter__inputPrice--text">Đến</div>
                                         <div class="product-filter__inputPrice--input">
-                                            <input type="text" value="" class="input-price" id="price_to">
+                                            <input type="text" value="10000">
                                         </div>
                                     </div>
                                    </div>
@@ -170,3 +170,149 @@
         </div>
     </section>
 </div>
+
+    <div class="modal-cart">
+        <div class="cart__overlay"></div>
+        <div class="cart">
+
+                <div class="cart__title">
+                    <h2>CART</h2>
+                    
+                </div>
+
+                <div class="listCart">
+
+                </div>
+
+                <div class="buttons">
+                    <button class="close">
+                        EDIT ORDER
+                        <img src="/image/edit.png" alt="" style="margin-left: 10px">
+                    </button>
+                    <button class="checkout">
+                        <a href="/cart/checkout">CHECKOUT</a>
+                    </button>
+                </div>
+        </div>
+    </div>
+
+<script>
+    let iconCart = document.querySelector('.iconCart');
+    let cart = document.querySelector('.cart');
+    let close = document.querySelector('.close');
+    let overlay = document.querySelector('.cart__overlay')
+
+    iconCart.addEventListener('click', function(){
+        if(cart.style.right == '-100%'){
+            cart.style.right = '0';
+            overlay.style.display = 'block';
+
+            
+        }else{
+            overlay.style.display = 'none';
+            cart.style.right = '-100%';
+            
+        }
+    })
+    close.addEventListener('click', function (){
+        cart.style.right = '-100%';
+        overlay.style.display = 'none';
+
+    })
+
+    let products = {{{jsonProduct}}};
+    addDataToHTML();
+    
+    let listCart = [];
+    function checkCart(){
+        var cookieValue = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('listCart='));
+        if(cookieValue){
+            listCart = JSON.parse(cookieValue.split('=')[1]);
+        }else{
+            listCart = [];
+        }
+    }
+        checkCart();
+    function addCart($idProduct){
+
+        console.log($idProduct);
+        let productsCopy = JSON.parse(JSON.stringify(products));
+        console.log(productsCopy);
+        //// If this product is not in the cart
+        console.log(listCart);
+        if(!listCart[$idProduct]) 
+        {
+            listCart[$idProduct] = productsCopy.filter(product => product.sku == $idProduct)[0];
+            console.log(listCart[$idProduct]);
+            listCart[$idProduct].quantity = 1;
+        }else{
+            console.log(listCart[$idProduct]);
+
+            //If this product is already in the cart.
+            //I just increased the quantity
+            listCart[$idProduct].quantity++;
+        }
+        document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
+
+        addCartToHTML();
+    }
+
+    addCartToHTML();
+    function addCartToHTML(){
+        // clear data default
+        let listCartHTML = document.querySelector('.listCart');
+        listCartHTML.innerHTML = '';
+
+        let totalHTML = document.querySelector('.totalQuantity');
+        let totalQuantity = 0;
+        // if has product in Cart
+        if(listCart){
+            listCart.forEach(product => {
+                if(product){
+                    let newCart = document.createElement('div');
+                    newCart.classList.add('item');
+                    newCart.innerHTML = 
+                        `<img src="${product.thumbnail[0]}">
+                        <div class="content">
+                            <div class="name">${product.name}</div>
+                            <div class="price">$${product.price} / 1 product</div>
+                        </div>
+                        <div class="quantity">
+                            <button onclick="changeQuantity(${product.sku}, '-')">-</button>
+                            <span class="value">${product.quantity}</span>
+                            <button onclick="changeQuantity(${product.sku}, '+')">+</button>
+                        </div>`;
+                    listCartHTML.appendChild(newCart);
+                    totalQuantity = totalQuantity + product.quantity;
+                }
+            })
+        }
+        totalHTML.innerText = totalQuantity;
+    }
+
+    function changeQuantity($idProduct, $type){
+        switch ($type) {
+            case '+':
+                listCart[$idProduct].quantity++;
+                break;
+            case '-':
+                listCart[$idProduct].quantity--;
+
+                // if quantity <= 0 then remove product in cart
+                if(listCart[$idProduct].quantity <= 0){
+                    delete listCart[$idProduct];
+                }
+                break;
+        
+            default:
+                break;
+        }
+        // save new data in cookie
+        document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
+        // reload html view cart
+        addCartToHTML();
+    }
+
+</script>

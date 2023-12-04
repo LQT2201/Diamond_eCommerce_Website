@@ -3,8 +3,8 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const secretKey = "c83c121ed9634881eb16d9df31714b63b2d07d0bd00d9859949b35ed46d15d8a";
 const expiresIn = 7 * 3600 * 24 * 1000;
-const util = require('../../until/util');
-const Order = require('../models/Order');
+const util = require('../../until/util')
+
 class AccountController {
     // [GET] /account 
     // Hiển thị thông tin tài khoản 
@@ -13,7 +13,7 @@ class AccountController {
             res.redirect('/login');
         else
         res.render('pages/account/account-detail',{
-            title: 'Thông tin tài khoản',
+            title: 'Account-detail',
             style: '/css/account-detail.css',
             script: '/js/account-detail.js',
             user: req.user.toObject(),
@@ -26,7 +26,7 @@ class AccountController {
             res.redirect('/account');
         else
         res.render('pages/account/login',{
-            title:'Đăng nhập',
+            title:'Login',
             style: '/css/login.css',
             script: '/js/account-login.js',
         })
@@ -38,7 +38,7 @@ class AccountController {
             res.redirect('/account');
         else
         res.render('pages/account/register', {
-            title:'Đăng ký',
+            title:'Register',
             style:'/css/register.css',
             script: '/js/account-register.js',
             isAdmin: 0,
@@ -49,16 +49,12 @@ class AccountController {
     showOrders(req,res) {
         if(!req.user)
             res.redirect('/login');
-        else{
-            const orders = Order.find({username: req.user.username}).lean();
-            res.render('pages/account/orders-history',{
-                title: 'Order history',
-                style: '/css/orders-history.css',
-                isAdmin: 0,
-                user: req.user.toObject(),
-                orders: orders,
-            });
-        }
+        res.render('pages/account/orders-history',{
+            title: 'Order history',
+            style: '/css/orders-history.css',
+            isAdmin: 0,
+            user: req.user.toObject(),
+        });
     }
 
     // [GET] /wishlist

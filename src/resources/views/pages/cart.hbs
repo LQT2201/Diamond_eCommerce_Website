@@ -3,112 +3,51 @@
 <section class="cartPage">
     <div class="grid wide">
         <div class="row">
+            
             <!-- Begin cart-item -->
             <div class="col l-8 m-12 c-12 cart">
                 <div class="row cart-head">
                     <div class="cart-head__title ">
                         <h1>Giỏ hàng của bạn</h1>
                     </div>
-                    <div class=" cart-head__quantity ">
-                        <span>3 sản phẩm</span>
+                    <div class="cart-head__quantity">
+                        10 sản phẩm
                     </div>
                 </div>
-
-                <hr size="1">  
-                <div class="row cart-item">
-                    <div class="col l-2 m-2 c-12">
-                        <div class="cart-item__image">
-                            <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/5/26/913299/Ngan-Ha25.jpg" alt="">
+                
+                <div class="cart__list-items">
+                    <hr size="1">  
+                    <div class="row cart-item">
+                        <div class="col l-2 m-2 c-12">
+                            <div class="cart-item__image">
+                                <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/5/26/913299/Ngan-Ha25.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col l-3 m-3 c-12">
+                            <div class="cart-item__detail">
+                                <span>Dây chuyền kim cương</span>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-3 c-6">
+                            <div class="cart-item__quantity">
+                                <button onclick="decreaseValue()">-</button>
+                                <input type="number" id="quantityInput" value="" class="">
+                                <button onclick="increaseValue()">+</button>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-3 c-5">
+                            <div class="cart-item__price">
+                                <span>10.000 <small>Đ</small></span>
+                            </div>
+                        </div>
+                        <div class="col l-1 m-1 c-1">
+                            <div class="cart-item__remove">
+                                <button><img src="/image/delete.png" alt=""></button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col l-3 m-3 c-12">
-                         <div class="cart-item__detail">
-                            <span>Dây chuyền kim cương</span>
-                        </div>
-                    </div>
-                    <div class="col l-3 m-3 c-6">
-                        <div class="cart-item__quantity">
-                            <button onclick="decreaseValue()">-</button>
-                            <input type="number" id="quantityInput" value="1">
-                            <button onclick="increaseValue()">+</button>
-                        </div>
-                    </div>
-                    <div class="col l-3 m-3 c-5">
-                        <div class="cart-item__price">
-                            <span>10.000 <small>Đ</small></span>
-                        </div>
-                    </div>
-                    <div class="col l-1 m-1 c-1">
-                        <div class="cart-item__remove">
-                            <button><img src="/image/delete.png" alt=""></button>
-                        </div>
-                    </div>
+                    <hr size="1"> 
                 </div>
-                <hr size="1"> 
-
-                <hr size="1">  
-                <div class="row cart-item">
-                    <div class="col l-2 m-2 c-12">
-                        <div class="cart-item__image">
-                            <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/5/26/913299/Ngan-Ha25.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col l-3 m-3 c-12">
-                         <div class="cart-item__detail">
-                            <span>Dây chuyền kim cương</span>
-                        </div>
-                    </div>
-                    <div class="col l-3 m-3 c-6">
-                        <div class="cart-item__quantity">
-                            <button onclick="decreaseValue()">-</button>
-                            <input type="number" id="quantityInput" value="1">
-                            <button onclick="increaseValue()">+</button>
-                        </div>
-                    </div>
-                    <div class="col l-3 m-3 c-5">
-                        <div class="cart-item__price">
-                            <span>10.000 <small>Đ</small></span>
-                        </div>
-                    </div>
-                    <div class="col l-1 m-1 c-1">
-                        <div class="cart-item__remove">
-                            <button><img src="/image/delete.png" alt=""></button>
-                        </div>
-                    </div>
-                </div>
-                <hr size="1"> 
-
-                <hr size="1">  
-                <div class="row cart-item">
-                    <div class="col l-2 m-2 c-12">
-                        <div class="cart-item__image">
-                            <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/5/26/913299/Ngan-Ha25.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col l-3 m-3 c-12">
-                         <div class="cart-item__detail">
-                            <span>Dây chuyền kim cương</span>
-                        </div>
-                    </div>
-                    <div class="col l-3 m-3 c-6">
-                        <div class="cart-item__quantity">
-                            <button onclick="decreaseValue()">-</button>
-                            <input type="number" id="quantityInput" value="1">
-                            <button onclick="increaseValue()">+</button>
-                        </div>
-                    </div>
-                    <div class="col l-3 m-3 c-5">
-                        <div class="cart-item__price">
-                            <span>10.000 <small>Đ</small></span>
-                        </div>
-                    </div>
-                    <div class="col l-1 m-1 c-1">
-                        <div class="cart-item__remove">
-                            <button><img src="/image/delete.png" alt=""></button>
-                        </div>
-                    </div>
-                </div>
-                <hr size="1"> 
 
             </div>
             <!-- End cart-item -->
@@ -121,8 +60,8 @@
                 <hr size="1">
 
                 <div class="row order__detail">
-                    <div class="col l-8"> 10 sản phẩm</div>
-                    <div class="col l-4">$10.000</div>
+                    <div class="col l-8 order__detail__quantity"> 1nghìn sản phẩm</div>
+                    <div class="col l-4 "></div>
                 </div>
                 <div class="row no-gutters">
                     <div class="order__shipp">
@@ -141,7 +80,7 @@
                     <div class="col l-8 ">
                         <h1>Tổng đơn hàng:</h1>
                     </div>
-                    <div class="col l-4"> 100.000.00Đ</div>
+                    <div class="col l-4 totalPrice">10 tỷ</div>
                 </div>
                 <div class="row no-gutters order__checkout">
                     <button>Thanh toán</button>
@@ -152,19 +91,101 @@
 </section>
 
 <script>
-  function increaseValue() {
-    var inputElement = document.getElementById('quantityInput');
-    var currentValue = parseInt(inputElement.value, 10);
-    inputElement.value = currentValue + 1;
-  }
-
-  function decreaseValue() {
-    var inputElement = document.getElementById('quantityInput');
-    var currentValue = parseInt(inputElement.value, 10);
-    
-    // Make sure the value doesn't go below 0
-    if (currentValue > 0) {
-      inputElement.value = currentValue - 1;
+   let listCart = [];
+    function checkCart(){
+            var cookieValue = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('listCart='));
+            if(cookieValue){
+                listCart = JSON.parse(cookieValue.split('=')[1]);
+            }
     }
-  }
+
+    checkCart();
+    addCartToHTML();
+    function addCartToHTML(){
+        // clear data default
+        let listCartHTML = document.querySelector('.cart__list-items');
+        listCartHTML.innerHTML ='';
+
+        let cartQuantity = document.querySelector('.cart-head__quantity');
+        let orderQuantity = document.querySelector('.order__detail__quantity');
+        let totalQuantityHTML = document.querySelector('.totalQuantity');
+        let totalPriceHTML = document.querySelector('.totalPrice');
+        let totalQuantity = 0;
+        let totalPrice = 0;
+        // if has product in Cart
+        if(listCart){
+            listCart.forEach(product => {
+                if(product){
+                    let newCart = document.createElement('div');
+                    newCart.classList.add('row','cart-item');
+                    newCart.innerHTML = 
+                        `<div class="col l-2 m-2 c-12">
+                        <div class="cart-item__image">
+                            <img src="${product.thumbnail[0]}" alt="">
+                        </div>
+                        </div>
+                        <div class="col l-3 m-3 c-12">
+                            <div class="cart-item__detail">
+                                <span>${product.name}</span>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-3 c-6">
+                            <div class="cart-item__quantity">
+                                <button onclick="changeQuantity(${product.sku}, '-')">-</button>
+                                <span class="value">${product.quantity}</span>
+                                <button onclick="changeQuantity(${product.sku}, '+')">+</button>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-3 c-5">
+                            <div class="cart-item__price">
+                                <span>${product.price} <small>Đ</small></span>
+                            </div>
+                        </div>
+                        <div class="col l-1 m-1 c-1">
+                            <div class="cart-item__remove">
+                                <button  onclick="changeQuantity(${product.sku}, 'delete')"><img src="/image/delete.png" alt=""></button>
+                            </div>
+                        </div>`;
+                    listCartHTML.appendChild(newCart);
+                    totalQuantity = totalQuantity + product.quantity;
+                    totalPrice = totalPrice + (product.price * product.quantity);
+                }
+            })
+        }
+        totalQuantityHTML.innerText = totalQuantity;
+        totalPriceHTML.innerText = '$' + totalPrice;
+        orderQuantity.innerText  = totalQuantity + ' sản phẩm';
+        cartQuantity.innerText = totalQuantity +' sản phẩm';
+    }   
+
+    
+
+    function changeQuantity($idProduct, $type){
+        switch ($type) {
+            case 'delete':
+                delete listCart[$idProduct];
+                break;
+            case '+':
+                listCart[$idProduct].quantity++;
+                break;
+            case '-':
+                listCart[$idProduct].quantity--;
+
+                // if quantity <= 0 then remove product in cart
+                if(listCart[$idProduct].quantity <= 0){
+                    delete listCart[$idProduct];
+                }
+                break;
+        
+            default:
+                break;
+        }
+        // save new data in cookie
+        document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
+        // reload html view cart
+        addCartToHTML();
+    }
+
 </script>

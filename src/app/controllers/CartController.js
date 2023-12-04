@@ -11,9 +11,9 @@ class CartController {
         else{
             const cart = await Cart.findOne({ 
                 username: req.user.username 
-            }).lean();
+            })?.lean();
             res.render('pages/cart', {
-                title: 'Giỏ hàng',
+                title: 'Cart',
                 style: '/css/cart.css',
                 user: req.user.toObject(),
                 cart: cart,
@@ -33,7 +33,7 @@ class CartController {
                 username: req.user.username 
             })?.lean();
             res.render('pages/checkout', {
-                title: 'Đơn hàng',
+                title: 'Order',
                 style: '/css/checkout.css',
                 user: req.user.toObject(),
                 cart: cart,

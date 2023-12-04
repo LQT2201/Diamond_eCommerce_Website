@@ -123,78 +123,37 @@
 
     <h2 style="font-size: 2rem;">Sản phẩm nổi bật</h2>
     <div class="row listProduct">
-        {{#each product}}
-        <div class="col l-3 m-4 c-6">
-            <div class="component-product">
-                <div class="component-product__image">
-                    <a href="">
-                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_1.jpg" alt="">
-                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_2.jpg" alt="">
-                    </a>
-                </div>
-
-                <div class="component-product__title">
-                    <a href="">
-                        <span>{{this.name}}</span>
-                    </a>
-                </div>
-
-                <div class="component-product__price">$ {{price}}
-                </div>
-                {{!-- <button class="component-product__btnAdd" onclick="addCart({{_id}})>ADD TO CART</button> --}}
-                <button class="component-product__btnAdd"</button>
-            </div>
-        </div>  
-        {{/each}}                
+        
     </div>
 
-    <div class="cart__overlay">
-    </div>
-    <div class="cart">
+    <div class="modal-cart">
+        <div class="cart__overlay"></div>
+        <div class="cart">
 
-        <div class="cart__title">
-            <h2>CART</h2>
-            
-        </div>
-
-        <div class="listCart">
-
-        </div>
-
-        <div class="buttons">
-            <button class="close">
-                EDIT ORDER
-                <img src="/image/edit.png" alt="" style="margin-left: 10px">
-            </button>
-            <button class="checkout">
-                <a href="/cart/checkout">CHECKOUT</a>
-            </button>
-        </div>
-    </div>
-    <!-- Begin ads -->
-    <div class="ads" id ="advertisement">
-        <div class="ads_container">
-            <div class="ads_content">
-                <div class="img_ads">
-                    <div class="skipbtn" id ="skipButton">
-                        <img src="/image/skip_ads.png" alt="Skip">
-                    </div>
-                    <div class="adsshow">
-                        <img src="/image/homepage_ads.jpg" alt="Advertisement">
-                    </div>
+                <div class="cart__title">
+                    <h2>CART</h2>
+                    
                 </div>
-                <a href="https://www.facebook.com/lqt.2201" target="_blank"> CONTACT US </a>
-            </div>
+
+                <div class="listCart">
+
+                </div>
+
+                <div class="buttons">
+                    <button class="close">
+                        EDIT ORDER
+                        <img src="/image/edit.png" alt="" style="margin-left: 10px">
+                    </button>
+                    <button class="checkout">
+                        <a href="/cart/checkout">CHECKOUT</a>
+                    </button>
+                </div>
         </div>
     </div>
-    <!-- End ads -->
 </div>
 <!-- End content -->
 
 <script>
-
-    
-
     let iconCart = document.querySelector('.iconCart');
     let cart = document.querySelector('.cart');
     let close = document.querySelector('.close');
@@ -219,16 +178,9 @@
     })
 
     let products = {{{jsonProduct}}};
-    {{!-- // get data from file json
-    fetch({{{jsonProduct}}})
-        .then(response => response.json())
-        .then(data => {
-            products = data;
-            addDataToHTML();
-    }) --}}
-
+    addDataToHTML();
     //show data
-    {{!-- function addDataToHTML() {
+    function addDataToHTML() {
         let listProductHTML = document.querySelector('.listProduct');
         listProductHTML.innerHTML = '';
 
@@ -239,9 +191,9 @@
                 newProduct.innerHTML = 
                 `<div class="component-product">
                 <div class="component-product__image">
-                    <a href="/product-detail/${product.id}">
-                        <img src="${product.image[0]}" alt="">
-                        <img src="${product.image[1]}" alt="">
+                    <a href="/products/${product.slug}">
+                        <img src="${product.thumbnail[0]}" alt="">
+                        <img src="${product.thumbnail[1]}" alt="">
                     </a>
                 </div>
 
@@ -252,13 +204,13 @@
                 </div>
 
                 <div class="component-product__price">$${product.price}</div>
-                <button class="component-product__btnAdd" onclick="addCart(${product.id})">Thêm vào giỏ hàng</button>
+                <button class="component-product__btnAdd" onclick="addCart(${product.sku})">Thêm vào giỏ hàng</button>
                 </div>`;
 
                 listProductHTML.appendChild(newProduct);
             });
         }
-    } --}}
+    }
     
     let listCart = [];
     function checkCart(){
@@ -271,79 +223,85 @@
             listCart = [];
         }
     }
-    checkCart();
+        checkCart();
     function addCart($idProduct){
-    let productsCopy = JSON.parse(jsonProduct);
-    //// If this product is not in the cart
-    if(!listCart[$idProduct]) 
-    {
-        listCart[$idProduct] = productsCopy.filter(product => product.id == $idProduct)[0];
-        listCart[$idProduct].quantity = 1;
-    }else{
-        //If this product is already in the cart.
-        //I just increased the quantity
-        listCart[$idProduct].quantity++;
-    }
-    document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
 
-    addCartToHTML();
-}
+        console.log($idProduct);
+        let productsCopy = JSON.parse(JSON.stringify(products));
+        console.log(productsCopy);
+        //// If this product is not in the cart
+        console.log(listCart);
+        if(!listCart[$idProduct]) 
+        {
+            listCart[$idProduct] = productsCopy.filter(product => product.sku == $idProduct)[0];
+            console.log(listCart[$idProduct]);
+            listCart[$idProduct].quantity = 1;
+        }else{
+            console.log(listCart[$idProduct]);
 
-addCartToHTML();
-function addCartToHTML(){
-    // clear data default
-    let listCartHTML = document.querySelector('.listCart');
-    listCartHTML.innerHTML = '';
-
-    let totalHTML = document.querySelector('.totalQuantity');
-    let totalQuantity = 0;
-    // if has product in Cart
-    if(listCart){
-        listCart.forEach(product => {
-            if(product){
-                let newCart = document.createElement('div');
-                newCart.classList.add('item');
-                newCart.innerHTML = 
-                    `<img src="${product.image[0]}">
-                    <div class="content">
-                        <div class="name">${product.name}</div>
-                        <div class="price">$${product.price} / 1 product</div>
-                    </div>
-                    <div class="quantity">
-                        <button onclick="changeQuantity(${product.id}, '-')">-</button>
-                        <span class="value">${product.quantity}</span>
-                        <button onclick="changeQuantity(${product.id}, '+')">+</button>
-                    </div>`;
-                listCartHTML.appendChild(newCart);
-                totalQuantity = totalQuantity + product.quantity;
-            }
-        })
-    }
-    totalHTML.innerText = totalQuantity;
-}
-
-function changeQuantity($idProduct, $type){
-    switch ($type) {
-        case '+':
+            //If this product is already in the cart.
+            //I just increased the quantity
             listCart[$idProduct].quantity++;
-            break;
-        case '-':
-            listCart[$idProduct].quantity--;
+        }
+        document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
 
-            // if quantity <= 0 then remove product in cart
-            if(listCart[$idProduct].quantity <= 0){
-                delete listCart[$idProduct];
-            }
-            break;
-    
-        default:
-            break;
+        addCartToHTML();
     }
-    // save new data in cookie
-    document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
-    // reload html view cart
-    addCartToHTML();
-}
 
+    addCartToHTML();
+    function addCartToHTML(){
+        // clear data default
+        let listCartHTML = document.querySelector('.listCart');
+        listCartHTML.innerHTML = '';
+
+        let totalHTML = document.querySelector('.totalQuantity');
+        let totalQuantity = 0;
+        // if has product in Cart
+        if(listCart){
+            listCart.forEach(product => {
+                if(product){
+                    let newCart = document.createElement('div');
+                    newCart.classList.add('item');
+                    newCart.innerHTML = 
+                        `<img src="${product.thumbnail[0]}">
+                        <div class="content">
+                            <div class="name">${product.name}</div>
+                            <div class="price">$${product.price} / 1 product</div>
+                        </div>
+                        <div class="quantity">
+                            <button onclick="changeQuantity(${product.sku}, '-')">-</button>
+                            <span class="value">${product.quantity}</span>
+                            <button onclick="changeQuantity(${product.sku}, '+')">+</button>
+                        </div>`;
+                    listCartHTML.appendChild(newCart);
+                    totalQuantity = totalQuantity + product.quantity;
+                }
+            })
+        }
+        totalHTML.innerText = totalQuantity;
+    }
+
+    function changeQuantity($idProduct, $type){
+        switch ($type) {
+            case '+':
+                listCart[$idProduct].quantity++;
+                break;
+            case '-':
+                listCart[$idProduct].quantity--;
+
+                // if quantity <= 0 then remove product in cart
+                if(listCart[$idProduct].quantity <= 0){
+                    delete listCart[$idProduct];
+                }
+                break;
+        
+            default:
+                break;
+        }
+        // save new data in cookie
+        document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
+        // reload html view cart
+        addCartToHTML();
+    }
 
 </script>

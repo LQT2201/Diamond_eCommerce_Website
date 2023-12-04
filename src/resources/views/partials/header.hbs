@@ -26,8 +26,8 @@
             </div>
             <div class="col l-4">
                 <div class="row">
-                    <div class="col l-4"></div>
-                    <div class="col l-4">
+                    <div class="col l-2"></div>
+                    <div class="col l-6">
                        {{#if user}}
                                 <li><a href="/logout">Thoát</a></li>
                                 <li><a href="/account">Chào: {{user.fullname}}</a></li>
@@ -61,7 +61,9 @@
                 <div class="search">
                     <form action="/search">
                         <input type="text" name="keyword" required>
+                     <button type="submit" class="search_btn"><img src="/image/header/search.png" alt=""></button>
                     </form>
+                    
                 </div>
             </div>
         </nav>

@@ -10,7 +10,7 @@ class ProductController {
         }).lean();
         if(!product) {
             res.render('pages/product-not-found', {
-                title: 'Không tìm thấy',
+                title: 'Product not found',
                 style: '/css/product-notfound.css',
                 slug: req.params.slug,
                 user: req.user?.toObject(),
@@ -18,15 +18,25 @@ class ProductController {
         }
         else{
             res.render('pages/product-detail', {
-                title: 'Thông tin sản phẩm',
+                title: 'Product detail',
                 style: '/css/product-detail.css',
                 isAdmin: 0,
                 product: product,
+                jsonProduct: JSON.stringify(product),
                 user: req.user?.toObject(),
             });
         }
     }
     
+    // CÁC XỬ LÍ TRANG ADMIN
+
+    // Hiển thị màn hình thêm sản phẩm
+    adminShowProduct(req,res) {
+        res.render('admin/admin-product',{
+            style: '/css/admin-product.css',
+            isAdmin: 1,
+        });
+    }
 
     // Hiển thị màn hình thêm sản phẩm
     showAddForm(req,res) {
@@ -99,7 +109,6 @@ class ProductController {
     deleteProduct() {
 
     }
-
 }
 
 module.exports = new ProductController;
