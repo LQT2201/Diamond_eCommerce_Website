@@ -9,8 +9,10 @@ class ProductController {
         res.render('pages/homepage', {
             title: 'Hompage',
             style:'/css/homepage.css',
+            script:'/js/homepage.js',
             isAdmin: 0,
-            products: products || null,
+            product: products,
+            jsonProduct:JSON.stringify(products) ,
             user: req.user?.toObject(),
         })
     }
