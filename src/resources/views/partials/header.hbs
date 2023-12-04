@@ -1,57 +1,71 @@
-
-    <header>
-        <div class="container">
-            <div class="header-top">
-                <div class="row no-gutters">
+<header>
+    <div class="grid wide">
+        <div class="row top-header">
+            <div class="col l-4">
+                <div class="row">
                     <div class="col l-4">
-                        <ul>
-                            <li><a href="/about-us">Về cửa hàng</a></li>
-                            <li><a href="tel:+1800">1800</a></li>
-                        </ul>
+                        <img src="/image/header/team.png" alt="">
+                        <a href="/about-us">Về chúng tôi</a>
                     </div>
-                    <div class="col l-1" id="header-brand">
-                        <a href="/about-us">
-                            <img src="/image/logo.png" alt="Logo">
-                        </a>
+                    <div class="col l-4">
+                        <img src="/image/header/location.png" alt="">
+                        <a href="">Cửa hàng</a>
                     </div>
-                    <div class="col l-4" id="header-right">
-                        <ul>
-                            <li><a href="/wishlist-cart">Giỏ hàng</a></li>
-                            {{#if user}}
+                    <div class="col l-4">
+                        <img src="/image/header/headphones.png" alt="">
+                        <a href="">1900 1000</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col l-4">
+               <a href="/">
+                 <div class="logo">
+                    <img src="/image/logo.png" alt="">
+                </div>
+               </a>
+            </div>
+            <div class="col l-4">
+                <div class="row">
+                    <div class="col l-4"></div>
+                    <div class="col l-4">
+                       {{#if user}}
                                 <li><a href="/logout">Thoát</a></li>
                                 <li><a href="/account">Chào: {{user.fullname}}</a></li>
                                 
-                            {{/if}}
-                            {{#unless user}}
-                            <li><a href="/login">Tài khoản</a></li>
-                            {{/unless}}
-                        </ul>
+                        {{/if}}
+                        {{#unless user}}
+                            <img src="/image/header/user.png" alt="">
+                            <a href="/login">Tài khoản</a>
+                        {{/unless}}
+                    </div>
+                    <div class="col l-4 iconCart">
+                        <img src="/image/header/shopping-cart.png" alt="">
+                        <div class="totalQuantity">0</div>
+                            {{!-- <div class="totalQuantity" style="font-size: large; position:absolute" >0</div> --}}
+                        <a href="/cart">Giỏ hàng</a>
                     </div>
                 </div>
             </div>
         </div>
+        <nav class="row bot-header">
+            <div class="col l-8">
+                <ul >
+                    <li><a href="#">Chất liệu </a></li>
+                    <li><a href="#">Chủng loại</a></li>
+                    <li><a href="#">Mục đích</a></li>
+                    <li><a href="#">Dòng hàng</a></li>
+                    <li><a href="#">Mục đích</a></li>
+                </ul>
+            </div>
+            <div class="col l-4">
+                <div class="search">
+                    <input type="search">
+                    <img src="/image/header/search.png" alt="">
+                </div>
+            </div>
+        </nav>
+    </div>
 
-        <div class="container" id="navbar">
-            <div class="header-menu">
-                <div class="row no-gutters">
-                    <div class="col l-8">
-                        <ul>
-                            <li><a href="#">Trang sức</a></li>
-                            <li><a href="#">Quà tặng</a></li>
-                            <li><a href="#">Kim cương viên</a></li>
-                            <li><a href="#">Trang sức ngọc trai</a></li>
-                            <li><a href="#">Thương hiệu</a></li>
-                        </ul>
-                    </div>
-                    <div class="col l-3">
-                        <div class="search-block">
-                            <form action="">
-                                <input type="text" name="hint_keyword" value="" id="search_input" placeholder="Tìm kiếm nhanh" autocomplete="off">
-                                <button type="submit">Tìm kiếm</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+</header>
+
+

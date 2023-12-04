@@ -2,9 +2,25 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
-const  Product = new Schema({
-    name:{type: String},
-    createAt:{type:Date, default:Date.now},
-  });
-
-module.exports = mongoose.model('product', Product);
+const productSchema = new Schema({
+  name: String,
+  sku: {
+    type: String,
+    unique: true,
+    index: true,
+  },
+  brand: String,
+  category: String,
+  material: String,
+  origin: String,
+  description: String,
+  price: Number,
+  thumbnail: [String],
+  url: String,
+  slug: String,
+  quantity: Number,
+  sizes: [Number],
+  size_title: String,
+});
+const Product =  mongoose.model('product', productSchema);
+module.exports = Product;

@@ -1,9 +1,7 @@
-const Test1 = require('../models/Colection1');
 const Product = require('../models/Product');
 
 
 class ProductController {
-
 
     //  [GET] hiển thị trang homepage
     index(req,res,next) {
@@ -19,19 +17,20 @@ class ProductController {
                 })
             })
 
+    }
 
-        // Test1.find({})
-        //     .then(test1 => {
-        //         test1 = test1.map(test1 => test1.toObject())
-        //         res.render('',{test1})
-        //     })
-                // .catch(next);
-
-        // res.render('pages/homepage', {
-        //     title: 'HomePage',
-        //     style: '/css/homepage.css',
-        //     isAdmin: true,
-        // });
+    
+    async index(req,res,next) {
+        const products = await Product.find({}).lean();
+        res.render('pages/homepage',{
+            title:'Homepage',
+            style: '/css/homepage.css',
+            isAdmin: 0,
+            product: products,
+            jsonProduct: JSON.stringify(products),
+            user: req.user?.toObject(),
+            script: '/js/homepage.js',
+        })
     }
 
     //  [GET] hiện thị trang search
