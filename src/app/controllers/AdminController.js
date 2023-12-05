@@ -69,7 +69,7 @@ class AdminController {
       if(admin) {
           return res.status(400).send("Username already taken!")
       } else {
-          let token = jwt.sign({ username }, adminSecretKey, {
+          let token = jwt.sign({ username }, process.env.adminSecretKey, {
               expiresIn: process.env.expiresIn,
           });
           admin = await Admin.create({
