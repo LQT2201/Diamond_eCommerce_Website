@@ -22,6 +22,7 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     checkCart();
     function addCart(sku){
+        alert("Thêm thành công vào giỏ hàng");
         sku = String(sku);
         console.log(sku);
         if(!listCart.get(sku)) 

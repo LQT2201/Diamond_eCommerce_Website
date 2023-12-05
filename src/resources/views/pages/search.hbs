@@ -142,27 +142,24 @@
                     </div>
                     <div class="row">
                         {{#each products as |product|}}
-                        <div class="col l-4 m-4 c-6">
-                            <div class="component-product">
-                                <div class="component-product__image">
-                                    <a href="">
-                                        <img src="{{product.thumbnail.[0]}}" alt="">
-                                        <img src="{{product.thumbnail.[1]}}" alt="">
-                                        
-                                    <a href="/products/{{this.slug}}">
-                                        <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
-                                    </a>
-                                </div>
+                            <div class="col l-4 m-4 c-6">
+                                <div class="component-product">
+                                    <div class="component-product__image">
+                                        <a href="/products/{{product.slug}}">
+                                            <img src="{{product.thumbnail.[0]}}" alt="">
+                                            <img src="{{product.thumbnail.[1]}}" alt="">
+                                        </a>
+                                    </div>
 
-                                <div class="component-product__title">
-                                    <a href="/products/{{this.slug}}">
-                                        <span>{{this.name}}</span>
-                                    </a>
+                                    <div class="component-product__title">
+                                        <a href="/product-detail/{{product.id}}">
+                                            <span>{{product.name}}</span>
+                                        </a>
+                                    </div>
+                                    <div class="component-product__price">{{formatCurrency product.price}}</div>
+                                    <button class="component-product__btnAdd" id="{{product.sku}}">Thêm vào giỏ hàng</button>
                                 </div>
-
-                                <div class="component-product__price">{{#formatCurrency this.price}}{{/formatCurrency}}</div>
-                            </div>
-                        </div>                       
+                            </div>                     
                         {{/each}}
                     </div>
 

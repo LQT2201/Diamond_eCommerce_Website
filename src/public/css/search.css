@@ -308,7 +308,9 @@ a:active,a:focus,a:hover {
     margin-bottom: 30px;
     background: linear-gradient(to top, #F3F3F3, #FFFFFF);
     border-radius: 10px;
+    position: relative;
 }
+
 
 
 .component-product__image {
@@ -337,6 +339,7 @@ a:active,a:focus,a:hover {
     position: absolute;
     top: 0;
     left: 0;
+    background-color: #F3F3F3;
 }
 
 
@@ -370,6 +373,37 @@ a:active,a:focus,a:hover {
     text-align: center;
     padding-bottom: 20px;
 }
+
+
+.component-product__btnAdd {
+    width: 100%;
+    background-color: rgba(17, 45, 78, 0.5);
+    color: #F3F3F3;
+    border: none;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(125%);
+    opacity: 0;
+}
+
+       
+
+.component-product:hover .component-product__btnAdd {
+    transition:  0.5s;
+    opacity: 1;
+    top: 53%;
+    left: 50%;
+    transform: translateY(80%) translateX(-50%);
+    z-index: 1;
+}
+
+
+
+/* end-component_product */
 
 /* begin modal cart */
 
