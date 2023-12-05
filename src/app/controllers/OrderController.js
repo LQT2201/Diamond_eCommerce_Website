@@ -1,5 +1,6 @@
 const Cart = require('../models/Cart');
-const Order = require('../models/Order')
+const Order = require('../models/Order');
+const Product = require('../models/Product');
 class OrderController {
     
     //  [GET] trả lịch sử đơn hàng của tài khoản
@@ -38,13 +39,20 @@ class OrderController {
                     phone: phone,
                     address: address
                 })
+                if(!order)
+                    return res.status(401).send();
+
                 res.cookie("listCart", '', { 
                     maxAge: 1,
                     httpOnly: true,
                 });
                 await cart.deleteOne();
-                if(!order)
-                    return res.status(401).send();
+                for(const e of order.products) {
+                    await Product.findOneAndUpdate(
+                        { sku: e.product.sku },
+                        { quantity: e.product.quantity - e.product_quantity }
+                    );
+                }
                 return res.status(201).send(order);
             } catch (error) {
                 console.log(error);
