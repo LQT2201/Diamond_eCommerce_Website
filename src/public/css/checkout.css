@@ -12,7 +12,7 @@
 }
 
 .checkoutPage .checkout {
-    background-color: aqua;
+    background-color: #112D4E;
     padding: 40px;
     border-radius: 15px;
     color: #fff;
@@ -30,7 +30,7 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 20px;
-    border-bottom: 1px solid #7a7fe2;
+    border-bottom: 1px solid #F9F7F7;
     padding-bottom: 20px;
 
 }
@@ -57,8 +57,8 @@
     border-radius: 20px;
     margin-top: 10px;
     border:none;
-    background-color: #6a6fc9;
-    color: #fff;
+    background-color: #F9F7F7;
+    color: #112D4E;
 }
 
  .total .total-inner{
@@ -72,7 +72,7 @@
     font-size: x-large;
 }
 .buttonCheckout{
-    width: 100%;
+    width: 50%;
     height: 40px;
     border: none;
     border-radius: 20px;

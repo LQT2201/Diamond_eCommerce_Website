@@ -50,6 +50,8 @@
 
 .main-image {
     background-color: #F7F7F7;
+    max-width: 485px;
+    border-radius: 5px;
 }
 
 .main-image-outer {
