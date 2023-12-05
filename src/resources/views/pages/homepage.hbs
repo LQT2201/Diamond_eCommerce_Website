@@ -127,16 +127,19 @@
     </div>
     <!-- End slick -->
 
-    <div class="listProduct-title">Sản phẩm nổi bật</div>
+    <div class="listProduct-title">Sản phẩm nổi bậ<tt></tt></div>
     <div class="row listProduct">
         {{#each products as |product|}}
         <div class="col l-3 m-4 c-6">
             <div class="component-product">
                 <div class="component-product__image">
                     <a href="/products/{{product.slug}}">
-                        {{#each product.thumbnail as |thumbnail|}}
-                        <img src="{{thumbnail}}" alt="">
+                        {{#each product.thumbnail as |thumb|}}
+                        {{#if @first}}
+                            <img src="{{thumb}}" alt="">
+                        {{/if}}
                         {{/each}}
+                        
                     </a>
                 </div>
 

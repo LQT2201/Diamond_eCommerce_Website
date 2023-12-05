@@ -1,29 +1,27 @@
-let iconCart, cart, closeBtn, overlay, listCartHTML;
+let iconCart = document.querySelector('.iconCart');
+let cart = document.querySelector('.cart');
+let close = document.querySelector('.close');
+let overlay = document.querySelector('.cart__overlay')
 
-window.addEventListener('DOMContentLoaded', function() {
-    iconCart = document.querySelector('.iconCart');
-    cart = document.querySelector('.cart');
-    closeBtn = document.querySelector('.close');
-    overlay = document.querySelector('.cart__overlay');
-    listCartHTML = document.querySelector('.listCart');
-    iconCart.addEventListener('click', function(){
-        if(cart.style.right == '-100%'){
-            cart.style.right = '0';
-            overlay.style.display = 'block';
-    
-            
-        }else{
-            overlay.style.display = 'none';
-            cart.style.right = '-100%';
-            
-        }
-    })
-    closeBtn.addEventListener('click', function (){
-        cart.style.right = '-100%';
+iconCart.addEventListener('click', function(){
+    if(cart.style.right == '-100%'){
+        cart.style.right = '0';
+        overlay.style.display = 'block';
+
+        
+    }else{
         overlay.style.display = 'none';
-    
-    })
-    let listCart = new Map();
+        cart.style.right = '-100%';
+        
+    }
+})
+close.addEventListener('click', function (){
+    cart.style.right = '-100%';
+    overlay.style.display = 'none';
+
+})
+
+let listCart = new Map();
 function checkCart(){
     var cookieValue = document.cookie
     .split('; ')
@@ -56,10 +54,11 @@ function addCart(sku){
 addCartToHTML();
 function addCartToHTML(){
     // clear data default
-    
+    let listCartHTML = document.querySelector('.listCart');
     listCartHTML.innerHTML = '';
 
     let totalHTML = document.querySelector('.totalQuantity');
+    let totalQuantity = 0;
     // if has product in Cart
     if(listCart){
         listCart.forEach((quantity,sku) => {
@@ -78,9 +77,11 @@ function addCartToHTML(){
                         <button onclick="changeQuantity('${product.sku}', '+')">+</button>
                     </div>`;
                 listCartHTML.appendChild(newCart);
+                totalQuantity = totalQuantity + quantity;
+                totalHTML.innerText = totalQuantity;
             })
         })
-        totalHTML.innerText = listCart.size;
+        
     }
     
 }
@@ -88,6 +89,7 @@ function addCartToHTML(){
 function changeQuantity(sku, type){
     switch (type) {
         case '+':
+            console.log(sku);
             listCart.set(sku, listCart.get(sku) + 1);
             break;
         case '-':
@@ -106,7 +108,3 @@ function changeQuantity(sku, type){
     // reload html view cart
     addCartToHTML();
 }
-});
-
-
-

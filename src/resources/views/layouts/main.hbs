@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="/css/base.css">
     {{#unless isAdmin}}
     <script src="/js/stick-navbar.js"></script>
-    <script src="/js/cart.js"></script>
-    <link rel="stylesheet" href="/css/modal-cart.css">
     {{/unless}}
 </head>
 <body>
@@ -23,27 +21,6 @@
         
         <div class="app__content">
             {{{body}}}
-            {{#unless isAdmin}}
-            <div class="modal-cart">
-                <div class="cart__overlay" style="display: none;"></div>
-                <div class="cart" style="right: -100%;">
-                    <div class="cart__title">
-                        <h2>CART</h2>
-                    </div>
-                    <div class="listCart">
-                    </div>
-                    <div class="buttons">
-                        <button class="close">
-                            EDIT ORDER
-                            <img src="/image/edit.png" alt="" style="margin-left: 10px">
-                        </button>
-                        <button class="checkout">
-                            <a href="/cart/checkout">CHECKOUT</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            {{/unless}}
         </div>
 
         {{#unless isAdmin}}

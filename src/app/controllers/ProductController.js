@@ -1,4 +1,4 @@
-const Product = require('../models/Product')
+const Product = require('../models/Product')    
 const Category = require('../models/Category')
 const util = require('../../until/util')
 class ProductController {
