@@ -1,74 +1,57 @@
-<body>
-  <div class="grid wide container">
-    <div class="row">
-      <div class="content">
-        <div class="content product">
-          <div class="content_product_title">
-            <h2>Sản phẩm</h2>
-          </div>
-          <div class="content_product_form">
-            <div class="row content_product_action">
-              <div class="product_action_add">
-                <button>Thêm sản phẩm</button>
-              </div>
-              <div class="product_action_search">
-                <span>Tìm kiếm: </span>
-                <input type="text" placeholder="Tên sản phẩm">
-                <button></button>
-              </div>
+<div class="grid wide">
+  <div class="row">
+        <div class="col l-2 m-0 menu-tab">
+            <div class="row dashboard">
+                <span><ion-icon name="speedometer-outline"></ion-icon>Bảng điều khiển</span>
             </div>
-            <div class="content_product_filter">
-              <select>
-                <option>Danh mục</option>
-              </select>
-              <input type="number" placeholder="Giá bắt đầu">
-              <input type="number" placeholder="Giá kết thúc">
-              <button>Lọc</button>
+           <div class="row product">
+                <span>
+                    <ion-icon name="pricetags-outline"></ion-icon>
+                    <a href="/admin/products">Sản phẩm</a>
+                </span>
             </div>
-            <div class="row content_product_list">
-              <table class="product_table">
-                <thead>
-                  <tr>
-                    <th>STT</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Danh mục</th>
-                    <th>Hình ảnh</th>
-                    <th>Số lượng</th>
-                    <th>Giá</th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Nhẫn PNJ cao cấp</td>
-                    <td>Nhẫn</td>
-                    <td>Hình ảnh</td>
-                    <td>10</td>
-                    <td>12.000.000 đ</td>
-                    <td><button id="product_btn_edit">Sửa</button></td>
-                    <td><button>Xóa</button></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Nhẫn PNJ cao cấp</td>
-                    <td>Nhẫn</td>
-                    <td>Hình ảnh</td>
-                    <td>10</td>
-                    <td>12.000.000 đ</td>
-                    <td><button id="product_btn_edit">Sửa</button></td>
-                    <td><button>Xóa</button></td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="row order">
+                <span><ion-icon name="calendar-clear-outline"></ion-icon>
+                <a href="/admin/orders">Đơn hàng</a></span>
             </div>
-          </div>
+            <div class="row account">
+                <span><ion-icon name="people-outline"></ion-icon>Quản lý tài khoản</span>
+            </div>
         </div>
-      </div>
-    </div>
+          <div class="content product col l-8 m-0">
+              <div class="content_product_title">
+                  <h2>Sản phẩm</h2>
+              </div>
+              <div class="content_product_list">
+                  <table class="product_table">
+                      <thead>
+                          <tr>
+                              <th>STT</th>
+                              <th>Tên sản phẩm</th>
+                              <th>Mã sản phẩm</th>
+                              <th>Loại sản phẩm</th>
+                              <th>Vật liệu</th>
+                              <th>Đơn giá</th>
+                              <th>Số lượng kho</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {{#each products as |product|}}
+                          <tr>
+                              <td>{{inc @index}}</td>
+                              <td>{{product.name}}</td>
+                              <td>{{product.sku}}</td>
+                              <td>{{product.category}}</td>
+                              <td>{{product.material}}</td>
+                              <td>{{formatCurrency product.price}}</td>
+                              <td>{{product.quantity}}</td>
+                          </tr>
+                          {{/each}}
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      
   </div>
-  </div>
-
-
-</body>
+</div>
+<script src="/js/admin-view.js"></script>

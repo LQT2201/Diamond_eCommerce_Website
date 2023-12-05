@@ -1,8 +1,6 @@
 const jwt = require('jsonwebtoken')
 const User = require('../models/User');
 const util = require('../../until/util')
-const secretKey = "c83c121ed9634881eb16d9df31714b63b2d07d0bd00d9859949b35ed46d15d8a";
-
 const verifyAccessToken = async (req) => {
   let token, decodedUser, user;
     try {
@@ -10,7 +8,7 @@ const verifyAccessToken = async (req) => {
       if (!token) {
           return {isLogged: false, user: null};
       }
-      decodedUser = jwt.verify(token, secretKey);
+      decodedUser = jwt.verify(token, process.env.secretKey);
       user = await User.findOne({
           username: decodedUser.username,
           tokens: {$in: [token]}

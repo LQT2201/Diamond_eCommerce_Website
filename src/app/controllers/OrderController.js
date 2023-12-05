@@ -1,5 +1,6 @@
 const Cart = require('../models/Cart');
-const Order = require('../models/Order')
+const Order = require('../models/Order');
+const Product = require('../models/Product');
 class OrderController {
     
     //  [GET] trả lịch sử đơn hàng của tài khoản
@@ -32,19 +33,26 @@ class OrderController {
                     username: req.user.username,
                     fullname: fullName,
                     products: cart.products,
-                    status: "Đang xử lý đơn hàng",
+                    status: "Đã mua",
                     total_quantity: cart.total_quantity,
                     total_price: cart.total_price,
                     phone: phone,
                     address: address
                 })
+                if(!order)
+                    return res.status(401).send();
+
                 res.cookie("listCart", '', { 
                     maxAge: 1,
                     httpOnly: true,
                 });
                 await cart.deleteOne();
-                if(!order)
-                    return res.status(401).send();
+                for(const e of order.products) {
+                    await Product.findOneAndUpdate(
+                        { sku: e.product.sku },
+                        { quantity: e.product.quantity - e.product_quantity }
+                    );
+                }
                 return res.status(201).send(order);
             } catch (error) {
                 console.log(error);
@@ -53,6 +61,7 @@ class OrderController {
         }
     }
     // Thực hiện hủy đơn hàng
+    /*
     async cancelOrder(req, res) {
         if(!req.user) {
             res.redirect('/login');
@@ -73,6 +82,7 @@ class OrderController {
             }
         }
     }
+        */
 
  
 }
