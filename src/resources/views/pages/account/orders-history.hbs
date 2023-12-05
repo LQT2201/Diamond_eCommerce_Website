@@ -31,16 +31,13 @@
                         <div class="row">
                             <div class="content">
                                 <div class="content order">
-                                    <div class="content_order_title">
-                                        <h2>Đơn hàng</h2>
-                                    </div>
                                     <div class="content_order_list">
                                         <table class="order_table">
                                             <thead>
                                                 <tr>
                                                     <th>STT</th>
                                                     <th>Mã đơn hàng</th>
-                                                    <th>Tên tài khoản</th>
+                                                    <th>Tên người nhận</th>
                                                     <th>SĐT liên lạc</th>
                                                     <th>Địa chỉ</th>
                                                     <th>Ngày đặt hàng</th>
@@ -55,7 +52,7 @@
                                                 <tr>
                                                     <td>{{inc @index}}</td>
                                                     <td>{{orders._id}}</td>
-                                                    <td>{{orders.username}}</td>
+                                                    <td>{{orders.fullname}}</td>
                                                     <td>{{orders.phone}}</td>
                                                     <td>{{orders.address}}</td>
                                                     <td>{{formatDate orders.createAt}}</td>

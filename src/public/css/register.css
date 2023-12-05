@@ -5,24 +5,133 @@
 form label span {
     color: red;
 }
-input[type=password], input[type=text], input[type=tel] {
+
+input[type=password],
+input[type=text],
+input[type=tel] {
     width: 97%;
     display: inline-block;
 }
+
+.loginPage {
+    background-color: #f1f1f1;
+}
+
 .container .row {
     justify-content: center;
 }
+
 .container .row:first-child {
     text-align: center;
 }
+
 .form-lft {
     display: inline-block;
 }
+
 .action button {
     width: 100%;
     cursor: pointer;
 }
+
+.form-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 50vh;
+}
+
 .form-group {
-    margin-top: 16px;
-    margin-bottom: 16px
+    width: 100%;
+}
+
+.sign-up {
+    background-color: #fff;
+    height: 100%;
+    position: absolute;
+    min-width: 768px;
+}
+
+.sign-up form {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    padding: 0 40px;
+    width: 60%;
+    top: 0;
+    right: 0;
+}
+
+.form-container.sign-up {
+    display: flex;
+    flex-direction: row;
+}
+
+.sign-up input {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.toggle-panel.toggle-left {
+    background: linear-gradient(to left, #5c6bc0, #512da8);
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0 150px 100px 0;
+}
+
+.form-register button {
+    background-color: #512da8;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.toggle-panel.toggle-left a {
+    background-color: transparent;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.toggle-panel.toggle-left h1 {
+    color: #fff;
+}
+
+.form-lft {
+    display: flex;
+    justify-content: start;
 }
