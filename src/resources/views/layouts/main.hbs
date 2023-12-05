@@ -29,9 +29,12 @@
 
     </div>
 
-    <script src="{{script}}"></script>
     {{#unless isAdmin}}
+        {{> cart-modal}}
         <script src="/js/cart.js"></script>
     {{/unless}}
+
+    <script src="{{script}}"></script>
+
 </body>
 </html>

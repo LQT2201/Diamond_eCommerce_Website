@@ -17,6 +17,7 @@ class CartController {
                 style: '/css/cart.css',
                 user: req.user.toObject(),
                 cart: cart,
+                script:'js/cart-edit.js',
             });
         }
         
@@ -37,6 +38,7 @@ class CartController {
                 style: '/css/checkout.css',
                 user: req.user.toObject(),
                 cart: cart,
+                script: '/js/checkout.js',
             });
         }
     }

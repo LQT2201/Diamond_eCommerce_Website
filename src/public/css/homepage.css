@@ -146,7 +146,7 @@
 
 .slider-dots{
     position: absolute;
-    z-index: 5;
+    z-index: 2;
     left: 50%;
     bottom: 25px;
     display: flex;
@@ -206,86 +206,64 @@
 }
 /* end banner  */
 
-/* Beign slick */
-.slick {
-    margin-top: 30px;
-}
-
-.slick-title h2 {
+.stick-title {
+    margin: 20px 10px;
     font-size: 2rem;
-    color:#112D4E;
-}
-.slick-content {
-    overflow: hidden;
-    position: relative;
-    margin: 1.5em 0;
+    font-weight: bold;
+    color: #112D4E;
 }
 
-.slick-wrapper {
+.stick-wrapper {
+   display: flex;
+   width: 100%;
+}
+
+.slick-item-inner figure{
+    margin: 0 40    px;
+}
+
+.slick-item-inner img {
     width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.slick-main {
-    position: relative;
-    display: flex;
-    transition: transform .25s linear;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.slick-item {
-    width:180px;    
-    height: 100%;
-    align-items: center;
+    height: auto;
     display: block;
-    justify-content: space-between;
+}
+
+.slick-item__title {
     
-}
-
-.slick-item-inner {
-    display: block;
+    width: 100%;
+    color: #000;
+    padding: 10px;
+    margin: 0;
     text-align: center;
-    flex: 1 0 0;
+    font-size: 14px; 
 }
 
-.slick-item a{
-    width:100%;
-    align-items: center;
+.listProduct-title {
+    margin: 20px 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #112D4E;
+}
+
+
+@media screen and (max-width: 739px) {
+    .slick-item__title {
+        font-size: 12px; 
+    }
+    .stick-title {
+        display: none;
+    }
     
 }
 
+@media screen and (max-width: 480px) {
 
-.slick-item img{
-    min-height: 130px;
-    max-width: 130px;
-    align-items: center;
-    justify-content: center;
+    .slick-item__title {
+        font-size: 10px; 
+    }
+
 }
 
-
-.slick-prev,
-.slick-next {
-    position:absolute;
-    top:50%;
-    width: 4em;
-    height: 4em;
-    border-radius: 100rem;
-    display: flex;
-    justify-content: center;
-    transform: translateY(-50%);
-    background-color: #fff;
-}
-
-.slick-prev{
-    left: 10px;
-}
-
-.slick-next{
-    right: 10px;
-}
 /* End slick */
 
 /* begin modal cart */

@@ -1,6 +1,4 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -92,7 +90,7 @@
 
 .returnCart .items .item{
     display: grid;
-    grid-template-columns: 80px 1fr  50px 80px;
+    grid-template-columns: 80px 1fr  40px 120px;
     align-items: center;
     gap: 20px;
     margin-bottom: 30px;

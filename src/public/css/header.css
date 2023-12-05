@@ -8,7 +8,7 @@ header {
     top: 0;
     width: 100%;
     background-color: #F9F7F7;
-    z-index: 1;
+    z-index: 3;
 }
 
 .top-header {
@@ -40,6 +40,13 @@ header {
     font-size: 1.3rem;
 }
 
+.user-login {
+    list-style-type: none;
+    gap: 10px;
+    display: flex;
+}
+
+
 .iconCart {
     cursor: pointer;
     position: relative;
@@ -53,7 +60,7 @@ header {
     height: 18px;
     width: 18px;
     left: 5px;
-    top: -25%;
+    top:5px;
     color: #fff;
     text-align: center;
 }
@@ -72,6 +79,7 @@ header {
 .logo img {
     max-width: 60px;
     height: auto;
+    cursor: pointer;
 }
 
 .logo {
@@ -80,7 +88,6 @@ header {
     justify-content: center;
     display: flex;
 }
-
 
 .bot-header {
     border-top: 1px solid #e9e0e0;
@@ -113,13 +120,17 @@ header {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 80%;
+    width: 100%;
     height: 30px;
     margin-left: 20px; 
 }
 
 .search__btn {
     position: absolute;
+    border: none;
+    background: none;
+    right: 5px;
+    top: 5px; 
 }
 
 .search img {
@@ -127,6 +138,20 @@ header {
     cursor: pointer;
 }
 
+.search__form {
+    display: flex;
+    position: relative;
+    width: 75%;
+    margin: 5px;
+}
 
+@media screen and (max-width: 480px) {
 
+    .top-header a {
+        font-size: 1em; 
+    }
+    .totalQuantity {
+        font-size: 10px;
+    }
+}
 
