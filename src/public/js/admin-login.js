@@ -15,7 +15,7 @@ loginForm.addEventListener("submit", async (e) => {
       body: data,
     });
     if(response.status == 201) {
-      window.location.href = '/admin/order';
+      window.location.href = '/admin/orders';
     }
     else {
       alert("Đăng nhập thất bại!");
