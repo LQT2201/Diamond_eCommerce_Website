@@ -9,25 +9,37 @@ class CartController {
             res.redirect('/login');
         }
         else{
-            const parseCookie = JSON.parse(req.cookies['listCart']);
             const listCart = [];
+
             let total_price = 0;
-            for(const element of parseCookie) {
-                const detail = {
-                    product: await Product.findOne({sku: element[0]}).lean(),
-                    quantity: element[1],
+            try {
+                
+                const parseCookie = JSON.parse(req.cookies['listCart'] || []);
+                
+                total_price = 0;
+                for(const element of parseCookie) {
+                    console.log(element)
+                    const detail = {
+                        product: await Product.findOne({sku: parseInt(element[0])}).lean(),
+                        quantity: element[1],
+                    }
+                    total_price += detail.quantity * detail.product.price;
+                    listCart.push(detail);
                 }
-                total_price += detail.quantity * detail.product.price;
-                listCart.push(detail);
+            } catch (error) {
+                console.log(error)
             }
-            res.render('pages/cart', {
-                title: 'Cart',
-                style: '/css/cart.css',
-                user: req.user.toObject(),
-                cart: listCart,
-                total_price: total_price,
-                script:'js/cart-edit.js',
-            });
+            finally {
+
+                res.render('pages/cart', {
+                    title: 'Cart',
+                    style: '/css/cart.css',
+                    user: req.user.toObject(),
+                    cart: listCart,
+                    total_price: total_price,
+                    script:'js/cart-edit.js',
+                });
+            }
         }
         
     }

@@ -66,6 +66,9 @@ addCartToHTML();
 });
 function changeQuantity(sku, type){
     switch (type) {
+        case 'delete':
+            listCart.delete(sku);
+            break;
         case '+':
             listCart.set(sku, listCart.get(sku) + 1);
             break;

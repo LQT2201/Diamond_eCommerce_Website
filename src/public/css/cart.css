@@ -3,6 +3,36 @@
 	box-sizing: border-box;
 }
 
+/* breadcrumb */
+.breadcrumb {
+    font-size: 1.4rem;
+    margin: 15px ;
+    text-align: center;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #a0a0a0;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.breadcrumb span {
+    margin: 0 5px;
+    color: #666;
+}
+
+.breadcrumb .active{
+    color: black;
+}
+/* breadcrumb */
+a:active,a:focus,a:hover {
+    text-decoration: none
+}
+
 /* Set a background color for the whole page */
 body {
     background-color: #f0f0f0;
@@ -220,5 +250,7 @@ hr {
 		margin: 1rem;
 	}	
 }
+
+
 
 
