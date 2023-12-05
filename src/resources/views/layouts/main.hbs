@@ -25,20 +25,6 @@
             <div class="modal-cart">
                 <div class="cart__overlay" style="display: none;"></div>
                 <div class="cart" style="right: -100%;">
-                    <div class="cart__title">
-                        <h2>CART</h2>
-                    </div>
-                    <div class="listCart">
-                    </div>
-                    <div class="buttons">
-                        <button class="close">
-                            EDIT ORDER
-                            <img src="/image/edit.png" alt="" style="margin-left: 10px">
-                        </button>
-                        <button class="checkout" onclick="checkout(this)">
-                            <a href="">CHECKOUT</a>
-                        </button>
-                    </div>
                 </div>
             </div>
             {{/unless}}
@@ -51,7 +37,6 @@
     </div>
 
     {{#unless isAdmin}}
-        {{> cart-modal}}
         <script src="/js/cart.js"></script>
     {{/unless}}
 

@@ -5,6 +5,8 @@ const Order = require('../models/Order')
 const secretKey = "c83c121ed9634881eb16d9df31714b63b2d07d0bd00d9859949b35ed46d15d8a";
 const expiresIn = 7 * 3600 * 24 * 1000;
 const util = require('../../until/util')
+const Cart = require('../models/Cart');
+const Product = require('../models/Product');
 
 class AccountController {
     // [GET] /account 
@@ -40,7 +42,6 @@ class AccountController {
         if(req.user)
             res.redirect('/account');
         else{
-
             res.render('pages/account/register', {
                 title:'Register',
                 style:'/css/register.css',
@@ -81,6 +82,17 @@ class AccountController {
                 isAdmin: 0,
                 user: req.user.toObject(),
             });
+        }
+    }
+    async buyNow(req, res) {
+        if(!req.user) {
+            return res.status(403).send();
+        }
+        else {
+            const {product_sku} = req.body;
+            if(!product_sku) 
+                return res.status(401).send();
+
         }
     }
     async register(req, res) {
@@ -168,7 +180,6 @@ class AccountController {
         if(!req.user)
             return res.redirect('/login');
         try {
-            console.log(req.body);
             const user = await User.findOne({
                 username: req.user.username,
                 tokens: {$in: [util.getToken(req)]}

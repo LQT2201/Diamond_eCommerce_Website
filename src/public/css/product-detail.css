@@ -30,7 +30,9 @@
     text-decoration: underline;
     color: black;
 }
-
+.add-to-cart-btn:hover {
+    cursor: pointer;
+}
 .breadcrumb span {
     margin: 0 5px;
     color: #666;

@@ -20,7 +20,7 @@ header {
 }
 
 .top-header .col .l-4 {
-    display: grid;
+    display: flex;
     grid-template-columns: 20px 1fr;
     align-items: center;
     text-align: center;
@@ -28,7 +28,7 @@ header {
 }
 
 .top-header .col .l-3 {
-    display: grid;
+    display: flex;
     grid-template-columns: 20px 1fr;
     align-items: center;
     text-align: center;
@@ -50,19 +50,6 @@ header {
 .iconCart {
     cursor: pointer;
     position: relative;
-}
-
-.totalQuantity {
-    position: absolute;
-    font-size: 1.4rem;
-    background-color: #112D4E;
-    border-radius: 50%;
-    height: 18px;
-    width: 18px;
-    left: 5px;
-    top:5px;
-    color: #fff;
-    text-align: center;
 }
 
 .top-header .iconCart span {

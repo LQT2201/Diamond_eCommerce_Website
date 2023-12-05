@@ -134,12 +134,8 @@
             <div class="component-product">
                 <div class="component-product__image">
                     <a href="/products/{{product.slug}}">
-                        {{#each product.thumbnail as |thumb|}}
-                        {{#if @first}}
-                            <img src="{{thumb}}" alt="">
-                        {{/if}}
-                        {{/each}}
-                        
+                        <img src="{{product.thumbnail.[0]}}" alt="">
+                        <img src="{{product.thumbnail.[1]}}" alt="">
                     </a>
                 </div>
 
@@ -148,7 +144,7 @@
                         <span>{{product.name}}</span>
                     </a>
                 </div>
-                <div class="component-product__price">{{product.price}}</div>
+                <div class="component-product__price">{{formatCurrency product.price}}</div>
                 <button class="component-product__btnAdd" id="{{product.sku}}">Thêm vào giỏ hàng</button>
             </div>
         </div>

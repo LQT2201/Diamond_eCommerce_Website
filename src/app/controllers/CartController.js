@@ -9,30 +9,21 @@ class CartController {
             res.redirect('/login');
         }
         else{
-            const parseCookie = JSON.parse(req.cookies['listCart'] || '[]');
-            const listCart = [];
-            let total_price = 0;
-            for(const element of parseCookie) {
-                const detail = {
-                    product: await Product.findOne({sku: element[0]}).lean(),
-                    quantity: element[1],
-                }
-                total_price += detail.quantity * detail.product.price;
-                listCart.push(detail);
+            try {
+                
+            } catch (error) {
+                console.log(error);
             }
-            res.render('pages/cart', {
-                title: 'Cart',
-                style: '/css/cart.css',
-                user: req.user.toObject(),
-                cart: listCart,
-                total_price: total_price,
-                cart: cart,
-                script:'js/cart-edit.js',
-            });
+            finally {
+                res.render('pages/cart', {
+                    title: 'Cart',
+                    style: '/css/cart.css',
+                    user: req.user.toObject(),
+                    script: '/js/cart-edit.js'
+                });
+            }
         }
-        
     }
-
     // Xử lý quá trình thanh toán
     // Hiển thị trang thanh toán hoặc chuyển hướng đến cổng thanh toán
     async checkout(req,res) {
@@ -47,13 +38,15 @@ class CartController {
                 console.log(error);
             }
             finally{
-                res.render('pages/checkout', {
-                    title: 'Order',
-                    style: '/css/checkout.css',
-                    user: req.user.toObject(),
-                    cart: cart,
-                    script: '/js/checkout.js',
-            });
+                if(!cart) 
+                    res.redirect('/cart');
+                else
+                    res.render('pages/checkout', {
+                        title: 'Order',
+                        style: '/css/checkout.css',
+                        user: req.user.toObject(),
+                        cart: cart,
+                    });
             }
         }
     }
@@ -70,6 +63,7 @@ class CartController {
                     return res.status(404).send("No items were found")
                 await Cart.findOneAndDelete({username: req.user.username});
                 let cart = await Cart.create({username: req.user.username});
+                console.log(parseCookie)
                 for(const element of parseCookie) {
                     const product_sku = element[0];
                     const product_quantity = element[1];

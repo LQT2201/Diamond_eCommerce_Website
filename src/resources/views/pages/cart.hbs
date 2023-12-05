@@ -8,43 +8,10 @@
                     <div class="cart-head__title ">
                         <h1>Giỏ hàng của bạn</h1>
                     </div>
-                    <div class="cart-head__quantity">
-                        {{cart.length}} sản phẩm
-                    </div>
                 </div>
-                
                 <div class="cart__list-items">
                     <hr size="1">  
                     <div class="row cart-item">
-                        {{#each cart}}
-                        <div class="col l-2 m-2 c-12">
-                            <div class="cart-item__image">
-                                <img src="{{this.product.thumbnail.[0]}}" alt="">
-                            </div>
-                        </div>
-                        <div class="col l-3 m-3 c-12">
-                            <div class="cart-item__detail">
-                                <span>{{this.product.name}}</span>
-                            </div>
-                        </div>
-                        <div class="col l-3 m-3 c-6">
-                            <div class="cart-item__quantity">
-                                <button onclick="changeQuantity('{{this.product.sku}}', '-')">-</button>
-                                <p style="font-size: 2em;">{{this.quantity}}</p>
-                                <button onclick="changeQuantity('{{this.product.sku}}', '+')">+</button>
-                            </div>
-                        </div>
-                        <div class="col l-3 m-3 c-5">
-                            <div class="cart-item__price">
-                                <span>{{formatCurrency this.product.price}}</span>
-                            </div>
-                        </div>
-                        <div class="col l-1 m-1 c-1">
-                            <div class="cart-item__remove">
-                                <button><img src="/image/delete.png" alt=""></button>
-                            </div>
-                        </div>
-                        {{/each}}
                     </div>
                     <hr size="1"> 
                 </div>
@@ -60,7 +27,7 @@
                 <hr size="1">
 
                 <div class="row order__detail">
-                    <div class="col l-8 order__detail__quantity">Tổng sản phẩm: {{cart.length}}</div>
+                    <div class="col l-8 order__detail__quantity"></div>
                     <div class="col l-4 "></div>
                 </div>
                 <div class="row no-gutters">
@@ -78,9 +45,9 @@
 
                 <div class="row order__total">
                     <div class="col l-8 ">
-                        <h1>Tổng đơn hàng:</h1>
+                        <h1>Tổng giá trị đơn hàng:</h1>
                     </div>
-                    <div class="col l-4 totalPrice">{{formatCurrency total_price}}</div>
+                    <div class="col l-4 totalPrice"></div>
                 </div>
                 <div class="row no-gutters order__checkout">
                     <button id="pay" onclick="checkout(this)">Thanh toán</button>

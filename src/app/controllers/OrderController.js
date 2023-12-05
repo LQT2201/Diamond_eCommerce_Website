@@ -19,6 +19,9 @@ class OrderController {
         }
         else {
             try {
+                const {fullName,phone,address} = req.body;
+                if(!fullName || !phone || !address)
+                    return res.status(401).send("Vui lòng điền đầy đủ thông tin");
                 const cart = await Cart.findOne({
                     username: req.user.username,
                 })
@@ -27,13 +30,13 @@ class OrderController {
                 }
                 const order = await Order.create({
                     username: req.user.username,
-                    fullname: req.body.fullName,
+                    fullname: fullName,
                     products: cart.products,
                     status: "Đang xử lý đơn hàng",
                     total_quantity: cart.total_quantity,
                     total_price: cart.total_price,
-                    phone: req.body.phone,
-                    address: req.body.address
+                    phone: phone,
+                    address: address
                 })
                 res.cookie("listCart", '', { 
                     maxAge: 1,
