@@ -126,7 +126,7 @@ hr {
 
 }
 
-.col.l-8.cart-detail {
+.col.l-8.cart {
 	background-color: #fff;
 	padding: 40px;
 	border-radius: 10px 0 0 10px;
@@ -220,3 +220,5 @@ hr {
 		margin: 1rem;
 	}	
 }
+
+

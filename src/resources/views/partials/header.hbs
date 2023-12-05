@@ -1,7 +1,7 @@
 <header>
     <div class="grid wide">
         <div class="row top-header">
-            <div class="col l-4">
+            <div class="col l-5 m- c-0">
                 <div class="row">
                     <div class="col l-4">
                         <img src="/image/header/team.png" alt="">
@@ -17,21 +17,22 @@
                     </div>
                 </div>
             </div>
-            <div class="col l-4">
+            <div class="col l-2 m-5 c-4">
                <a href="/">
                  <div class="logo">
                     <img src="/image/logo.png" alt="">
                 </div>
                </a>
             </div>
-            <div class="col l-4">
+            <div class="col l-5 m-7 c-8">
                 <div class="row">
                     <div class="col l-2"></div>
                     <div class="col l-6">
                        {{#if user}}
-                                <li><a href="/logout">Thoát</a></li>
+                            <ul class="user-login">
                                 <li><a href="/account">Chào: {{user.fullname}}</a></li>
-                                
+                                <li><a href="/logout">Thoát</a></li>
+                            </ul> 
                         {{/if}}
                         {{#unless user}}
                             <img src="/image/header/user.png" alt="">
@@ -48,7 +49,7 @@
             </div>
         </div>
         <nav class="row bot-header">
-            <div class="col l-8">
+            <div class="col l-7 c-0">
                 <ul >
                     <li><a href="#">Chất liệu </a></li>
                     <li><a href="#">Chủng loại</a></li>
@@ -57,11 +58,11 @@
                     <li><a href="#">Mục đích</a></li>
                 </ul>
             </div>
-            <div class="col l-4">
+            <div class="col l-5 c-12">
                 <div class="search">
-                    <form action="/search">
-                        <input type="text" name="keyword" required>
-                     <button type="submit" class="search_btn"><img src="/image/header/search.png" alt=""></button>
+                    <form action="/search" class="search__form"> 
+                        <input type="text" name="keyword" required placeholder="Tìm kiếm nhanh">
+                     <button type="submit" class="search__btn"><img src="/image/header/search.png" alt=""></button>
                     </form>
                     
                 </div>

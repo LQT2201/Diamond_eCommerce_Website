@@ -56,6 +56,7 @@ function changeQuantity(sku, type){
 }
 function addCartToHTML(){
     let totalHTML = document.querySelector('.totalQuantity');
+    let totalQuantity = 0;
     // if has product in Cart
     if(listCart){
         totalHTML.innerText = listCart.size;

@@ -26,6 +26,8 @@ class CartController {
                 user: req.user.toObject(),
                 cart: listCart,
                 total_price: total_price,
+                cart: cart,
+                script:'js/cart-edit.js',
             });
         }
         
@@ -50,7 +52,8 @@ class CartController {
                     style: '/css/checkout.css',
                     user: req.user.toObject(),
                     cart: cart,
-                });
+                    script: '/js/checkout.js',
+            });
             }
         }
     }
