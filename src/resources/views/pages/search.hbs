@@ -141,13 +141,14 @@
                         </div>
                     </div>
                     <div class="row">
-                        {{#each products}}
+                        {{#each products as |product|}}
                         <div class="col l-4 m-4 c-6">
                             <div class="component-product">
                                 <div class="component-product__image">
                                     <a href="">
-                                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_1.jpg" alt="">
-                                        <img src="https://lili.vn/wp-content/uploads/2021/12/Day-chuyen-bac-nu-phong-cach-co-trang-CZ-LILI_831944_2.jpg" alt="">
+                                        <img src="{{product.thumbnail.[0]}}" alt="">
+                                        <img src="{{product.thumbnail.[1]}}" alt="">
+                                        
                                     <a href="/products/{{this.slug}}">
                                         <img src="https://cdn.pnj.io/images/thumbnails/485/485/detailed/192/sp-gn00ddw006275-vo-nhan-kim-cuong-vang-trang-18k-pnj-1.png" alt="">
                                     </a>

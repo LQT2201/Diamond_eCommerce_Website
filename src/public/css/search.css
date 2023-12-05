@@ -331,6 +331,7 @@ a:active,a:focus,a:hover {
 }
 
 .component-product__image img:last-child {
+    background: linear-gradient(to top, #F3F3F3, #FFFFFF);
     opacity: 0;
     transition: transform 0.5s ease-in;
     position: absolute;
