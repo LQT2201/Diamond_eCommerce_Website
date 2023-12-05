@@ -1,13 +1,9 @@
 <div class="loginPage">
     <div class="grid container">
-        <div class="row">
-            <div class="col l-2">
-                <b>ĐĂNG NHẬP</b>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col l-2">
+        <div class="row form-login">
+            <div class="col l-2 form-container sign-in">
                 <form id="accountLogin" action="" method="post">
+                    <h1>Đăng nhập</h1>
                     <div class="form-group">
                         <label for="username">
                             <div class="form-lft">
@@ -23,16 +19,20 @@
                                 <b>Mật khẩu</b>
                                 <span>*</span>
                             </div>
-                            <input type="password" name="pass" id="password" autocomplete="current-password"required>
+                            <input type="password" name="pass" id="password" autocomplete="current-password" required>
                         </label>
-                    </div>
-                    <div class="register">
-                        <a href="/register" title="Đăng ký tài khoản">Đăng ký tài khoản</a>
                     </div>
                     <div class="action">
                         <button type="submit">Đăng nhập</button>
                     </div>
+
                 </form>
+
+                <div class="toggle-panel toggle-right">
+                    <h1>Chưa có tài khoản?</h1>
+                    <a href="/register">Đăng ký</a>
+                </div>
+
             </div>
         </div>
     </div>
