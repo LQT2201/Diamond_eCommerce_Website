@@ -26,7 +26,6 @@ class CartController {
                 user: req.user.toObject(),
                 cart: listCart,
                 total_price: total_price,
-                cart: cart,
                 script:'js/cart-edit.js',
             });
         }
