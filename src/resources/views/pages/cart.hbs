@@ -1,5 +1,3 @@
-<h1>giỏ hàng</h1>
-
 <section class="cartPage">
     <div class="grid wide">
         <div class="row">
@@ -31,9 +29,9 @@
                         </div>
                         <div class="col l-3 m-3 c-6">
                             <div class="cart-item__quantity">
-                                <button onclick="decreaseValue()">-</button>
-                                <input type="number" id="quantityInput" value="{{this.quantity}}" class="">
-                                <button onclick="increaseValue()">+</button>
+                                <button onclick="changeQuantity('{{this.product.sku}}', '-')">-</button>
+                                <p style="font-size: 2em;">{{this.quantity}}</p>
+                                <button onclick="changeQuantity('{{this.product.sku}}', '+')">+</button>
                             </div>
                         </div>
                         <div class="col l-3 m-3 c-5">
@@ -85,29 +83,10 @@
                     <div class="col l-4 totalPrice">{{formatCurrency total_price}}</div>
                 </div>
                 <div class="row no-gutters order__checkout">
-                    <button id="pay">Thanh toán</button>
+                    <button id="pay" onclick="checkout(this)">Thanh toán</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<script>
-const button = document.getElementById('pay');
-button.addEventListener('click', async (e) => {
-    console.log('clicked');
-    try {
-        const response = await fetch('/cart/add', {
-            method: 'POST',
-        });
-        if(response.status == 201) {
-            window.location.href = '/cart/checkout';
-        }
-        else {
-        alert("Đăng nhập thất bại!");
-        }
-    } catch (error) {
-        console.log(error);
-    }
-})
-</script>
