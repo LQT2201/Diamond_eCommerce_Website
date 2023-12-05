@@ -41,8 +41,8 @@ class AdminController {
       if(!isValid){
           return res.status(401).send("Wrong username or password");
       }
-      let token = jwt.sign({ username }, adminSecretKey, {
-          expiresIn: expiresIn,
+      let token = jwt.sign({ username }, process.env.adminSecretKey, {
+          expiresIn: process.env.expiresIn,
       });
       admin.token = token;
       await admin.save();
