@@ -42,7 +42,7 @@ header {
 
 .user-login {
     list-style-type: none;
-    gap: 10px;
+    gap: 50px;
     display: flex;
 }
 
