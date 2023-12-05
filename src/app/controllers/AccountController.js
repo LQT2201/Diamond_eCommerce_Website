@@ -1,6 +1,7 @@
 const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
+const Order = require('../models/Order')
 const secretKey = "c83c121ed9634881eb16d9df31714b63b2d07d0bd00d9859949b35ed46d15d8a";
 const expiresIn = 7 * 3600 * 24 * 1000;
 const util = require('../../until/util')
@@ -11,50 +12,60 @@ class AccountController {
     showAccount(req,res) {
         if(!req.user)
             res.redirect('/login');
-        else
-        res.render('pages/account/account-detail',{
-            title: 'Account-detail',
-            style: '/css/account-detail.css',
-            script: '/js/account-detail.js',
-            user: req.user.toObject(),
-        });
+        else{
+            res.render('pages/account/account-detail',{
+                title: 'Account-detail',
+                style: '/css/account-detail.css',
+                script: '/js/account-detail.js',
+                user: req.user.toObject(),
+            });
+        }
     }
     //[GET] /login
     // Hiển thị trang đăng nhập tài khoản
     showLogin(req, res) {
         if(req.user)
             res.redirect('/account');
-        else
-        res.render('pages/account/login',{
-            title:'Login',
-            style: '/css/login.css',
-            script: '/js/account-login.js',
-        })
+        else{ 
+            res.render('pages/account/login',{
+                title:'Login',
+                style: '/css/login.css',
+                script: '/js/account-login.js',
+            })
+        }
     }
     //[GET] /register
     //Hiển thị trang đăng ký tài khoản
     showRegister(req, res) {
         if(req.user)
             res.redirect('/account');
-        else
-        res.render('pages/account/register', {
-            title:'Register',
-            style:'/css/register.css',
-            script: '/js/account-register.js',
-            isAdmin: 0,
-        })
+        else{
+
+            res.render('pages/account/register', {
+                title:'Register',
+                style:'/css/register.css',
+                script: '/js/account-register.js',
+                isAdmin: 0,
+            })
+        }
     }
     // [GET] /orders-history 
     // Hiện thị lịch sử đơn hàng 
-    showOrders(req,res) {
+    async showOrders(req,res) {
         if(!req.user)
             res.redirect('/login');
-        res.render('pages/account/orders-history',{
-            title: 'Order history',
-            style: '/css/orders-history.css',
-            isAdmin: 0,
-            user: req.user.toObject(),
-        });
+        else{
+            const orders = await Order.find({
+                username: req.user.username
+            }).lean();
+            res.render('pages/account/orders-history',{
+                title: 'Order history',
+                style: '/css/orders-history.css',
+                isAdmin: 0,
+                user: req.user.toObject(),
+                orders: orders,
+            });
+        }
     }
 
     // [GET] /wishlist

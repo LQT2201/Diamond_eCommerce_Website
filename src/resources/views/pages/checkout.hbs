@@ -4,21 +4,23 @@
         <a href="/"> Tiếp tục mua sắm </a>
         <h1>Danh sách sản phẩm</h1>
         <div class="items">
+          {{#each cart.products}}
           <div class="item">
-            <img src="/image/baner-1.jpg" alt="">
+            <img src="{{this.product.thumbnail.[0]}}" alt="">
             <div class="item__info">
-              <div class="item__info__name">  Product 1</div>
-              <div class="item__info__price"> 10.000D</div>
+              <div class="item__info__name">{{this.product.name}}</div>
+              <div class="item__info__price"> {{formatCurrency this.product.price}}</div>
             </div>
-            <div class="item__quantity">123</div>
-            <div class="item__returnPrice">$20</div>
+            <div class="item__quantity">{{this.product_quantity}}</div>
+            <div class="item__returnPrice">{{formatCurrency this.product.price}}</div>
           </div>
+          {{/each}}
         </div>
     </div>
 
     <div class="col l-6 checkout">
         <h1>Checkout</h1>
-        <form action="">
+        <form id="order">
           <div class="group">
             <label for="fullName" >Họ và tên</label>
             <input type="text" name="fullName">
@@ -45,20 +47,20 @@
               <option value="">Thủ Đức</option>           
             </select>
           </div>
-        </form>
         <div class="total">
           <div class="total-inner">
             <h2>Số lượng:</h2>
-            <div class="totalQuantity"></div>
+            <div class="totalQuantity">{{cart.total_quantity}}</div>
           </div>
           <div class="total-inner">
             <h2>Tổng tiền:</h2>
-            <div class="totalPrice"></div>
+            <div class="totalPrice">{{cart.total_price}}</div>
           </div>
-          <button class="buttonCheckout">
+          <button type="submit" class="buttonCheckout" id="checkout">
             CHECKOUT
           </button>
         </div>
+        </form>
 
         
     </div>
@@ -66,3 +68,24 @@
   </div>
 </div>
 
+<script>
+  const orderForm = document.getElementById('order');
+  orderForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const order = new FormData(orderForm);
+    try {
+            const response = await fetch('/order/create', {
+              method: 'POST',
+              body: order,
+            });
+            if(response.status == 201) {
+              window.location.href = '/';
+            }
+            else {
+              alert(await response.text());
+            }
+          } catch (error) {
+            console.log(error);
+          }
+  })
+</script>
