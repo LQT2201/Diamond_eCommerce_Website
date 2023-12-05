@@ -51,83 +51,25 @@
     <div class="row no-gutters" style="margin:10px 0;">
         <div class="stick-title">Xu hướng tìm kiếm</div>
         <div class="stick-wrapper">
-            <div class="col l-2 m-4 c-0 ">
-                <div class="slick-item">
-                    <div class="slick-item-inner">
-                        <figure>
-                            <a href="">
-                                <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
-                            </a>
-                            <figcaption class="slick-item__title"><a href="">Dây chuyền</a></figcaption>
-                        </figure>
+            {{#each top_product}}
+                <div class="col l-2 m-4 c-0 ">
+                    <div class="slick-item">
+                        <div class="slick-item-inner">
+                            <figure>
+                                <a href="/products/{{this.slug}}">
+                                    <img src="{{this.thumbnail.[0]}}" style="border-radius: 50%;" alt="">
+                                </a>
+                                <figcaption class="slick-item__title"><a href="/products/{{this.slug}}">{{this.name}}</a></figcaption>
+                            </figure>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col l-2 m-0 c-0">
-                <div class="slick-item">
-                    <div class="slick-item-inner">
-                        <figure>
-                            <a href="">
-                                <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
-                            </a>
-                            <figcaption class="slick-item__title">Dây chuyền</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col l-2 m-4 c-0">
-                <div class="slick-item">
-                    <div class="slick-item-inner">
-                        <figure>
-                            <a href="">
-                                <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
-                            </a>
-                            <figcaption class="slick-item__title">Dây chuyền</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col l-2 m-0 c-0">
-                <div class="slick-item">
-                    <div class="slick-item-inner">
-                        <figure>
-                            <a href="">
-                                <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
-                            </a>
-                            <figcaption class="slick-item__title">Dây chuyền</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col l-2 m-4 c-0">
-                <div class="slick-item">
-                    <div class="slick-item-inner">
-                        <figure>
-                            <a href="">
-                                <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
-                            </a>
-                            <figcaption class="slick-item__title">Dây chuyền</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col l-2 m-0 c-0">
-                <div class="slick-item">
-                    <div class="slick-item-inner">
-                        <figure>
-                            <a href="">
-                                <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
-                            </a>
-                            <figcaption class="slick-item__title">Dây chuyền</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
     </div>
     <!-- End slick -->
 
-    <div class="listProduct-title">Sản phẩm nổi bật<tt></tt></div>
+    <div class="listProduct-title">Sản phẩm<tt></tt></div>
     <div class="row listProduct">
         {{#each products as |product|}}
         <div class="col l-3 m-4 c-6">

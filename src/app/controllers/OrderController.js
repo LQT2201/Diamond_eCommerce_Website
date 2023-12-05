@@ -33,7 +33,7 @@ class OrderController {
                     username: req.user.username,
                     fullname: fullName,
                     products: cart.products,
-                    status: "Đang xử lý đơn hàng",
+                    status: "Đã mua",
                     total_quantity: cart.total_quantity,
                     total_price: cart.total_price,
                     phone: phone,
@@ -61,6 +61,7 @@ class OrderController {
         }
     }
     // Thực hiện hủy đơn hàng
+    /*
     async cancelOrder(req, res) {
         if(!req.user) {
             res.redirect('/login');
@@ -81,6 +82,7 @@ class OrderController {
             }
         }
     }
+        */
 
  
 }

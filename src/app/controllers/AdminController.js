@@ -1,8 +1,6 @@
 const Admin = require('../models/Admin');
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const adminSecretKey = "b6d5ddf1cde676bb2290a30f0dec482fd3346022623a3a917bab058b95d766c9";
-const expiresIn = 7 * 3600 * 24 * 1000;
 const Order = require('../models/Order')
 const Product = require('../models/Product')
 const User = require('../models/User');
@@ -49,7 +47,7 @@ class AdminController {
       admin.token = token;
       await admin.save();
       res.cookie("jwt-admin", token, { 
-          maxAge: expiresIn,
+          maxAge: process.env.expiresIn,
           httpOnly: true,
       });
       return res.status(201).send(token);
@@ -72,7 +70,7 @@ class AdminController {
           return res.status(400).send("Username already taken!")
       } else {
           let token = jwt.sign({ username }, adminSecretKey, {
-              expiresIn: expiresIn,
+              expiresIn: process.env.expiresIn,
           });
           admin = await Admin.create({
               username: username,
@@ -84,7 +82,7 @@ class AdminController {
               return res.status(409).send("Register failed. Please try again!");
           }
           res.cookie("jwt-admin", token, { 
-              maxAge: expiresIn,
+              maxAge: process.env.expiresIn,
               httpOnly: true,
           });
           return res.status(200).send(token);
