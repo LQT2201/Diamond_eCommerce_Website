@@ -89,10 +89,32 @@ class AccountController {
             return res.status(403).send();
         }
         else {
-            const {product_sku} = req.body;
-            if(!product_sku) 
-                return res.status(401).send();
+            try {
+                const product_sku = req.params.sku;
+                console.log(product_sku)
+                if(!product_sku) 
+                    return res.status(401).send();
+                const product = await Product.findOne({sku: product_sku});
+                if(!product)
+                    return res.status(401).send();
+                await Cart.findOneAndDelete({
+                    username: req.user.username,
+                })
+                const cart = await Cart.create({
+                    username: req.user.username,
+                    products: [{
+                        product: product,
+                        product_quantity: 1,
+                    }],
+                    total_price: product.price,
+                    total_quantity: 1,
+                })
+                return res.status(201).send(cart);
 
+            } catch (error) {
+                return res.status(401).send();
+            }
+            
         }
     }
     async register(req, res) {

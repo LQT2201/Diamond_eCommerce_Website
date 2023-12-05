@@ -77,9 +77,17 @@
     const thumbnails = document.querySelectorAll('.thumbnail');
     const mainImage = document.querySelector('.main-image');
     const buyBtn = document.querySelector('.buy-now');
-    buyBtn.addEventListener('click', (e) => {
+    buyBtn.addEventListener('click', async (e) => {
       const product_sku = e.target.classList.item(2).toString().split('-')[2];
-      
+      const response = await fetch('/buynow/' + product_sku, {
+        method: "POST",
+      });
+      if(response.ok) {
+        window.location.href = '/cart/checkout';
+      }
+      else{
+        alert(await response.text())
+      }
     })
     thumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('mouseover', () => {
