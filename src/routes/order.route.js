@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
-
+const multer = require('multer')
+const upload = multer();
 const orderController = require('../app/controllers/OrderController');
-
+const authentication = require('../app/middlewares/Authentication');
 // Hiển thị đơn hàng 
-router.get('/orders', orderController.getOrder);
-
+router.get('/orders', orderController.getOrders);
+router.post('/order/create', authentication.isAuth, upload.none(), orderController.addOrder);
 // // Hiển thị form thêm sản phẩm
 // router.get('/orders/add', orderController.showAddForm);
 

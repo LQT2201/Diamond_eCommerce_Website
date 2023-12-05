@@ -16,8 +16,16 @@ const cartSchema = new Schema({
       min: 0,
     }
   }],
-  total_quantity: Number,
-  total_price: Number,
+  total_quantity: {
+    type: Number,
+    default: 0,
+    min: 0,
+  },
+  total_price: {
+    type: Number,
+    default: 0,
+    min: 0,
+  },
   
   // Thêm các trường khác nếu cần
 });

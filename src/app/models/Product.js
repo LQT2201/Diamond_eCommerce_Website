@@ -6,8 +6,7 @@ const productSchema = new Schema({
   name: String,
   sku: {
     type: Number,
-    unique: true,
-    index: true,
+    unique: false,
   },
   brand: String,
   category: String,
