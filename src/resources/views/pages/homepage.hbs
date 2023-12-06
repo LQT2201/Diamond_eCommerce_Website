@@ -52,14 +52,14 @@
         <div class="stick-title">Xu hướng tìm kiếm</div>
         <div class="stick-wrapper">
             {{#each top_product}}
-                <div class="col l-2 m-0 c-0 ">
+                <div class="col l-2 m-4 c-0 ">
                     <div class="slick-item">
                         <div class="slick-item-inner">
                             <figure>
-                                <a href="/products/{{this.slug}}" >
+                                <a href="/products/{{this.slug}}">
                                     <img src="{{this.thumbnail.[0]}}" style="border-radius: 50%;" alt="">
                                 </a>
-                                <figcaption class="slick-item__title"><a href="/products/{{this.slug}}" style="text-decoration: none;">{{this.name}}</a></figcaption>
+                                <figcaption class="slick-item__title"><a href="/products/{{this.slug}}">{{this.name}}</a></figcaption>
                             </figure>
                         </div>
                     </div>
