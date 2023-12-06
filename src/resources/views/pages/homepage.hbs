@@ -51,95 +51,33 @@
     <div class="row no-gutters" style="margin:10px 0;">
         <div class="stick-title">Xu hướng tìm kiếm</div>
         <div class="stick-wrapper">
-            <div class="col l-2 m-4 c-0 ">
-                <div class="slick-item">
-                    <div class="slick-item-inner">
-                        <figure>
-                            <a href="">
-                                <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
-                            </a>
-                            <figcaption class="slick-item__title"><a href="">Dây chuyền</a></figcaption>
-                        </figure>
+            {{#each top_product}}
+                <div class="col l-2 m-0 c-0 ">
+                    <div class="slick-item">
+                        <div class="slick-item-inner">
+                            <figure>
+                                <a href="/products/{{this.slug}}" >
+                                    <img src="{{this.thumbnail.[0]}}" style="border-radius: 50%;" alt="">
+                                </a>
+                                <figcaption class="slick-item__title"><a href="/products/{{this.slug}}" style="text-decoration: none;">{{this.name}}</a></figcaption>
+                            </figure>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col l-2 m-0 c-0">
-                <div class="slick-item">
-                    <div class="slick-item-inner">
-                        <figure>
-                            <a href="">
-                                <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
-                            </a>
-                            <figcaption class="slick-item__title">Dây chuyền</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col l-2 m-4 c-0">
-                <div class="slick-item">
-                    <div class="slick-item-inner">
-                        <figure>
-                            <a href="">
-                                <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
-                            </a>
-                            <figcaption class="slick-item__title">Dây chuyền</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col l-2 m-0 c-0">
-                <div class="slick-item">
-                    <div class="slick-item-inner">
-                        <figure>
-                            <a href="">
-                                <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
-                            </a>
-                            <figcaption class="slick-item__title">Dây chuyền</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col l-2 m-4 c-0">
-                <div class="slick-item">
-                    <div class="slick-item-inner">
-                        <figure>
-                            <a href="">
-                                <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
-                            </a>
-                            <figcaption class="slick-item__title">Dây chuyền</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col l-2 m-0 c-0">
-                <div class="slick-item">
-                    <div class="slick-item-inner">
-                        <figure>
-                            <a href="">
-                                <img src="https://cdn.pnj.io/images/image-update/2022/hot-categories/trang-suc-vang.png" alt="">
-                            </a>
-                            <figcaption class="slick-item__title">Dây chuyền</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
     </div>
     <!-- End slick -->
 
-    <div class="listProduct-title">Sản phẩm nổi bậ<tt></tt></div>
+    <div class="listProduct-title">Sản phẩm<tt></tt></div>
     <div class="row listProduct">
         {{#each products as |product|}}
         <div class="col l-3 m-4 c-6">
             <div class="component-product">
                 <div class="component-product__image">
                     <a href="/products/{{product.slug}}">
-                        {{#each product.thumbnail as |thumb|}}
-                        {{#if @first}}
-                            <img src="{{thumb}}" alt="">
-                        {{/if}}
-                        {{/each}}
-                        
+                        <img src="{{product.thumbnail.[0]}}" alt="">
+                        <img src="{{product.thumbnail.[1]}}" alt="">
                     </a>
                 </div>
 
@@ -148,11 +86,28 @@
                         <span>{{product.name}}</span>
                     </a>
                 </div>
-                <div class="component-product__price">{{product.price}}</div>
+                <div class="component-product__price">{{formatCurrency product.price}}</div>
                 <button class="component-product__btnAdd" id="{{product.sku}}">Thêm vào giỏ hàng</button>
             </div>
         </div>
         {{/each}}
     </div>
+    <!-- Begin ads -->
+    <div class="ads" id ="advertisement">
+        <div class="ads_container">
+            <div class="ads_content">
+                <div class="img_ads">
+                    <div class="skipbtn" id ="skipButton">
+                        <img src="/image/skip_ads.png" alt="Skip">
+                    </div>
+                    <div class="adsshow">
+                        <img src="/image/homepage_ads.jpg" alt="Advertisement">
+                    </div>
+                </div>
+                <a href="https://www.facebook.com/lqt.2201" target="_blank"> CONTACT US </a>
+            </div>
+        </div>
+    </div>
+    <!-- End ads -->
 </div>
 <!-- End content -->

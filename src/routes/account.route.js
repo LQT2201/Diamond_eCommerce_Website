@@ -13,6 +13,7 @@ router.get('/login', authentication.isAuth, accountController.showLogin)
 router.get('/register', authentication.isAuth, accountController.showRegister)
 router.get('/logout', authentication.isAuth, accountController.logout);
 
+router.post('/buynow/:sku', authentication.isAuth, accountController.buyNow);
 router.post('/account-register', accountController.register);
 router.post('/account-login', accountController.login);
 router.post('/change-information', authentication.isAuth, upload.none(), accountController.changeInformation);

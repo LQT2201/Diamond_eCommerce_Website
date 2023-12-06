@@ -30,7 +30,9 @@
     text-decoration: underline;
     color: black;
 }
-
+.add-to-cart-btn:hover {
+    cursor: pointer;
+}
 .breadcrumb span {
     margin: 0 5px;
     color: #666;
@@ -420,4 +422,10 @@
     font-weight: lighter;
     border: none;
     justify-content: center;
+}
+
+@media (max-width: 740px) {
+    .product-details {
+        display: block;
+    }
 }

@@ -1,0 +1,39 @@
+.menu-tab {
+    justify-items: center;
+    background-color: rgb(7, 1, 65);
+}
+
+
+.menu-tab div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.menu-tab span {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu-tab ion-icon {
+    margin-right: 10px;
+}
+
+.menu-tab span:hover {
+    background-color: rgb(149, 190, 243);
+    color: black;
+    width: 95%;
+}
+
+.content {
+    flex: 0 0 83%;
+    max-width: 100%;
+    width: 100%;
+    background-color: #f1f1f1;
+}

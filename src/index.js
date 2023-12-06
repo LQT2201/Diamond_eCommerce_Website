@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const path = require('path');
+require("dotenv").config();
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
@@ -14,7 +15,7 @@ db.connect();
 
 // Middleware để phục vụ các tệp tĩnh từ thư mục "public"
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cors());
 
 //Body parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,7 +28,7 @@ app.use(cookieParser());
 app.use(morgan('combined'))
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://127.0.0.1:3000");
+  res.header("Access-Control-Allow-Origin", process.env.ORIGIN);
   res.header("Access-Control-Allow-Credentials", true);
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
   res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');

@@ -1,8 +1,7 @@
 const jwt = require('jsonwebtoken')
 const Admin = require('../models/Admin');
 const util = require('../../until/util')
-const adminSecretKey = "b6d5ddf1cde676bb2290a30f0dec482fd3346022623a3a917bab058b95d766c9";
-const domainOrigin = 'localhost:3000';
+
 const verifyAdminAccessToken = async (req) => {
   let token, decodedAdmin, admin;
     try {
@@ -10,7 +9,7 @@ const verifyAdminAccessToken = async (req) => {
       if (!token) {
           return {isLogged: false, admin: null};
       }
-      decodedAdmin = jwt.verify(token, adminSecretKey);
+      decodedAdmin = jwt.verify(token, process.env.adminSecretKey);
       admin = await Admin.findOne({
           username: decodedAdmin.username,
           token: token,

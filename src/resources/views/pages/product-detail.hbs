@@ -11,7 +11,7 @@
     </div>
     <div class="row body-product">
       <!--Gallery -->
-      <div class="col l-7 product-images">
+      <div class="col l-7 c-12 product-images">
         <div class="product-gallery">
           <div class="thumbnails">
               <button class="up-button"></button>
@@ -21,7 +21,7 @@
           </div>
           <div class="main-image-outer">
             
-              <img src="{{product.thumbnail[0]}}" alt="Product Image 1" class="main-image">
+              <img src="{{product.thumbnail.[0]}}" alt="Product Image 1" class="main-image">
             
               
           </div>
@@ -30,7 +30,7 @@
       <!--Gallery -->
 
       <!-- Details -->
-      <div class="col l-4 product-details">
+      <div class="col l-4 c-12 product-details">
 
         <div class="product-name-wrapper">
           <img src="https://cdn.pnj.io/images/image-update/2022/10/pnjfast/PNJfast-Giaotrong3h.svg" alt="pnj" class="product-name-image">
@@ -60,60 +60,35 @@
             <span class="product-stock-status">Còn {{product.quantity}} sản phẩm</span>
         </div>
         <div class="add-to-cart-wrapper">
-          <button class="add-to-cart-btn">
-            <span class="add-to-cart-span-tittle"> Mua ngay</span>
-            <span class="add-to-cart-span">Miễn phí giao hàng tận nhà hoặc nhận tại cửa hàng</span>
+          <button class="add-to-cart-btn component-product__btnAdd" id="{{product.sku}}">
+            <span class="add-to-cart-span-tittle">Thêm vào giỏ hàng</span>
           </button>
         </div>
-
-        <div class="row add-to-cart-wrapper" >
-          <div class="col l-6">
-            <button class="add-to-whilist-btn" onclick="addCart({{product.sku}})">
-              
-            </button>
-          </div>
-
-          <div class="col l-6">
-            <button class="add-to-whilist-btn">
-              <span class="add-to-cart-span-tittle"> <i class="fa fa-heart" aria-hidden="true"></i> Thêm vào yêu thích</span>
-              <span class="add-to-cart-span">Dễ dàng xem lại sản phẩm</span>
-            </button>
-          </div>
+        <div class="add-to-cart-wrapper">
+          <button class="add-to-cart-btn buy-now product-sku-{{product.sku}}">
+            <span class="add-to-cart-span-tittle">Mua ngay</span>
+          </button>
         </div>
       </div>
     </div>
 </div>
-
-    <div class="modal-cart">
-        <div class="cart__overlay"></div>
-        <div class="cart">
-
-                <div class="cart__title">
-                    <h2>CART</h2>
-                    
-                </div>
-
-                <div class="listCart">
-
-                </div>
-
-                <div class="buttons">
-                    <button class="close">
-                        EDIT ORDER
-                        <img src="/image/edit.png" alt="" style="margin-left: 10px">
-                    </button>
-                    <button class="checkout">
-                        <a href="/cart/checkout">CHECKOUT</a>
-                    </button>
-                </div>
-        </div>
-    </div>
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const thumbnails = document.querySelectorAll('.thumbnail');
     const mainImage = document.querySelector('.main-image');
-
+    const buyBtn = document.querySelector('.buy-now');
+    buyBtn.addEventListener('click', async (e) => {
+      const product_sku = e.target.classList.item(2).toString().split('-')[2];
+      const response = await fetch('/buynow/' + product_sku, {
+        method: "POST",
+      });
+      if(response.ok) {
+        window.location.href = '/cart/checkout';
+      }
+      else{
+        alert(await response.text())
+      }
+    })
     thumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('mouseover', () => {
             const thumbnailSrc = thumbnail.src;

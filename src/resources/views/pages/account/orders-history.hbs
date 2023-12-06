@@ -3,7 +3,7 @@
         <div class="grid wide container">
             <div class="row">
                 <!-- - Begin  -->
-                <div class="col l-3">
+                <div class="col l-3 m-4 c-12">
                     <div class="menu-profile">
                         <div class="menu-profile__info">
                             <div class="profile-avatar">
@@ -21,34 +21,25 @@
                             <div class="item-account">
                                 <a href="/orders-history" class="active">Đơn hàng của tôi</a>
                             </div>
-                            <div class="item-account">
-                                <a href="/wishlist-cart">Giỏ hàng yêu thích</a>
-                            </div>
-                            <div class="item-account">
-                                <a href="#">Hỏi đáp</a>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
-                <div class="col l-9">
+                <div class="col l-9 m-8 c-12">
                     <div class="content-profile">
-                        <div class="title-h2">
-                            <h2>Lịch sử đơn hàng</h2>
-                        </div>
                     <div class="grid wide container">
                         <div class="row">
                             <div class="content">
                                 <div class="content order">
-                                    <div class="content_order_title">
-                                        <h2>Đơn hàng</h2>
+                                    <div class="title-h2">
+                                        <h2>THÔNG TIN ĐƠN HÀNG</h2>
                                     </div>
                                     <div class="content_order_list">
                                         <table class="order_table">
                                             <thead>
                                                 <tr>
                                                     <th>STT</th>
-                                                    <th>Mã đơn hàng</th>
-                                                    <th>Tên tài khoản</th>
+                                                    <th>Tên người nhận</th>
                                                     <th>SĐT liên lạc</th>
                                                     <th>Địa chỉ</th>
                                                     <th>Ngày đặt hàng</th>
@@ -62,8 +53,7 @@
                                                 {{#each orders as |orders|}}
                                                 <tr>
                                                     <td>{{inc @index}}</td>
-                                                    <td>{{orders._id}}</td>
-                                                    <td>{{orders.username}}</td>
+                                                    <td>{{orders.fullname}}</td>
                                                     <td>{{orders.phone}}</td>
                                                     <td>{{orders.address}}</td>
                                                     <td>{{formatDate orders.createAt}}</td>
@@ -73,26 +63,26 @@
                                                     <td><button type="submit" class="detail_button" id="{{orders._id}}">Chi tiết</button></td>
                                                 </tr>
                                                 <tr class="id-{{orders._id}} hide_detail">
-                                                    <th colspan="1"></th>
-                                                    <th colspan="9">Thông tin sản phẩm</th>
+                                                    
+                                                    <th colspan="10">Thông tin sản phẩm</th>
                                                 </tr>
                                                 <tr class="id-{{orders._id}} hide_detail">
-                                                    <th colspan="2"></th>
+                                    
                                                     <th>STT</th>
                                                     <th>Tên sản phẩm</th>
-                                                    <th>Mã sản phẩm</th>
-                                                    <th>Loại sản phẩm</th>
-                                                    <th>Vật liệu</th>
+                                                    <th colspan="2">Mã sản phẩm</th>
+                                                    <th colspan="1">Loại sản phẩm</th>
+                                                    <th colspan="2">Vật liệu</th>
                                                     <th>Đơn giá</th>
                                                     <th>Số lượng sản phẩm</th>
                                                     {{#each orders.products as |products|}}
                                                     <tr class="id-{{orders._id}} hide_detail">
-                                                        <td colspan="2"></td>
+                                                        
                                                         <td>{{inc @index}}</td>
                                                         <td>{{products.product.name}}</td>
-                                                        <td>{{products.product.sku}}</td>
-                                                        <td>{{products.product.category}}</td>
-                                                        <td>{{products.product.material}}</td>
+                                                        <td colspan="2">{{products.product.sku}}</td>
+                                                        <td colspan="1">{{products.product.category}}</td>
+                                                        <td colspan="2">{{products.product.material}}</td>
                                                         <td>{{formatCurrency products.product.price}}</td>
                                                         <td>{{products.product_quantity}}</td>
                                                     </tr>

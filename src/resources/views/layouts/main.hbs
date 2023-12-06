@@ -21,6 +21,13 @@
         
         <div class="app__content">
             {{{body}}}
+            {{#unless isAdmin}}
+            <div class="modal-cart">
+                <div class="cart__overlay" style="display: none;"></div>
+                <div class="cart" style="right: -100%;">
+                </div>
+            </div>
+            {{/unless}}
         </div>
 
         {{#unless isAdmin}}
@@ -30,7 +37,6 @@
     </div>
 
     {{#unless isAdmin}}
-        {{> cart-modal}}
         <script src="/js/cart.js"></script>
     {{/unless}}
 

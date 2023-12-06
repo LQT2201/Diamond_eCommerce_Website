@@ -1,20 +1,25 @@
-
-addCartToHTML();
-function addCartToHTML(){
+let listCartHTML;
+formatCurrency = (price) => {
+    return Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+};
+window.addEventListener('DOMContentLoaded', async function() {
+    await addCartToHTML();
+})
+async function addCartToHTML(){
     // clear data default
-    let listCartHTML = document.querySelector('.cart__list-items');
+    listCartHTML = document.querySelector('.cart__list-items');
     listCartHTML.innerHTML ='';
-
-    let cartQuantity = document.querySelector('.cart-head__quantity');
-    let orderQuantity = document.querySelector('.order__detail__quantity');
-    let totalQuantityHTML = document.querySelector('.totalQuantity');
+    let totalQuantityHTML = document.querySelector('.order__detail__quantity');
     let totalPriceHTML = document.querySelector('.totalPrice');
     let totalQuantity = 0;
     let totalPrice = 0;
     // if has product in Cart
     if(listCart){
-        listCart.forEach((quantity,sku) => {
-            fetch('/products/get/' + sku).then(response => response.json()).then(product =>{
+        for(const e of listCart) {
+            const sku = e[0], quantity = e[1];
+            const response = await fetch('/products/get/' + sku);
+            if(response.ok) {
+                const product = await response.json();
                 let newCart = document.createElement('div');
                 newCart.classList.add('row','cart-item');
                 newCart.innerHTML = 
@@ -30,58 +35,48 @@ function addCartToHTML(){
                     </div>
                     <div class="col l-3 m-3 c-6">
                         <div class="cart-item__quantity">
-                            <button onclick="changeQuantity(${product.sku}, '-')">-</button>
-                            <span class="value">${product.quantity}</span>
-                            <button onclick="changeQuantity(${product.sku}, '+')">+</button>
+                            <button onclick="changeQuantity('${product.sku}', '-')">-</button>
+                            <span class="value">${quantity}</span>
+                            <button onclick="changeQuantity('${product.sku}', '+')">+</button>
                         </div>
                     </div>
                     <div class="col l-3 m-3 c-5">
                         <div class="cart-item__price">
-                            <span>${product.price} <small>Đ</small></span>
+                            <span>${formatCurrency(product.price)} <small>Đ</small></span>
                         </div>
                     </div>
                     <div class="col l-1 m-1 c-1">
                         <div class="cart-item__remove">
-                            <button  onclick="changeQuantity(${product.sku}, 'delete')"><img src="/image/delete.png" alt=""></button>
+                            <button  onclick="changeQuantity('${product.sku}', 'delete')"><img src="/image/delete.png" alt=""></button>
                         </div>
                     </div>`;
                 listCartHTML.appendChild(newCart);
-                totalQuantity = totalQuantity + product.quantity;
-                totalPrice = totalPrice + (product.price * product.quantity);
-                console.log(totalQuantity);
-            })
-        })
-        
+                totalQuantity++;
+                totalPrice = totalPrice + (product.price * quantity);
+            }
+        }
+        totalPriceHTML.innerHTML = `<h2>${formatCurrency(totalPrice)}</h2>`;
+        totalQuantityHTML.innerText = 'Số loại sản phẩm: ' + String(totalQuantity);
     }
-    totalQuantityHTML.innerText = totalQuantity;
-    totalPriceHTML.innerText = '$' + totalPrice;
-    orderQuantity.innerText  = totalQuantity + ' sản phẩm';
-    cartQuantity.innerText = totalQuantity +' sản phẩm';
+    
 }   
 
 
 function changeQuantity(sku, type){
-    switch (type) {
-        case 'delete':
-            delete listCart[sku];
-            break;
-        case '+':
-            listCart[sku].quantity++;
-            break;
-        case '-':
-            listCart[sku].quantity--;
-
-            // if quantity <= 0 then remove product in cart
-            if(listCart[sku].quantity <= 0){
-                delete listCart[sku];
-            }
-            break;
-    
-        default:
-            break;
+    if(type ==='delete') {
+        listCart.delete(sku);
+    }
+    else if(type ==='+') {
+        listCart.set(sku, listCart.get(sku) + 1);
+    }
+    else if(type ==='-') {
+        listCart.set(sku, listCart.get(sku) - 1);
+        if(listCart.get(sku) <= 0){
+            listCart.delete(sku);
+        }
     }
     // save new data in cookie
-    document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
+    document.cookie = "listCart=" + JSON.stringify(Array.from(listCart.entries())) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
     // reload html view cart
     addCartToHTML();
 }

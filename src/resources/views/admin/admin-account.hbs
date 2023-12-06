@@ -1,1 +1,55 @@
-<h1>Account</h1>
+<div class="grid wide ">
+    <div class="row">
+        <div class="col l-2 m-0 menu-tab">
+            <div class="row dashboard">
+                <span><ion-icon name="speedometer-outline"></ion-icon>Bảng điều khiển</span>
+            </div>
+            <div class="row product">
+                <span>
+                    <ion-icon name="pricetags-outline"></ion-icon>
+                    <a href="/admin/products">Sản phẩm</a>
+                </span>
+            </div>
+            <div class="row order">
+                <span><ion-icon name="calendar-clear-outline"></ion-icon>
+                <a href="/admin/orders">Đơn hàng</a></span>
+            </div>
+            <div class="row account">
+                <span><ion-icon name="people-outline"></ion-icon>
+                <a href="/admin/users">Quản lý tài khoản</a></span>
+            </div>
+        </div>
+        <div class="content order">
+            <div class="content_order_title">
+                <h2>Đơn hàng</h2>
+            </div>
+            <div class="content_order_list">
+                <table class="order_table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên tài khoản</th>
+                            <th>Họ và tên</th>
+                            <th>SĐT liên lạc</th>
+                            <th>Địa chỉ</th>
+                            <th>Ngày tạo tài khoản</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each users as |users|}}
+                        <tr>
+                            <td>{{inc @index}}</td>
+                            <td>{{users.username}}</td>
+                            <td>{{users.fullname}}</td>
+                            <td>{{users.phone}}</td>
+                            <td>{{users.address}}</td>
+                            <td>{{formatDate users.createAt}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</div>
+<script src="/js/admin-view.js"></script>

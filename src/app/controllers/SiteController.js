@@ -18,6 +18,7 @@ class ProductController {
                 script:'/js/homepage.js',
                 isAdmin: 0,
                 products: products,
+                top_product: products.slice(0, 6),
                 user: req.user?.toObject(),
             })
         }

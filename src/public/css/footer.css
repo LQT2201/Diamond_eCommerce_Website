@@ -1,12 +1,14 @@
 footer {
     background-color: #F9F7F7;
+    box-sizing: border-box;
 }
 footer .social-media .logo img{
     width:35px;
     padding-left: 10px;
 }
 footer a {
-    text-decoration-line: none;
+    text-decoration: none;
+    color: #5233AA;
 }
 footer h6 {
     font-size: 14px;
@@ -31,4 +33,8 @@ footer .footer-slash {
     height: 1px;
     width: 100%;
     background-color: rgb(172, 172, 172);
+}
+
+.social-media {
+    display: inline-flex;
 }
