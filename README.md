@@ -40,7 +40,8 @@
 - Quản lí sản phẩm: hiện thị danh sach sản phẩm có trên website (Đang phát triển thêm chức năng thêm xóa sửa)
 - Quản lí tài khoản: hiển thị danh sách các tài khoản mà khách hàng đã đăng kí (Đang phát triển thêm chức năng thêm xóa sửa)
 
-
+## Đóng góp và thắc mắc
+- Liên hệ qua email: 21521542@gm.uit.edu.vn
 
 
 
