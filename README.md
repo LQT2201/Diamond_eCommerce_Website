@@ -6,6 +6,7 @@
 - install nodemon: npm i nodemon
 - install mongoose: npm i mongoose
 - Cài đặt mongoDBcompass hoặc sử dụng mongoDBatlas để import csdl từ file json trong thư mục db. Tiếp đến thay liên kến đến mongoDB sever tại đường dẫn /src/config/db/index.js
+- LƯU Ý: ĐỂ TRÁNH LỖI NÊN XÓA COOKIE TRƯỚC KHỊ CHẠY DỰ ÁN
 
 ## Hướng Dẫn Sử Dụng Trang Web Bán Kim Cương
 
