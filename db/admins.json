@@ -1,0 +1,11 @@
+[{
+  "_id": {
+    "$oid": "656f20eb65402ad3b338d54e"
+  },
+  "username": "admin",
+  "password": "$2b$10$f8Wqn6tkyFvyXRqpJu3XguQvuAzswXL3GYE0YfMedI23bt4ituUmC",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzAxNzgxNzM5LCJleHAiOjE3MDIzODY1Mzl9.6IzKYxQmTE8IDM-bK9emiI-eawi-eIvNSC0CzTSI3YY",
+  "createAt": {
+    "$date": "2023-12-05T13:08:59.952Z"
+  }
+}]
