@@ -5,7 +5,7 @@
 - install express: npm i express
 - install nodemon: npm i nodemon
 - install mongoose: npm i mongoose
-- Cài đặt mongoDBcompass hoặc sử dụng mongoDBatlas để import csdl từ file json trong thư mục db. Tiếp đến thay liên kến đến mongoDB sever tại đường dẫn /src/config/db.js
+- Cài đặt mongoDBcompass hoặc sử dụng mongoDBatlas để import csdl từ file json trong thư mục db. Tiếp đến thay liên kến đến mongoDB sever tại đường dẫn /src/config/db/index.js
 
 ## Hướng Dẫn Sử Dụng Trang Web Bán Kim Cương
 
