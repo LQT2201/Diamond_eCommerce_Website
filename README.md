@@ -1,6 +1,6 @@
  # Diamond_eCommerce_Website
  
-## Chuẩn bị cho 
+## Chuẩn bị cho dự án
 - install node: https://nodejs.org/en/download/current
 - install express: npm i express
 - install nodemon: npm i nodemon
