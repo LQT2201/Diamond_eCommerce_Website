@@ -1,13 +1,16 @@
  # Diamond_eCommerce_Website
-## Setup for project
+ 
+## Chuẩn bị cho 
 - install node: https://nodejs.org/en/download/current
 - install express: npm i express
 - install nodemon: npm i nodemon
 - install mongoose: npm i mongoose
+- Cài đặt mongoDBcompass hoặc sử dụng mongoDBatlas để import csdl từ file json trong thư mục db. Tiếp đến thay liên kến đến mongoDB sever tại đường dẫn /src/config/db.js
+
 ## Hướng Dẫn Sử Dụng Trang Web Bán Kim Cương
 
 ### Giới Thiệu chung
-- Mục tiêu: Xây dựng một trang web hiện đại, thuận tiện và an toàn để mua bán trang sức kim cương, đá quý, …
+- Mục tiêu: Xây dựng một trang web hiện đại, thuận tiện và an toàn với đầy đủ chức năng cơ bản để mua bán trang sức kim cương, đá quý, …
 - Đối tượng sử dụng: Những người yêu thích và quan tâm đến kim cương, cũng như những người muốn mua sắm trực tuyến chất lượng.
 ### Tính Năng Chính
 1. Trang Chủ
@@ -32,6 +35,7 @@
  - Đăng ký tài khoản để theo dõi đơn hàng giỏ hàng cá nhân và trả nghiệm đầy đủ các chức năng của website
 - Quản lý thông tin cá nhân và lịch sử mua hàng của khách hàng.
 7. Trang ADMIN
+ - (Chưa hỗ trợ tạo tài khoản, đăng nhập bằng tài khoản mặc định: admin|123)
 - Quản lí đơn hàng, hiện thị danh sách tất cả đơn hàng và chi tiết của từng đơn hàng của tất cả khách hàng đã mua sản phẩm ở website. 
 - Quản lí sản phẩm: hiện thị danh sach sản phẩm có trên website (Đang phát triển thêm chức năng thêm xóa sửa)
 - Quản lí tài khoản: hiển thị danh sách các tài khoản mà khách hàng đã đăng kí (Đang phát triển thêm chức năng thêm xóa sửa)
